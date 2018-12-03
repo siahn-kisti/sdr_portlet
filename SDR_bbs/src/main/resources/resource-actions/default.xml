@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.2.0//EN"
-        "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
-
-<resource-action-mapping>
-    <resource file="resource-actions/sdrBbsAdmin.xml"/>
-    <resource file="resource-actions/sdrBbs.xml"/>
-</resource-action-mapping>
