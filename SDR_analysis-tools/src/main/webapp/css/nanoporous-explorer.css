@@ -1,0 +1,57 @@
+/* devsky 수정/추가 : Nanoporous Analysis */
+
+#search-width .col-md-2 {
+    height: 213px;
+    background: url('../images/material_sub/plus.png') center center no-repeat;
+    background-size:  80px;
+}
+
+#search-width #errorMessage {
+    margin: 10px 0px;
+}
+
+.select-section {
+     position: relative;
+     padding: 45px 0px 15px 0px;
+     margin: 0 auto;
+     color: black;
+     font-size: 12px;
+ }
+
+.select-section:after {
+    position: absolute;
+    top: 15px;
+    left: 0px;
+    font-size: 14px;
+    font-weight: bold;
+    color: #474747;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.select-section .list-group {
+    margin: 0px;
+    cursor: pointer;
+}
+
+.select-section .list-group i {
+    font-weight: bold;
+    font-size: 17px;
+    float: right;
+}
+
+.search-sorbent:after {
+    content: "Select Sorbent Material";
+}
+
+.search-sorbate:after {
+    content: "Select Sorbate Material";
+}
+
+.button-section {
+    border-radius: 5px;
+    width: 233px;
+    padding: 5px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}

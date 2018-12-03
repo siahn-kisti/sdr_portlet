@@ -1,0 +1,408 @@
+/* view.jsp용 */
+.aui h3 {
+    margin: 0 0 10px 0;
+    font-size: 20px;
+}
+
+.aui h3.submissionTitle {
+    font-size: 18px;
+    line-height: 32px;
+}
+
+.aui h3.tab-title {
+    font-size: 16px;
+    line-height: 32px;
+}
+
+/* 공통 file 컨트롤 */
+.aui #sdr_content input[type="file"] {
+    width: 100%;
+    display: inline-block;
+}
+
+/*공통 radio버튼 컨트롤*/
+.aui #sdr_content .radio {
+    margin-right: 15px;
+    padding: 5px 0 0 20px;
+    display: inline-block;
+    font-size: 12px;
+}
+
+/* 버튼 컨트롤 css */
+.aui .btn-right {
+    float: right;
+    margin-left: 4px;
+}
+
+/* submission용 상단 탭 */
+.aui #submissionTab {
+  position: relative;
+}
+
+.aui #submissionTab #analyzer-link{
+  position: absolute;
+  top: 0px;
+  right: 6px;
+}
+
+.aui #submissionTab .nav-tabs > li > a {
+    padding: 12px 20px;
+    font-size: 14px;
+    color: #b0b0b8;
+    transition: all 0.5s;
+}
+
+.aui #submissionTab .nav-tabs > .active > a, .aui #submissionTab .nav-tabs > .active > a:hover, .aui #submissionTab .nav-tabs > .active > a:focus {
+    color: #666675;
+}
+
+/* 기본 상세보기 테이블 */
+.detail-table {
+    margin-bottom: 35px;
+}
+
+.detail-table table {
+    border-top: 2px solid #327bb9;
+    width: 100%;
+}
+
+.detail-table table thead tr th, .detail-table table tbody tr th, .detail-table table tbody tr td {
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    padding: 10px 12px;
+    vertical-align: middle;
+}
+
+.detail-table table thead tr th, .detail-table table tbody tr th {
+    background: #f9f9f9;
+    font-weight: bold;
+    text-align: center;
+}
+
+.detail-table table tbody tr td {
+
+}
+
+.detail-table table thead tr th:last-child, .detail-table table tbody tr td:last-child {
+    border-right: 0;
+}
+
+/* 상하 padding가 넓은 유형 */
+.detail-table.input-table table thead tr th, .detail-table.input-table table tbody tr th, .detail-table.input-table table tbody tr td {
+    padding: 20px 12px;
+}
+
+/* 기본 table Edit input box */
+.aui .detail-table .control-group {
+    margin-bottom: 0;
+}
+
+.aui .detail-table textarea, .aui .detail-table input {
+    box-shadow: none;
+    -webkit-box-shadow: none;
+}
+
+.aui .detail-table textarea, .aui .detail-table input[type="text"], .aui .detail-table input[type="password"], .aui .detail-table input[type="datetime"], .aui .detail-table input[type="datetime-local"], .aui .detail-table input[type="date"], .aui .detail-table input[type="month"], .aui .detail-table input[type="time"], .aui .detail-table input[type="week"], .aui .detail-table input[type="number"], .aui .detail-table input[type="email"], .aui .detail-table input[type="url"], .aui .detail-table input[type="search"], .aui .detail-table input[type="tel"], .aui .detail-table input[type="color"], .aui .detail-table .uneditable-input, .aui .detail-table input[type="file"] {
+    width: 100%;
+    height: 30px;
+    vertical-align: middle;
+    box-sizing: border-box;
+    padding: 4px 6px;
+    font-size: 12px;
+    line-height: 30px;
+    color: #555;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-bottom: 0px;
+}
+
+.aui .detail-table select, .aui .detail-table .input-prepend .add-on, .aui .detail-table .navbar-search .search-query, .aui .detail-table .uneditable-input {
+    height: 30px;
+    padding: 4px 6px;
+    font-size: 12px;
+    line-height: 30px;
+    color: #555;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    vertical-align: middle;
+    margin-bottom: 0px;
+}
+
+.aui .detail-table select {
+    width: 100%;
+    border: 1px solid #ccc;
+    background-color: white;
+}
+
+.aui .detail-table .collection-control {
+    position: relative;
+}
+
+.aui .detail-table .collection-control .btn {
+    position: absolute;
+    top: 1px;
+    right: 1px;
+    border: 0;
+    border-left: 1px solid #cfcfcf;
+    padding: 4px 12px;
+    line-height: 20px;
+}
+
+.aui .detail-table .help-inline {
+    padding: 3px 0 0 0;
+    vertical-align: top;
+}
+
+.aui .detail-table .tagselector-content {
+    margin-bottom: 0px;
+}
+
+.aui .detail-table .tagselector-content:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.aui .detail-table .tagselector-content .textboxlistentry-holder {
+    width: calc(100% - 158px);
+    padding: 2px 5px 1px 5px;
+    margin-bottom: 0px;
+    float: left;
+}
+
+.aui .detail-table .tagselector-content input {
+    margin-top: 0px;
+}
+
+.aui .detail-table .tagselector-content .toolbar {
+    margin-left: -1px;
+    float: left;
+    vertical-align: top;
+}
+
+.aui .detail-table .tagselector-content .toolbar .btn-group .btn {
+    padding: 4px 12px;
+    line-height: 20px;
+}
+
+.aui .detail-table .tagselector-content .toolbar .btn-group .btn:first-child {
+    border-top-left-radius: 2px;
+    -webkit-border-top-left-radius: 2px;
+    -moz-border-top-left-radius: 2px;
+    border-bottom-left-radius: 2px;
+    -webkit-border-bottom-left-radius: 2px;
+    -moz-border-bottom-left-radius: 2px;
+}
+
+.aui .detail-table .tagselector-content .textboxlistentry-holder .lfr-tag-selector-input {
+    font-size: 12px;
+    height: 25px;
+}
+
+.aui .detail-table .textboxlistentry {
+    margin: 0 5px 2px 0;
+    padding: 4px 8px;
+    background-color: #f9f9fa;
+}
+
+.aui .detail-table .textboxlistentry-focused {
+    background-color: #9aaaad;
+}
+
+.aui .detail-table .fileExplanation {
+    line-height: 20px;
+    font-size: 12px;
+    color: #b0b0b8;
+}
+
+.aui .detail-table .fileExplanation a {
+    position: relative;
+    text-decoration: none;
+    color: #666675;
+    transition: all 0.2s;
+}
+
+.aui .detail-table .fileExplanation a:hover {
+    color: #327bb9;
+}
+
+.aui .detail-table .fileExplanation a:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 1px;
+    background: #666675;
+    transform: scale(0);
+    transition: all 0.2s;
+}
+
+.aui .detail-table .fileExplanation a:hover:before {
+    background: #327bb9;
+    transform: scale(1);
+}
+
+/* Bulk Submission Error Log 테이블 */
+#errorLogDiv {
+
+}
+
+#errorLogDiv h4 {
+    font-size: 14px;
+    color: #ea4747;
+}
+
+#errorLogDiv .logArea {
+    overflow-y: auto;
+    max-height: 500px;
+    border: 1px solid #ddd;
+    border-top: 2px solid #e27149;
+}
+
+#errorLogDiv .logTable {
+    width: 100%;
+}
+
+#errorLogDiv .logTable thead tr th {
+    padding: 5px 8px;
+    font-size: 11px;
+    font-weight: bold;
+    text-align: center;
+    background-color: #f2f2f2;
+}
+
+#errorLogDiv .logTable tbody tr td {
+    border-right: 1px solid #fff;
+    border-bottom: 1px solid #fff;
+    padding: 3px 8px;
+    font-size: 11px;
+    background-color: #fff;
+    color: #666675;
+    transition: all 0.2s;
+}
+
+#errorLogDiv .logTable tbody tr:hover td {
+    background-color: #e0e0e0;
+}
+
+#errorLogDiv .logTable .submit_error {
+    color: #ff491f;
+    background-color: #ffebeb;
+}
+
+#errorMsgDiv h5 {
+    font-size: 12px;
+    font-weight: normal;
+}
+
+/* 미디어 쿼리 중간 사이즈 컨트롤 */
+
+@media (max-width: 979px) {
+    /* 하단 버튼 */
+    .aui .btn {
+        padding: 4px 12px;
+        font-size: 14px;
+    }
+
+    .aui #sdr_content textarea, .aui #sdr_content input[type="text"], .aui #sdr_content input[type="password"], .aui #sdr_content input[type="datetime"], .aui #sdr_content input[type="datetime-local"], .aui #sdr_content input[type="date"], .aui #sdr_content input[type="month"], .aui #sdr_content input[type="time"], .aui #sdr_content input[type="week"], .aui #sdr_content input[type="number"], .aui #sdr_content input[type="email"], .aui #sdr_content input[type="url"], .aui #sdr_content input[type="search"], .aui #sdr_content input[type="tel"], .aui #sdr_content input[type="color"], .aui #sdr_content .uneditable-input, .aui #sdr_content select, .aui #sdr_content .input-prepend .add-on, .aui #sdr_content .navbar-search .search-query {
+        height: 25px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .aui .taglib-page-iterator .lfr-pagination-config .lfr-pagination-delta-selector, .aui .taglib-page-iterator .search-results {
+        display: inline;
+    }
+
+    .aui .taglib-page-iterator .lfr-pagination-buttons {
+        width: auto;
+        margin-top: 0px;
+        float: right;
+    }
+
+    .aui .taglib-page-iterator .lfr-pagination-buttons > li {
+        display: inline;
+        width: auto;
+        float: none;
+    }
+
+    .aui .taglib-page-iterator .lfr-pagination-buttons > li > a {
+        padding: 5px 14px;
+        width: auto;
+    }
+}
+
+/* 미디어 쿼리 작은 사이즈 컨트롤 */
+
+@media (max-width: 767px) and (max-width: 979px) {
+    .aui .button-holder {
+        width: auto;
+    }
+
+    .aui .btn-group > .btn + .btn {
+        margin-left: -1px;
+    }
+
+    /* 하단 버튼 */
+    .aui .btn {
+        width: auto;
+        margin-top: 0px;
+        padding: 4px 12px;
+        display: inline-block;
+        font-size: 14px;
+    }
+
+    .aui #sdr_content textarea, .aui #sdr_content input[type="text"], .aui #sdr_content input[type="password"], .aui #sdr_content input[type="datetime"], .aui #sdr_content input[type="datetime-local"], .aui #sdr_content input[type="date"], .aui #sdr_content input[type="month"], .aui #sdr_content input[type="time"], .aui #sdr_content input[type="week"], .aui #sdr_content input[type="number"], .aui #sdr_content input[type="email"], .aui #sdr_content input[type="url"], .aui #sdr_content input[type="search"], .aui #sdr_content input[type="tel"], .aui #sdr_content input[type="color"], .aui #sdr_content .uneditable-input {
+        height: 25px;
+        font-size: 12px;
+        line-height: 20px;
+    }
+
+    .aui .btn-group {
+        display: inline-block;
+        width: auto;
+    }
+
+    .aui .taglib-page-iterator .lfr-pagination-config {
+        float: left;
+    }
+
+    .aui .taglib-page-iterator .lfr-pagination-config .current-page-menu {
+        display: inline-block;
+    }
+
+    .aui .taglib-page-iterator .lfr-pagination-config .current-page-menu .btn {
+        display: inline-block;
+    }
+}
+
+pre.descriptionPre {
+    word-wrap: break-word;
+    white-space: pre-wrap;
+    white-space: -moz-pre-wrap;
+    white-space: -pre-wrap;
+    white-space: -o-pre-wrap;
+    word-break: break-all;
+
+    resize: none;
+    background-color: #FFF;
+    border: 0px;
+    /*text-overflow: ellipsis;*/
+}
+
+pre.descriptionPre a {
+    color: #0000ff;
+}
+
+pre.descriptionPre a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+pre.descriptionPre a:visited {
+    color: #800080;
+}

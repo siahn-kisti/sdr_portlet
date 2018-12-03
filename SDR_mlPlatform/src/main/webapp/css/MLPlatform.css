@@ -1,0 +1,24 @@
+@charset "UTF-8";
+
+@import "crud.css"; /*머신러닝 공통 사용*/
+
+@import "MLPlatform/MLPlatform_common.css"; /*머신러닝 기본*/
+@import "MLPlatform/MLPlatform_step.css"; /*머신러닝 작성*/
+
+@import "bootstrap/3.3.7/bootstrap.min.css"; /*부트스트랩*/
+@import "bootstrap/3.3.7/bootstrap-theme.min.css"; /*부트스트램 테마*/
+@import "font-awesome.min.css"; /*폰트아이콘*/
+@import "bootstrap-slider/10.2.0/bootstrap-slider.min.css"; /*슬라이더*/
+    
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,form,fieldset,p,button,input,img,a,strong,select,label,textarea{margin:0; padding:0;}
+body,h1,h2,h3,h4,input,textarea,select,option,button,td,th{font-family: Arial,Nanum Barun Gothic,NanumGothic; font-weight:normal; -webkit-font-smoothing :antialiased;}
+li{list-style-type:none;}
+img,input,select,button,radio,textarea{vertical-align:middle}
+a{text-decoration:none; color:#000;transition: 0.5s;}
+a:hover {text-decoration: none;}
+table , tr , th , td { border-spacing: 0px;border-style: none;}
+table caption { position:absolute; left:-1000px; top: auto; width: 1px; height: 1px; overflow: hidden; }
+
+#MLP-area label {display: inline-block !important;}
+#MLP-step ul {margin-bottom: 0 !important;}

@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.sdr.bbs">
+    <author>goopsw</author>
+    <namespace>sdr_bbs</namespace>
+
+
+    <entity name="Bbs" uuid="true" local-service="true" remote-service="false">
+        <!-- PK fields -->
+        <column name="bbsId" type="long" primary="true"></column>
+
+        <!-- Audit fields -->
+        <column name="companyId" type="long"></column>
+        <column name="groupId" type="long"></column>
+
+        <!-- Principal Fields -->
+        <column name="userId" type="long"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="modifiedDate" type="Date"></column>
+        <column name="title" type="String"></column>
+        <column name="displayType" type="int"></column>
+
+        <!-- Order -->
+        <order>
+            <order-column name="bbsId" order-by="desc"></order-column>
+        </order>
+
+        <!-- Finder methods -->
+        <finder name="C_G" return-type="Collection">
+            <finder-column name="companyId"></finder-column>
+            <finder-column name="groupId"></finder-column>
+        </finder>
+    </entity>
+
+    <entity name="BbsPost" uuid="true" local-service="true" remote-service="false">
+        <!-- PK fields -->
+        <column name="postId" type="long" primary="true"></column>
+
+        <!-- Audit fields -->
+        <column name="bbsId" type="long"></column>
+
+        <!-- Principal Fields -->
+        <column name="userId" type="long"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="modifiedDate" type="Date"></column>
+        <column name="writer" type="String"></column>
+        <column name="email" type="String"></column>
+        <column name="password" type="String"></column>
+        <column name="title" type="String"></column>
+        <column name="content" type="String"></column>
+        <column name="secret" type="boolean"></column>
+        <column name="commentEmailed" type="boolean"></column>
+        <column name="viewCount" type="int"></column>
+
+        <!-- Order -->
+        <order>
+            <order-column name="postId" order-by="desc"></order-column>
+        </order>
+
+        <!-- Finder methods -->
+        <finder name="BbsId" return-type="Collection">
+            <finder-column name="bbsId"></finder-column>
+        </finder>
+        <finder name="B_W" return-type="Collection">
+            <finder-column name="bbsId"></finder-column>
+            <finder-column name="writer" comparator="LIKE"></finder-column>
+        </finder>
+        <finder name="B_T" return-type="Collection">
+            <finder-column name="bbsId"></finder-column>
+            <finder-column name="title" comparator="LIKE"></finder-column>
+        </finder>
+        <finder name="B_C" return-type="Collection">
+            <finder-column name="bbsId"></finder-column>
+            <finder-column name="content" comparator="LIKE"></finder-column>
+        </finder>
+    </entity>
+
+    <entity name="BbsComment" uuid="true" local-service="true" remote-service="false">
+        <!-- PK fields -->
+        <column name="commentId" type="long" primary="true"></column>
+
+        <!-- Audit fields -->
+        <column name="postId" type="long"></column>
+
+        <!-- Principal Fields -->
+        <column name="userId" type="long"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="modifiedDate" type="Date"></column>
+        <column name="writer" type="String"></column>
+        <column name="email" type="String"></column>
+        <column name="password" type="String"></column>
+        <column name="content" type="String"></column>
+        <column name="secret" type="boolean"></column>
+
+        <!-- Order -->
+        <order>
+            <order-column name="commentId" order-by="asc"></order-column>
+        </order>
+
+        <!-- Finder methods -->
+        <finder name="PostId" return-type="Collection">
+            <finder-column name="postId"></finder-column>
+        </finder>
+    </entity>
+
+</service-builder>

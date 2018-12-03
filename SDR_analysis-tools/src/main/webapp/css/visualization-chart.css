@@ -1,0 +1,58 @@
+.vc-container:after { content: ""; display: block; clear: both; }
+
+/*Visualization Chart Title*/
+.box {
+    position: relative;
+    width: 100%;
+    background: url('../images/material_sub/blt_topTitle.png') no-repeat #ffffff 10px center;
+}
+.box h3{
+    position: relative;
+    display: inline-block;
+    margin-top: 18px;
+    margin-left: 70px;
+    font-weight:bold;
+    font-size: 30px;
+    line-height: 50px;
+    vertical-align: middle;
+    text-align:left;
+    width: 100%;
+    height: 55px;
+    color: #000000;
+}
+
+/****************************************************************
+*styling shadows
+****************************************************************/
+.shadow1:before, .shadow1:after{position:absolute;content:"";bottom:12px;left:15px;top:80%;width:45%;background:#9B7468;z-index:-1;-webkit-box-shadow: 0 20px 15px #9B7468;-moz-box-shadow: 0 20px 15px #9B7468;box-shadow: 0 20px 15px #9B7468;-webkit-transform: rotate(-6deg);-moz-transform: rotate(-6deg);transform: rotate(-6deg);}
+.shadow1:after{-webkit-transform: rotate(6deg);-moz-transform: rotate(6deg);transform: rotate(6deg);right: 15px;left: auto;}
+
+/*Visualization Chart 입력영역*/
+.vc-input-container { float: left; width:20%; padding-top: 20px; }
+.aui .vc-input { position: relative; border-left:1px solid #ddd; margin: 0 0 0 20px; padding: 0 0 20px 20px; }
+.aui .vc-input:before { content: ''; position: absolute; top:5px; left:-5px; width: 10px; height: 10px; background: url('../images/material_sub/bl-vc-input.png') center no-repeat; }
+.vc-input_title { font-size: 12px; color: #000; }
+.aui .vc-input .input-mb-5 { margin-bottom: 5px; }
+.aui .vc-input button.right-deploy { float: right; }
+.aui .vc-input p.vc-ul-input { margin-bottom: 5px; padding: 10px; border-bottom: 1px solid #707b82; }
+
+
+/*Visualization Chart 출력영역*/
+.vc-view-container { float: left; padding: 20px 0 0 40px; width: 80%; }
+.aui .vc-button { text-align: right; }
+#highchartsContainer { min-height: 505px; padding: 20px; border:1px solid #ddd; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px;}
+.highcharts-item-title {
+    background: url('../images/material_sub/blt_midTitle.png') no-repeat #ffffff left center;
+    font-weight: bold;
+    text-align: left;
+    font-size: 16px;
+    padding-left: 35px;
+    margin-bottom: 10px;
+}
+.highcharts-item-content {
+    min-height: 500px; -moz-border-radius:5px; -webkit-border-radius:5px; border-radius:5px; margin-bottom:10px;
+}
+.aui .vc-input_right { position: relative; margin: 0 ; padding: 0 ; }
+.aui label.vc-input_right_title { display: block; border-style: solid; border-image: linear-gradient(to right, #14a8a9, #e5dd7b); border-image-slice: 1; border-image-width: 0 0 2px 0; border-right:0px; border-top:0px; border-left:0px; margin-bottom:9px; padding-bottom:5px; font-size:12px; color: #000; }
+.aui .vc-input_right .vc-select_right { position: absolute; top:-5px; right: 0; width:220px; height:25px; line-height: 25px; }
+.aui .vc-input_right .code-input { margin-bottom: 5px; font-size: 11px; font-family: Monaco, Menlo, Consolas, "Courier New", monospace; }

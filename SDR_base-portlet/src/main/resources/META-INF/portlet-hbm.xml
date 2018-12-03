@@ -1,0 +1,334 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.sdr.metadata.model.ApiKey" />
+	<import class="com.sdr.metadata.model.AssetEntries_AssetTags" />
+	<import class="com.sdr.metadata.model.Collection" />
+	<import class="com.sdr.metadata.model.Collection_AllowedUser" />
+	<import class="com.sdr.metadata.model.Collection_User" />
+	<import class="com.sdr.metadata.model.Curate" />
+	<import class="com.sdr.metadata.model.CurationJob" />
+	<import class="com.sdr.metadata.model.Dataset" />
+	<import class="com.sdr.metadata.model.DataType" />
+	<import class="com.sdr.metadata.model.DataType_dataTypeSchema_essential" />
+	<import class="com.sdr.metadata.model.DatatypeRule" />
+	<import class="com.sdr.metadata.model.DataTypeSchema" />
+	<import class="com.sdr.metadata.model.DataView" />
+	<import class="com.sdr.metadata.model.DataViewComponents" />
+	<import class="com.sdr.metadata.model.GroupRule" />
+	<import class="com.sdr.metadata.model.IceBreakerVcToken" />
+	<import class="com.sdr.metadata.model.MlGuiParameter" />
+	<import class="com.sdr.metadata.model.PpLogic" />
+	<import class="com.sdr.metadata.model.ReqMakeSite" />
+	<import class="com.sdr.metadata.model.SdrOrganizations" />
+	<import class="com.sdr.metadata.model.SdrUsers" />
+	<import class="com.sdr.metadata.model.SimulationJob" />
+	<class name="com.sdr.metadata.model.impl.ApiKeyImpl" table="sdr_ApiKey">
+		<cache usage="read-write" />
+		<id name="userId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="apiKey" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.AssetEntries_AssetTagsImpl" table="sdr_AssetEntries_AssetTags">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.sdr.metadata.service.persistence.AssetEntries_AssetTagsPK">
+			<key-property name="entryId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="tagId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+	</class>
+	<class name="com.sdr.metadata.model.impl.CollectionImpl" table="sdr_Collection">
+		<cache usage="read-write" />
+		<id name="collectionId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="usageRight" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="doi" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="accessPolicy" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="skipCurate" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.Collection_AllowedUserImpl" table="sdr_Collection_AllowedUser">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.sdr.metadata.service.persistence.Collection_AllowedUserPK">
+			<key-property name="collectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+	</class>
+	<class name="com.sdr.metadata.model.impl.Collection_UserImpl" table="sdr_Collection_User">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.sdr.metadata.service.persistence.Collection_UserPK">
+			<key-property name="collectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+	</class>
+	<class name="com.sdr.metadata.model.impl.CurateImpl" table="sdr_Curate">
+		<cache usage="read-write" />
+		<id name="curateId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="endDate" type="org.hibernate.type.TimestampType" />
+		<property name="log" type="com.liferay.portal.dao.orm.hibernate.StringType" column="log_" />
+		<property name="datasetId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.CurationJobImpl" table="sdr_CurationJob">
+		<cache usage="read-write" />
+		<id name="simulationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="simulationUuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="jobUuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="simulationStartDt" type="org.hibernate.type.TimestampType" />
+		<property name="simulationEndDt" type="org.hibernate.type.TimestampType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.DatasetImpl" table="sdr_Dataset">
+		<cache usage="read-write" />
+		<id name="datasetId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="descriptiveMetadata" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="provenanceMetadata" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="location" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="metalocation" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="publishDate" type="org.hibernate.type.TimestampType" />
+		<property name="version" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="checksum" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="doi" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="remote" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="repository" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="fileFinalized" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="fileNum" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="hashcode" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="curateSignature" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="retrieveSignature" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="curateLogCode" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="curateLogDate" type="org.hibernate.type.TimestampType" />
+		<property name="curateErrorCode" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="statusByUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="statusByUserName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="statusDate" type="org.hibernate.type.TimestampType" />
+		<property name="collectionId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="dataTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="ppLogicId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="curateId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="parent" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="grId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.DataTypeImpl" table="sdr_DataType">
+		<cache usage="read-write" />
+		<id name="dataTypeId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="fileValidationRule" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="allowedUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="curateRequired" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+		<property name="location" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dockerImage" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="defaultPpLogicId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.DataType_dataTypeSchema_essentialImpl" table="sdr_DataType_dataTypeSchema_essential">
+		<cache usage="read-write" />
+		<composite-id name="primaryKey" class="com.sdr.metadata.service.persistence.DataType_dataTypeSchema_essentialPK">
+			<key-property name="dataTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+			<key-property name="dataTypeSchemaId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		</composite-id>
+		<property name="essential" type="com.liferay.portal.dao.orm.hibernate.BooleanType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.DatatypeRuleImpl" table="sdr_DatatypeRule">
+		<cache usage="read-write" />
+		<id name="drId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="grId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="dataTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.DataTypeSchemaImpl" table="sdr_DataTypeSchema">
+		<cache usage="read-write" />
+		<id name="dataTypeSchemaId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="reference" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="variableType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="variableUnit" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="essential" type="org.hibernate.type.BooleanType" />
+		<property name="minimum" type="org.hibernate.type.DoubleType" />
+		<property name="maximum" type="org.hibernate.type.DoubleType" />
+		<property name="enums" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="pattern" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createUserId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.DataViewImpl" table="sdr_DataView">
+		<cache usage="read-write" />
+		<id name="dataViewId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dataTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="html" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="orderNo" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.DataViewComponentsImpl" table="sdr_DataViewComponents">
+		<cache usage="read-write" />
+		<id name="dataViewComponentsId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="compGroup" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="compName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="image" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="html" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="script" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="properties" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="orderNo" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.GroupRuleImpl" table="sdr_GroupRule">
+		<cache usage="read-write" />
+		<id name="grId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="rule" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="viewAttr" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="mergeAttr" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.IceBreakerVcTokenImpl" table="sdr_IceBreakerVcToken">
+		<cache usage="read-write" />
+		<id name="tokenId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="vcToken" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="vcTokenExpired" type="org.hibernate.type.TimestampType" />
+		<property name="resultCode" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+		<property name="activate" type="com.liferay.portal.dao.orm.hibernate.IntegerType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.MlGuiParameterImpl" table="sdr_MlGuiParameter">
+		<cache usage="read-write" />
+		<id name="mlGuiParameterId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="parentId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="kind" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="displayName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="valueType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="value" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="image" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="option" type="com.liferay.portal.dao.orm.hibernate.StringType" column="option_" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.PpLogicImpl" table="sdr_PpLogic">
+		<cache usage="read-write" />
+		<id name="ppId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="type" type="com.liferay.portal.dao.orm.hibernate.IntegerType" column="type_" />
+		<property name="command" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dataTypeId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.ReqMakeSiteImpl" table="sdr_ReqMakeSite">
+		<cache usage="read-write" />
+		<id name="requestId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="name" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="siteType" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="requestDate" type="org.hibernate.type.TimestampType" />
+		<property name="confirmDate" type="org.hibernate.type.TimestampType" />
+		<property name="message" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="answer" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.SdrOrganizationsImpl" table="sdr_SdrOrganizations">
+		<cache usage="read-write" />
+		<id name="organizationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="organizationName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="url" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="address" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="zipcode" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="city" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="country" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.SdrUsersImpl" table="sdr_SdrUsers">
+		<cache usage="read-write" />
+		<id name="userId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="firstName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="lastName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="email" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="organizationId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="createUser" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+	<class name="com.sdr.metadata.model.impl.SimulationJobImpl" table="sdr_SimulationJob">
+		<cache usage="read-write" />
+		<id name="simulationId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="simulationUuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="jobUuid" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="inputId" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="status" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="simulationStartDt" type="org.hibernate.type.TimestampType" />
+		<property name="simulationEndDt" type="org.hibernate.type.TimestampType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+	</class>
+</hibernate-mapping>

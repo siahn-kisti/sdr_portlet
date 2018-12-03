@@ -1,0 +1,2024 @@
+@CHARSET "UTF-8";
+
+html, body {
+	margin: 0;
+	width: 100%;
+    height:100%;
+    padding: 0;
+    
+}
+ 
+
+div.full-height {
+	height:100%;
+	//padding-left:0px !important; 
+	//padding-right:0px !important
+}
+    	
+div.ctx-hidden-page {
+	display:none;
+}
+
+#viewport {
+        -webkit-user-select: none;  /* Chrome all / Safari all */
+        -moz-user-select: none;     /* Firefox all */
+        -ms-user-select: none;      /* IE 10+ */
+        user-select: none;
+
+        -webkit-user-drag: none;  /* Chrome all / Safari all */
+        -moz-user-drag: none;     /* Firefox all */
+        -ms-user-drag: none;      /* IE 10+ */
+        user-drag: none;
+}
+
+
+#editarea.full-screen {
+	height: 100%;
+}
+
+ul {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.fileUpload {
+	position: relative;
+	overflow: hidden;
+	//margin: 10px;
+}
+
+#circle-bar {
+	margin: 0;
+	width:100px;
+	height:100px;
+    position: absolute !important;
+    top: 50%;
+    left: 50%;
+    margin-right: -50%;
+    transform: translate(-50%, -50%);
+}
+
+input.upload {
+	position: absolute;
+	top: 0;
+	right: 0;
+	margin: 0;
+	padding: 0;
+	font-size: 20px;
+	cursor: pointer;
+	opacity: 0;
+	filter: alpha(opacity=0);
+}
+
+div#annotation-container, div#viewpoint-container {
+	overflow:hidden;	
+    /*display: none;*/
+    
+    -webkit-user-select: none;  /* Chrome all / Safari all */
+    -moz-user-select: none;     /* Firefox all */
+    -ms-user-select: none;      /* IE 10+ */
+    user-select: none;
+        
+  	outline-color: transparent;
+  	outline-style: none;
+}
+
+div#annotation-container.hide-annotation span.annotation, div#annotation-container.hide-annotation div.popover,
+div#viewpoint-container.hide-viewpoint span.viewpoint, div#viewpoint-container.hide-viewpoint div.popover {
+	display:none !important;
+}
+
+#annotation-container .popover, #viewpoint-container .popover {
+	opacity: 0.8;
+/* 	opacity: 0; */
+/* 	visibility: hidden; */
+}
+
+#annotation-container .badge, #viewpoint-container .badge {
+	opacity: 0.5;
+}
+
+.popover-content .popover-contents {
+	max-height: 200px;
+	overflow-x: auto;
+	overflow-y: auto;
+	
+}
+
+#modelTitle {
+	 text-overflow:ellipsis; 
+	 overflow:hidden; 
+	 white-space:nowrap; 
+	 color: black; 
+	 width: 230px; 
+	 height: 30px; 
+	 background: rgba(255,255,255,0.8);
+}
+
+#model_description {
+	padding: 10px;
+	overflow: auto;
+	color: #000;
+	font-weight: 600;
+	background: rgba(255, 255, 255, 0.8);
+	border: 1px solid;
+	border-radius: 5px;
+	position: absolute;
+	left: 0;
+	bottom: 90px;
+	right: 0;
+	margin: 0 auto;
+	width: 60%;
+	height: 50%;
+	
+}
+
+#joystick_center {
+/* 	display: none; */
+	opacity: .5;
+	padding: 0;
+	width: 32px;
+	height: 32px;
+	color: #2F9D27;
+	position: absolute;
+	left: calc(50% - 16px);
+	top: calc(50% - 16px);
+}
+
+.viewer #annoMenu {
+	display: none
+}
+
+.viewer.annotation-enabled #annoMenu {
+	display: inline-block
+}
+
+.viewer #annotation-container .popover .popover-content .more {
+	display: none;
+}
+
+
+.viewer.has-animation .controls .animation-controls,.viewer.has-animation .controls .timeline-wrapper,.viewer.has-animation .controls .timeline {
+    opacity: 1;
+    pointer-events: all
+}
+
+.viewer .controls .animation-controls,.viewer .controls .timeline-wrapper,.viewer .controls .timeline {
+    opacity: 0;
+    pointer-events: none
+}
+
+
+.viewer .controls {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    height: 50px
+}
+
+.viewer .watermark {
+	width: 30px;
+	height: 30px;	
+}
+
+
+.viewer .controls {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 10px;
+    min-width: 0;
+    pointer-events: none
+}
+
+.viewer .controls p,.viewer .controls a {
+    color: #FFF;
+    margin: 0;
+    padding: 0
+}
+
+.viewer .controls .spacer {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto
+}
+
+.viewer .controls .animation-controls {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 1 auto;
+    -ms-flex: 0 1 auto;
+    flex: 0 1 auto;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    min-width: 0
+}
+
+.viewer .controls .animation-controls p {
+    text-shadow: 0 0 10px #000
+}
+
+.viewer .controls .control {
+    display: inline-block;
+    font-size: 16px;
+    margin: 0 10px;
+    outline: none;
+    padding: 5px;
+    min-width: 0;
+    -webkit-transition: background 200ms linear;
+    transition: background 200ms linear;
+    border-radius: 5px;
+    position: relative
+}
+
+.viewer .controls .control:hover,.viewer .controls .control.active {
+    background: rgba(0,0,0,.75)
+}
+
+.viewer .controls .control:before {
+    color: #FFF;
+    text-shadow: 0 0 1px #000
+}
+
+.viewer .controls .control .control-menu {
+    bottom: 40px;
+    margin-left: 1000px;
+    width: 145px
+}
+
+.viewer .controls .control .control-menu {
+	position: absolute;
+	left: 50%;
+	border-radius: 6px;
+	padding: 5px;
+	font-family: 'Open Sans',sans-serif;
+	font-size: .75rem;
+	text-align: initial;
+	line-height: normal;
+	white-space: nowrap;
+	background: rgba(0,0,0,.75);
+	color: #fff;
+	opacity: 0;
+	pointer-events: none;
+	-webkit-transition: opacity .3s, margin-left 0s .3s;
+	transition: opacity .3s, margin-left 0s .3s;
+	
+	
+}
+
+.viewer .controls .control .control-menu.settings-menu {
+    overflow: hidden;
+    padding: 0!important
+}
+
+.viewer .controls .control .control-menu.detail .control-menu-wrapper {
+    -webkit-transform: translateX(-50%);
+    transform: translateX(-50%)
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper {
+    width: calc(200% - 8px);
+    -webkit-transition: all 250ms ease-in-out;
+    transition: all 250ms ease-in-out;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-list {
+    width: 50%;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0;
+    -ms-flex: 1 0;
+    flex: 1 0
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane {
+    width: 50%
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-list {
+    padding: 4px
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane {
+    padding: 8px 0;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 1;
+    -ms-flex: 1 1;
+    flex: 1 1
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .setting-list {
+    padding-top: 4px
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .setting-list-header-help {
+    float: right;
+    margin-right: 10px;
+    font-size: 11px;
+    line-height: 17px;
+    color: #888
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .shortcut {
+    float: right;
+    margin-right: 10px
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .shortcut kbd {
+    border: 0;
+    background: 0 0;
+    color: #888
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .wireframe-title .shortcut {
+    margin-right: 0
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .setting-item {
+    padding-left: 24px;
+    color: #CCC;
+    line-height: 23px;
+    cursor: pointer;
+    border-radius: 2px;
+    position: relative
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .setting-item:hover {
+    background: #333
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .setting-item.selected {
+    color: #FFF;
+    padding-left: 0
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .setting-item.selected:before {
+    content: '\f00c';
+    font-family: fontawesome;
+    font-size: 12px;
+    color: #FFF;
+    margin-right: 8px;
+    margin-left: 4px
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .setting-item:not(:last-child) {
+    border-bottom: 1px solid #333
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .control-menu-back {
+    padding: 4px;
+    cursor: pointer;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #CCC
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .control-menu-back:before {
+    content: '\f053';
+    font-family: fontawesome;
+    margin-right: 4px
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .control-menu-back:hover {
+    color: #FFF
+}
+
+.viewer .controls .control .control-menu .control-menu-wrapper .control-menu-pane .control-menu-back:hover:before {
+    color: #FFF
+}
+
+.viewer .controls .control .control-menu li.link a {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    border-radius: 2px;
+    padding: 4px 5px;
+    text-transform: none;
+    color: #ccc
+}
+
+.viewer .controls .control .control-menu li.link a:hover {
+    color: #fff;
+    background: #1caad9
+}
+
+.viewer .controls .control .control-menu li.link.active a {
+    color: #fff
+}
+
+.viewer .controls .control .control-menu li.link.active a:after {
+    content: "\f00c";
+    display: block;
+    position: absolute;
+    top: 7px;
+    right: 4px;
+    font-family: FontAwesome
+}
+
+.viewer .controls .control .control-menu .wireframe-title {
+    border-top: 1px solid #555;
+    margin: 6px 0 4px;
+    padding: 10px 10px 0 24px
+}
+
+.viewer .controls .control .control-menu .wireframe-colors {
+    padding: 5px;
+    line-height: 14px;
+    cursor: default;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center
+}
+
+.viewer .controls .control .control-menu .wireframe-colors a {
+    display: inline-block;
+    margin-left: 4px;
+    border: 2px solid transparent;
+    border-radius: 2px;
+    width: 15px;
+    height: 15px;
+    font-size: 8px;
+    vertical-align: bottom;
+    box-shadow: 0 0 1px #FFF
+}
+
+.viewer .controls .control .control-menu .wireframe-colors a:first-child {
+    margin-left: 0
+}
+
+.viewer .controls .control .control-menu .wireframe-colors a:before {
+    display: inline-block;
+    position: relative;
+    top: -1px;
+    width: 13px;
+    height: 13px;
+    font-family: 'FontAwesome';
+    font-size: 12px;
+    text-align: center;
+    text-shadow: 0 0 1px #000;
+    color: #fff
+}
+
+.viewer .controls .control .control-menu .wireframe-colors a:hover {
+    border: 2px solid #FFF
+}
+
+.viewer .controls .control .control-menu .wireframe-colors a.active {
+    border: 2px solid #FFF
+}
+
+.viewer .controls .control .control-menu .wireframe-colors .colors-red {
+    background: #ff507f
+}
+
+.viewer .controls .control .control-menu .wireframe-colors .colors-red:before {
+    color: #fff
+}
+
+.viewer .controls .control .control-menu .wireframe-colors .colors-green {
+    background: #2d9e84
+}
+
+.viewer .controls .control .control-menu .wireframe-colors .colors-blue {
+    background: #4d9cff
+}
+
+.viewer .controls .control .control-menu .wireframe-colors .colors-yellow {
+    background: #ebc712
+}
+
+.viewer .controls .control .control-menu .wireframe-colors .colors-white {
+    background: #ccc
+}
+
+.viewer .controls .control .control-menu .wireframe-colors .colors-white:before {
+    color: #000;
+    text-shadow: none
+}
+
+.viewer .controls .control .control-menu .wireframe-colors .colors-black {
+    background: #000
+}
+
+.viewer .controls .control .control-menu .wireframe-colors .colors-none {
+    background-color: #eee;
+    background-image: -webkit-linear-gradient(45deg,#ccc 25%,transparent 25%,transparent 75%,#ccc 75%,#ccc),-webkit-linear-gradient(45deg,#ccc 25%,transparent 25%,transparent 75%,#ccc 75%,#ccc);
+    background-image: linear-gradient(45deg,#ccc 25%,transparent 25%,transparent 75%,#ccc 75%,#ccc),linear-gradient(45deg,#ccc 25%,transparent 25%,transparent 75%,#ccc 75%,#ccc);
+    background-size: 7px 7px;
+    background-position: 0 0,3px 3px
+}
+
+.viewer .controls .control .control-menu .wireframe-colors .colors-none.active:before {
+    content: "\f00d";
+    color: #000;
+    text-shadow: none
+}
+
+.viewer .controls .control .control-menu .wireframe-colors.active {
+    cursor: pointer
+}
+
+.viewer .controls .control .control-menu .wireframe-colors.active a {
+    opacity: 1;
+    pointer-events: auto
+}
+
+.viewer .controls .control .control-menu li.toggle a:first-child:last-child:hover {
+    background: #1caad9;
+    cursor: default
+}
+
+.viewer .controls .control.active .control-menu {
+    margin-left: -75px;
+    -webkit-transition: opacity .3s,margin-left 0;
+    transition: opacity .3s,margin-left 0s;
+    opacity: 1;
+    pointer-events: auto;
+    cursor: auto
+}
+
+.viewer .controls .general-controls {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 auto;
+    -ms-flex: 0 0 auto;
+    flex: 0 0 auto;
+    display: -webkit-box!important;
+    display: -webkit-flex!important;
+    display: -ms-flexbox!important;
+    display: flex!important;
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+    font-size: 13px;
+    -webkit-flex-flow: row nowrap!important;
+    -ms-flex-flow: row nowrap!important;
+    flex-flow: row nowrap!important;
+    pointer-events: all
+}
+
+.viewer .controls .general-controls a:last-child {
+    margin-right: 0
+}
+
+.viewer .controls .general-controls .control {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    line-height: 20px;
+    text-align: center;
+    margin: 0 5px;
+    border-radius: 16px;
+    filter: drop-shadow(0px 0px 1px #000);
+}
+
+.viewer .controls .general-controls .control.fullscreen {
+    line-height: 22px
+}
+
+.viewer .controls .general-controls .control i {
+    pointer-events: none;
+    /*text-shadow: 0 0 1px #000;*/
+}
+
+.viewer .controls .general-controls .control-badge {
+    position: absolute;
+    top: 0;
+    left: 18px;
+    border-radius: 2px;
+    padding: 1px 2px;
+    font-size: 8px;
+    font-weight: 600;
+    line-height: 10px;
+    background: #1caad9;
+    color: #fff;
+    visibility: hidden;
+    pointer-events: none
+}
+
+.viewer .controls .general-controls .control-badge.active {
+    visibility: visible
+}
+
+.viewer .controls .general-controls .settings {
+    position: relative
+}
+
+.viewer .controls .general-controls .settings.shift-menu-left .control-menu {
+    margin-left: -130px
+}
+
+.viewer .controls .general-controls .settings .control-menu {
+    width: 185px;
+    margin-left: -140px;
+    padding: 8px;
+    cursor: default
+}
+
+.viewer .controls .general-controls .setting {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    cursor: pointer;
+    font-size: 13px;
+    border-radius: 2px
+}
+
+.viewer .controls .general-controls .setting:hover {
+    background: #333
+}
+
+.viewer .controls .general-controls .setting:not(:last-child) {
+    border-bottom: 1px solid #333
+}
+
+.viewer .controls .general-controls .setting-label {
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 5px 0 5px 4px;
+    color: #BBB
+}
+
+.viewer .controls .general-controls .setting-value {
+    -webkit-box-flex: 0;
+    -webkit-flex: 0 0 70px;
+    -ms-flex: 0 0 70px;
+    flex: 0 0 70px;
+    height: 100%;
+    padding: 5px 4px;
+    text-align: right;
+    color: #FFF
+}
+
+.viewer .controls .general-controls .setting-value:after {
+    content: '\f054';
+    font-family: fontawesome;
+    color: #BBB;
+    font-size: 11px;
+    margin-left: 8px;
+    line-height: 14px
+}
+
+.viewer .timeline {
+    color: #eee;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+.viewer .controls a {
+	cursor: pointer;
+	text-decoration: none
+	
+}
+.viewer .timeline {
+	position: absolute;
+	left: 15px;
+	bottom: 35px;
+	height: 30px;
+	right: 15px;
+}
+
+.viewer .timeline,.viewer .timeline.disabled .timeline-wrapper {
+    pointer-events: none
+}
+
+.viewer .timeline .timeline-wrapper {
+    position: absolute;
+    left: 50%;
+    -webkit-transform: translate(-50%,0);
+    transform: translate(-50%,0);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: row nowrap;
+    -ms-flex-flow: row nowrap;
+    flex-flow: row nowrap;
+    -webkit-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+    background: 0 0
+}
+
+.viewer .timeline .timeline-wrapper.hidden {
+    opacity: 0;
+    pointer-events: none
+}
+
+.viewer .timeline .mobile .track {
+    top: 4px;
+    height: 15px;
+    overflow: hidden
+}
+
+.viewer .timeline .mobile .track .bar {
+    height: 100%
+}
+
+.viewer .timeline .track {
+    top: 0;
+    height: 100%;
+    cursor: pointer;
+    -webkit-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out;
+    position: absolute;
+    left: -10px;
+    right: -10px
+}
+
+.viewer .timeline .track.disabled {
+    pointer-events: none;
+    opacity: 0
+}
+
+.viewer .timeline .track.disabled .bar {
+    background: rgba(255,255,255,.3)
+}
+
+.viewer .timeline .track.disabled .knob {
+    background: #999;
+    -webkit-transform: translateX(0)!important;
+    transform: translateX(0)!important;
+    -webkit-transition: none!important;
+    transition: none!important
+}
+
+.viewer .timeline .track .bar {
+    position: absolute;
+    height: 2px;
+    background: rgba(238,238,238,.5);
+    -webkit-transform: none;
+    transform: none;
+    margin-top: 14px;
+    left: 10px;
+    right: 10px
+}
+
+.viewer .timeline .track .knob {
+    position: absolute;
+    background: #da022b;
+    border: 2px solid #FFF;
+    width: 13px;
+    height: 13px;
+    top: 8px;
+    left: 5px;
+    pointer-events: none;
+    border-radius: 10px
+}
+
+.viewer .timeline .track .knob:before {
+    content: attr(data-frame);
+    display: inline-block;
+    background: rgba(0,0,0,.5);
+    padding: 4px 8px;
+    -webkit-transform: translate(-50%,-35px);
+    transform: translate(-50%,-35px);
+    font-size: 12px;
+    border-radius: 4px
+}
+
+.viewer .timeline .track .knob:before,.viewer .timeline .track .knob:after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    opacity: 0;
+    -webkit-transition: opacity 200ms ease-in-out;
+    transition: opacity 200ms ease-in-out
+}
+
+.viewer .timeline .track .knob:after {
+    content: " ";
+    border-top: 4px solid rgba(0,0,0,.5);
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    -webkit-transform: translate(-50%,-10px);
+    transform: translate(-50%,-10px)
+}
+
+.viewer .timeline .track .knob.frame-visible:before,.viewer .timeline .track .knob.frame-visible:after {
+    opacity: .75
+}
+
+.viewer .timeline .progress {
+    margin: 0 10px 0 5px;
+    padding: 0;
+    color: #FFF;
+    font-size: 12px;
+    line-height: 24px;
+    text-align: right;
+    -webkit-user-select: text;
+    -moz-user-select: text;
+    -ms-user-select: text;
+    user-select: text
+}
+
+.viewer .gui {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    pointer-events: none;
+    z-index: 2;
+    -webkit-transition: opacity 250ms ease-in-out;
+    transition: opacity 250ms ease-in-out;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none
+}
+
+.viewer .gui .animation-not-supported {
+    position: absolute;
+    top: 70%;
+    background: rgba(0,0,0,.4);
+    border-radius: 6px;
+    left: 30%;
+    right: 30%;
+    text-align: center;
+    pointer-events: none;
+    -webkit-transition: opacity 300ms ease-in-out;
+    transition: opacity 300ms ease-in-out;
+    color: #FFF;
+    padding: 0 40px;
+    font-size: 11px
+}
+
+.viewer .gui .animation-not-supported.hidden {
+    opacity: 0;
+    pointer-events: none!important
+}
+
+.viewer .gui .animation-not-supported p {
+    margin: 10px 0
+}
+
+.viewer .gui .animation-not-supported .close {
+    position: absolute;
+    top: 3px;
+    right: 7px;
+    pointer-events: all;
+    color: rgba(255,255,255,.8)
+}
+
+.viewer .gui .animation-not-supported .close:after {
+    content: "\f00d";
+    font-family: fontawesome
+}
+
+.viewer .gui .hotspot-controls-responsive {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    right: 20px;
+    pointer-events: none;
+    -webkit-transition: opacity 250ms ease-in-out;
+    transition: opacity 250ms ease-in-out
+}
+
+.viewer .gui .hotspot-controls-responsive [data-action="next-annotation"],.viewer .gui .hotspot-controls-responsive [data-action="prev-annotation"] {
+    display: block;
+    line-height: 30px;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    font-size: 14px;
+    color: #FFF;
+    background: rgba(0,0,0,.6);
+    border-radius: 15px;
+    cursor: pointer;
+    pointer-events: all
+}
+
+.viewer .gui .hotspot-controls-responsive [data-action="prev-annotation"] {
+    float: left
+}
+
+.viewer .gui .hotspot-controls-responsive [data-action="next-annotation"] {
+    float: right
+}
+
+.viewer .gui.enabled {
+    opacity: 1
+}
+
+.viewer .gui.enabled>*:not(.snapshot-guides):not(.snapshot-flash):not(.controls) {
+    pointer-events: all
+}
+
+.viewer .gui.enabled>.hotspot-controls-responsive {
+    pointer-events: none!important
+}
+.viewer .helper-vr-overlay .footer-helper a:hover {
+	color: #1caad9
+}
+
+.viewer .helper-vr-overlay {
+    color: #fff;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    z-index: 8;
+    padding: 0
+}
+
+.viewer .helper-vr-overlay .close {
+    cursor: pointer
+}
+
+.viewer .helper-vr-overlay .inner {
+    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    text-align: left
+}
+
+.viewer .helper-vr-overlay .inner .header-helper,.viewer .helper-vr-overlay .inner .footer-helper {
+    padding: 30px;
+    font-size: 14px;
+    text-align: center
+}
+
+.viewer .helper-vr-overlay .inner .header-helper {
+    text-transform: uppercase;
+    font-weight: 700;
+    font-family: 'Titillium Web',sans-serif
+}
+
+.viewer .helper-vr-overlay .inner .header-helper i {
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer
+}
+
+.viewer .helper-vr-overlay .inner .content-helper {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.viewer .helper-vr-overlay .inner .content-helper .row-helper {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 15px 15px 25px;
+    background: #333;
+    color: #ccc;
+    border-radius: 6px
+}
+
+.viewer .helper-vr-overlay .inner .content-helper .row-helper:nth-child(1) {
+    margin: 0 15px 0 34px
+}
+
+.viewer .helper-vr-overlay .inner .content-helper .row-helper:nth-child(2) {
+    margin: 0 34px 0 15px
+}
+
+.viewer .helper-vr-overlay .inner .content-helper .row-helper .content-row {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: distribute;
+    justify-content: space-around;
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    margin: 10px 0
+}
+
+.viewer .helper-vr-overlay .inner .content-helper .row-helper .content-row .image {
+    margin: 0 12px 0 20px;
+    color: #fff
+}
+
+.viewer .helper-vr-overlay .inner .content-helper .row-helper .content-row .image .fa-desktop:before {
+    font-size: 32px
+}
+
+.viewer .helper-vr-overlay .inner .content-helper .row-helper .content-row .image .fa-mobile:before {
+    font-size: 39px
+}
+
+.viewer .helper-vr-overlay .inner .content-helper .row-helper .content-row .text {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    font-size: 13px
+}
+
+.viewer .helper-vr-overlay .inner .content-helper .row-helper .content-row .text .title {
+    font-weight: 700;
+    color: #fff
+}
+
+.viewer .helper-vr-overlay .inner .content-helper .row-helper .info {
+    list-style-type: inherit;
+    margin-left: 40px;
+    font-size: 13px
+}
+
+.viewer .helper-vr-overlay .inner .content-helper a {
+    text-decoration: underline;
+    color: #1caad9
+}
+
+.viewer .helper-vr-overlay.osd-compact .osd-content {
+    height: 30px;
+    border-radius: 15px;
+    padding: 5px 15px;
+    font-size: 14px
+}
+
+.viewer .helper-vr-overlay.padded .osd-content {
+    margin: 40px auto
+}
+
+.viewer .helper-vr-overlay .viewer-mode-help h2 {
+    margin: 16px 0;
+    font-size: 18px;
+    font-weight: 700
+}
+
+.viewer .helper-vr-overlay .viewer-mode-help .help-shortcuts {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex
+}
+
+.viewer .helper-vr-overlay .viewer-mode-help .help-shortcuts li {
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    padding: 0 16px
+}
+
+.viewer .helper-vr-overlay .viewer-mode-help .help-shortcuts .mouse-left,.viewer .helper-vr-overlay .viewer-mode-help .help-shortcuts .mouse-wheel,.viewer .helper-vr-overlay .viewer-mode-help .help-shortcuts .mouse-right,.viewer .helper-vr-overlay .viewer-mode-help .help-shortcuts .kbd-wasd {
+    padding-top: 60px
+}
+
+.viewer .helper-vr-overlay .viewer-mode-help .help-shortcuts .mouse-left {
+    background: url(/static/builds/web/dist/mouse-left-848217ad9d3c81aa418045bf2f0e9424.png) no-repeat center top;
+    background-size: 60px
+}
+
+.viewer .helper-vr-overlay .viewer-mode-help .help-shortcuts .mouse-wheel {
+    background: url(/static/builds/web/dist/mouse-scroll-543360b3da78713f37624e10a3d5393e.png) no-repeat center top;
+    background-size: 60px
+}
+
+.viewer .helper-vr-overlay .viewer-mode-help .help-shortcuts .mouse-right {
+    background: url(/static/builds/web/dist/mouse-right-01e49ff4f0b8cbfd6b1d86d83ee56bc7.png) no-repeat center top;
+    background-size: 60px
+}
+
+.viewer .helper-vr-overlay .viewer-mode-help .help-shortcuts .kbd-wasd {
+    background: url(/static/builds/web/dist/keyboard-wasd-7f27ed9f13c1d2a2b302c06a011038e4.png) no-repeat center top;
+    background-size: 60px
+}
+
+.viewer .helper-vr-overlay .viewer-mode-help .hint {
+    display: block;
+    font-size: 10px
+}
+
+.viewer .overlay.hotspots-overlay .inner {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    padding: 40px
+}
+
+.viewer .overlay.hotspots-overlay .inner>* {
+    display: block
+}
+
+.viewer .overlay.hotspots-overlay .hotspot-title {
+    text-align: left;
+    font-weight: 700;
+    font-size: 16px
+}
+
+.viewer .overlay.hotspots-overlay .hotspot-content {
+    text-align: left;
+    font-size: 13px;
+    color: #CCC;
+    font-weight: 400;
+    -webkit-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    overflow: auto
+}
+
+.viewer .overlay.hotspots-overlay .hotspot-content::-webkit-scrollbar {
+    width: 10px
+}
+
+.viewer .overlay.hotspots-overlay .hotspot-content::-webkit-scrollbar-track {
+    background: rgba(0,0,0,.5)
+}
+
+.viewer .overlay.hotspots-overlay .hotspot-content::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background: #888;
+    background-clip: padding-box
+}
+
+.markdown-rendered-content {
+    overflow: hidden
+}
+
+.markdown-rendered-content h1,.markdown-rendered-content h2,.markdown-rendered-content h3,.markdown-rendered-content h4,.markdown-rendered-content h5 {
+    line-height: 1;
+    margin-bottom: 20px
+}
+
+.markdown-rendered-content img,.markdown-rendered-content iframe,.markdown-rendered-content video,.markdown-rendered-content audio,.markdown-rendered-content canvas {
+    max-width: 100%!important
+}
+
+.markdown-rendered-content img {
+    height: auto;
+    border: 1px solid transparent;
+    outline: none
+}
+
+.markdown-rendered-content ul {
+    list-style: initial;
+    padding: 0 0 0 20px;
+    margin: 0 0 0 15px
+}
+
+.markdown-rendered-content a {
+    text-decoration: underline;
+    outline: none;
+    word-break: break-all
+}
+
+.markdown-rendered-content a:hover {
+    text-decoration: none
+}
+
+.markdown-rendered-content p {
+    margin: .4em 0
+}
+
+.markdown-rendered-content code {
+    background: #EEE;
+    padding: 0 3px
+}
+
+.markdown-rendered-content pre {
+    display: block;
+    background: #EEE;
+    padding: 5px 15px
+}
+
+.markdown-rendered-content hr {
+    border-top: none;
+    border-bottom: 1px solid #555;
+    margin: 20px 0
+}
+
+.markdown-rendered-content table {
+    border: 1px solid #DDD
+}
+
+.markdown-rendered-content tr {
+    border-bottom: 1px solid #DDD
+}
+
+.markdown-rendered-content th {
+    background: #F9F9F9
+}
+
+.markdown-rendered-content th,.markdown-rendered-content td {
+    padding: 5px;
+    border-right: 1px solid #DDD
+}
+
+.markdown-rendered-content.inversed table {
+    border: 1px solid #666
+}
+
+.markdown-rendered-content.inversed tr {
+    border-bottom: 1px solid #666
+}
+
+.markdown-rendered-content.inversed th,.markdown-rendered-content.inversed td {
+    border-right: 1px solid #666
+}
+
+.markdown-rendered-content.inversed code,.markdown-rendered-content.inversed pre,.markdown-rendered-content.inversed th {
+    background: #444
+}
+
+.markdown-rendered-content.inversed code {
+    color: #DDD
+}
+
+.markdown-rendered-content.inversed hr {
+    border-bottom: 1px solid #AAA
+}
+
+.markdown-rendered-content.inversed .lazyload {
+    border: 1px solid rgba(255,255,255,.3)
+}
+
+.markdown-rendered-content.inversed .lazyload:after {
+    background: rgba(255,255,255,.05);
+    border-right: 1px solid transparent
+}
+
+
+.viewer .controls .animation-controls .play {
+    margin: 0 15px 0 0;
+    padding: 10px 10px 10px 13px;
+    border-radius: 20px;
+    width: 35px;
+    height: 35px
+}
+
+.viewer .controls .animation-controls .play:before {
+    content: "\f04b"
+}
+
+.viewer .controls .animation-controls .play.pause:not(.stopped) {
+    padding: 10px 10px 10px 11px
+}
+
+.viewer .controls .animation-controls .play.pause:before {
+    content: "\f04c"
+}
+
+.viewer .controls .animation-controls .play.stopped:before {
+    content: "\f04d"
+}
+
+.viewer .controls .animation-controls .next {
+    display: none;
+    margin: 0 15px 0 0;
+    padding: 10px;
+    border-radius: 20px
+}
+
+.viewer .controls .animation-controls .next:before {
+    content: "\f050"
+}
+
+.viewer .controls .animation-controls .animation-timer {
+    font-size: 13px;
+    padding: 2px 4px;
+    cursor: pointer;
+    margin: 0;
+    color: #FFF
+}
+
+.viewer .controls .animation-controls .animation-timer>p {
+    padding: 2px 4px;
+    outline: none;
+    border: 1px solid transparent
+}
+
+.viewer .controls .animation-controls .animation-timer.disabled {
+    pointer-events: none;
+    opacity: .4;
+    font-size: 0
+}
+
+.viewer .controls .animation-controls .animation-timer.disabled[data-unit="time"] .time:before {
+    content: '00:00';
+    font-size: 13px
+}
+
+.viewer .controls .animation-controls .animation-timer.disabled[data-unit="frames"] .total-frames:before {
+    content: '000 / 000';
+    font-size: 13px
+}
+
+.viewer .controls .animation-controls .animation-list {
+    margin-left: 20px;
+    position: relative
+}
+
+.viewer .controls .animation-controls .animation-list .animation-name {
+    font-size: 13px;
+    padding: 0 16px 0 4px;
+    cursor: pointer;
+    white-space: nowrap;
+    pointer-events: none;
+    max-width: 135px;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.viewer .controls .animation-controls .animation-list:after {
+    content: " ";
+    border-top: 4px solid #FFF;
+    border-left: 4px solid transparent;
+    border-right: 4px solid transparent;
+    width: 0;
+    height: 0;
+    display: inline-block;
+    -webkit-transition: -webkit-transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out;
+    transition: transform 250ms ease-in-out,-webkit-transform 250ms ease-in-out;
+    position: absolute;
+    right: 8px;
+    top: 50%;
+    margin-top: -2px
+}
+
+.viewer .controls .animation-controls .animation-list.active .animation-name:after {
+    -webkit-transform: rotateZ(180deg);
+    transform: rotateZ(180deg)
+}
+
+.viewer .controls .animation-controls .animation-list .list {
+    left: 0;
+    margin: 0;
+    bottom: 30px;
+    padding: 6px 8px
+}
+
+.viewer .controls .animation-controls .animation-list .list .static-pose {
+    margin-bottom: 5px
+}
+
+.viewer .controls .animation-controls .animation-list .list .static-pose,.viewer .controls .animation-controls .animation-list .list li {
+    line-height: 25px;
+    cursor: pointer;
+    color: #CCC;
+    border-radius: 2px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding: 0 10px 0 4px;
+    position: relative
+}
+
+.viewer .controls .animation-controls .animation-list .list .static-pose:hover,.viewer .controls .animation-controls .animation-list .list li:hover {
+    background: rgba(255,255,255,.2)
+}
+
+.viewer .controls .animation-controls .animation-list .list .static-pose.selected,.viewer .controls .animation-controls .animation-list .list li.selected {
+    color: #FFF;
+    padding-right: 20px
+}
+
+.viewer .controls .animation-controls .animation-list .list .static-pose.selected:after,.viewer .controls .animation-controls .animation-list .list li.selected:after {
+    font-family: "fontawesome";
+    content: "\f00c";
+    position: absolute;
+    top: 2px;
+    right: 4px
+}
+
+.viewer .controls .animation-controls .animation-list .list ul {
+    padding: 0;
+    max-height: 100px;
+    overflow: auto;
+    padding-top: 5px;
+    border-top: 1px solid #666;
+}
+
+.viewer .controls .animation-controls .animation-list .list ul::-webkit-scrollbar {
+    width: 10px
+}
+
+.viewer .controls .animation-controls .animation-list .list ul::-webkit-scrollbar-track {
+    background: rgba(0,0,0,.5)
+}
+
+.viewer .controls .animation-controls .animation-list .list ul::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 5px;
+    background: #888;
+    background-clip: padding-box
+}
+@media (max-width: 400px) {
+	.viewer.annotation-enabled #annoMenu {
+		display: none
+	}	
+	.viewer #annotation-container .popover .popover-content .more {
+		display: inline-block;
+		color: #fff;
+		cursor: pointer;
+		text-decoration: none;
+	}
+	.viewer #annotation-container .popover .popover-title {
+		display: none
+	}
+	
+	.viewer #annotation-container .popover .popover-content>* {
+		display: none
+	}
+    .titlebar .model-info,.viewer .gui .controls .hotspot-controls {
+        display:none
+    }
+
+    .viewer.has-hotspots .gui .hotspot-controls-responsive,.viewer.annotations-enabled .gui .hotspot-controls-responsive {
+        display: block
+    }
+
+    .viewer .gui .animation-not-supported {
+        left: 20%;
+        right: 20%
+    }
+
+    .viewer .gui .controls .animation-controls .next {
+        display: block
+    }
+
+    .viewer .gui .controls .animation-controls .play {
+        margin: 0
+    }
+
+    .viewer .gui .controls .animation-controls .progress,.viewer .gui .controls .animation-controls .animation-list {
+        display: none
+    }
+
+    .viewer .annotation .tooltip {
+        width: 90px
+    }
+
+    .viewer .annotation .tooltip .tooltip-content>* {
+        display: none
+    }
+
+    .viewer .annotation .tooltip .tooltip-content .more {
+        display: inline-block
+        
+    }
+}
+
+div#model-embed-info
+{
+	word-wrap: break-word;	
+	overflow:auto;
+}
+
+
+#vignetteSlider div.slider-selection {
+	background-color: #BABABA;
+}
+textarea{
+	resize: none;
+}
+
+
+
+
+
+
+
+
+/* editor */
+
+@CHARSET "UTF-8";
+body {
+	
+}
+
+#viewport {
+	height:100% !important;
+}
+
+#annotation-container {
+	height:100% !important;
+}
+
+#sidebar {
+    width: 300px;
+    float: left;
+    position: relative;
+  	font-weight: bold;
+  	font-size: 11px;
+}
+
+#editarea {
+    width: calc(100% - 300px);
+    float: left;
+    position: relative;
+    background: #fff;
+}
+#animCycle {
+	margin: 10px;
+	margin-left: 15px;
+}
+
+.nopadding {
+   padding: 0 !important;
+   //margin: 0 !important;
+   margin-bottom: 5px;
+}
+
+.vertical-align {
+    display: flex;
+    align-items: center;
+}
+
+.hcenter {
+	display: block;
+    text-align: center;
+}
+
+.vcenter {
+    line-height: 2.4;
+}
+
+label {
+    margin-bottom: 0;
+}
+
+.panel-body {
+    padding: 6px;
+}
+.popover-content{
+	
+	width: 215px;
+	
+	
+}
+
+.povover-content .mdPreview{
+	min-height: 200px;
+	overflow-x: auto;
+	overflow-y: auto;
+	
+}
+.light-list{
+	margin-bottom:0px;
+	
+}
+.pagination{
+	display: inline-block;
+	padding-left: 0;
+	margin-top:0px;
+	border-radius: 4px;
+}
+.pagination li {
+	text-align:center;
+	
+}
+.list-group-item-texture{
+	position: relative;
+  display: block;
+  padding: 5px 10px;
+  margin-bottom: -1px;
+  background-color: #32383e;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+	
+}
+.slider.slider-horizontal {
+    width: calc(100% - 10px);
+    
+}
+
+.slider-input {
+    width: 50px;
+    height: 25px;
+    display: inline;
+    margin-left: 20px;
+    text-align: center;
+    padding: 0;
+}
+
+.slider .tooltip {
+    display: none;
+}
+
+.slider-selection {
+    background: #CBCBE2;
+}
+
+.slider-handle.round {
+    border-radius: 4px;
+}
+
+.slider.slider-horizontal .slider-track.slider-track {
+    margin-left: 20px;
+    width: calc(100% - 20px);
+}
+
+.sp-replacer {
+        width: 75px;
+        padding: 0px;
+}
+
+.sp-preview {
+        width: 50px;
+        height: 50px;
+}
+.sp-input-container {
+    float:right;
+    width: 100px;
+    margin-bottom: 4px;
+    background: white;
+}
+.sp-container {
+    border-radius: 0;
+    background-color: transparent;
+    //border: solid 1px #f0c49B;
+    padding: 0;
+    border: none;
+}
+.sp-replacer {
+    margin:0;
+    overflow:hidden;
+    cursor:pointer;
+    //padding: 4px;
+    display:inline-block;
+    *zoom: 1;
+    *display: inline;
+    //border: solid 1px #91765d;
+    border: none;
+    background: #eee;
+    color: #333;
+    vertical-align: middle;
+}
+.sp-picker-container {
+    width: 172px;
+    border-left: none;
+}
+.sp-input {
+   font-size: 12px !important;
+   border: 1px inset;
+   padding: 4px 5px;
+   margin: 0;
+   width: 100%;
+   background:transparent;
+   border-radius: 0px;
+   color: #222;
+}
+.ctx-disabled {
+	background-color: #A0A0A0;
+	opacity: 0.6;
+	pointer-events: none;
+	
+}
+.ctx-disabled button {
+	color: #5A5A5A;
+}
+.ctx-disabled label {
+	color: #5A5A5A;
+}
+.ctx-disabled input {
+	color: #5A5A5A;
+}
+.ctx-disabled select {
+	color: #5A5A5A;
+}
+
+.panel-title a{
+	text-decoration: none;
+	cursor: pointer;
+	
+}
+.panel-title span{
+	text-decoration: none;
+	cursor: pointer;
+	
+}
+ul.dropdown-menu button {
+	padding: 0;
+	width: 40px;
+	height: 30px;
+}
+
+
+.change-type {
+	padding: 0;
+	height: 30px;
+	width: 125px;
+	display: inline;
+}
+
+.component-menu {
+	padding: 5px;
+	text-align: center;
+}
+
+.component-menu button {
+	width: calc(25% - 5px);
+}
+
+.sp-preview-inner {
+    /*
+    multiply or screen depending on the backdrop color value
+    https://drafts.fxtf.org/compositing-1/#valdef-blend-mode-hard-light
+    */
+
+    background-blend-mode: hard-light;
+}
+#manageList-body {
+    max-height: calc(100vh - 210px);
+    overflow-y: auto;
+
+}
+
+#edit-tabs {
+    height: 100%;
+}
+
+#edit-tabs > li > a {
+    padding: 10px 0px;		
+}
+
+#edit-props.tab-content {
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+
+
+.light-props > li > a {
+    position: relative;
+    display: inline-block;
+    //padding: 10px 7px;
+    padding: 10px 0px 10px 0px;
+    width: 49px;
+}
+
+
+.toggle {
+    top: -2px;  /* for heading align center */
+}
+.mdPreview img {
+	max-width: 100%!important;
+}
+
+div.form-group.no-hide-annotation .mdPreview {
+	max-height: 200px;
+	overflow-y: auto;
+	overflow-x: hidden
+}
+
+
+.help {
+	position: relative;
+}
+.help .tooltip.saved {
+	opacity: 1;
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s;
+}
+
+.help .tooltip.tooltip-up:before {
+	left: 50%;
+	top: 100%;
+	margin-left: -5px;
+	border: 5px solid transparent;
+	border-top: 5px solid rgba(0,0,0, .8);
+	border-bottom: 0;
+}
+
+.help .tooltip.tooltip-up {
+	left: 50%;
+	top: -5px;
+	margin-top: -5px;
+	margin-left: -30px;
+	-webkit-transform: translate(0, 100%);
+	transform: translate(0, 100%);
+}
+
+
+
+.help .tooltip {
+	width: 65px;
+	border-radius: 6px;
+	padding: 6px;
+	font-family: 'Open sans', sans-serif;
+	font-size: 12px;
+	text-align: center;
+	text-transform: none;
+	line-height: 17px;
+	color: #fff;
+	background: rgba(0,0,0,.8);
+	opacity: 0;
+	-webkit-transition: opacity .2s;
+	transition: opacity .2s;
+
+	
+}
+.help .tooltip, .help .tooltip:before {
+	display: block;
+	position: absolute;
+	z-index: 4;
+	pointer-events: none;
+	
+}
+
+.help .tooltip:before {
+	content: '';
+}
+
+
+/*.additional .stats .help .tooltip.tooltip-down
+{
+	left: 50%;
+	top: 100%;
+	margin-top: 5px;
+	margin-left: -65px;
+}*/
+
+.help .tooltip.tooltip-down {
+	left: 50%;
+	top: 100%;
+	margin-top: 5px;
+	margin-left: -33px;
+}
+.help .tooltip.tooltip-down:before {
+	left: 50%;
+	bottom: 100%;
+	margin-left: -5px;
+	border: 5px solid transparent;
+	border-top: 0;
+	border-bottom: 5px solid rgba(0,0,0,.8);
+}
+
+.tooltip {
+	position: absolute;
+	z-index: 1070;
+	display: block;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: 1.4;
+	visibility: visible;
+	filter: alpha(opacity=0);
+/* 	opacity: 0; */
+}
+li[role=presentation]:last-child:before {
+    right: 0;
+    margin-left: -70px;
+}
+
+li[role=presentation]:before {
+    content: attr(data-tab);
+    width: 94px;
+    border-radius: 6px;
+    padding: 6px;
+    font-family: 'Open Sans',sans-serif;
+    font-size: 12px;
+    text-align: center;
+    line-height: 17px;
+    color: #fff;
+    background: rgba(0,0,0,.8);
+    text-transform: capitalize;
+    margin-top: 5px;
+    margin-left: -47px
+}
+
+
+
+li[role=presentation]:before, li[role=presentation]:after {
+    position: absolute;
+    z-index: 4;
+    left: 50%;
+    top: 100%;
+    pointer-events: none;
+    opacity: 0;
+    -webkit-transition: opacity .2s;
+    transition: opacity .2s
+}
+
+
+li[role=presentation]:after {
+	content: " ";
+	display: block;
+	margin-left: -5px;
+	border: 5px solid transparent;
+	border-top: 0;
+	border-bottom: 5px solid rgba(0,0,0,.8);
+}
+
+
+li[role=presentation]:hover:before {
+    opacity: 1
+}
+
+li[role=presentation] a:before {
+    color: #ccc;
+    font-size: 18px;
+    font-family: fontawesome;
+    width: 100%;
+    display: inline-block
+}
+
+li[data-tab=scene]>a:before {
+    content: "\f013"
+}
+
+li[data-tab=view]>a:before{
+    content: "\f0eb"
+}
+
+li[data-tab=materials]>a:before {
+    content: "\f03e"
+}
+
+li[data-tab=viewpoints]>a:before {
+    content: "\f21d"
+}
+
+li[data-tab=annotations]>a:before {
+    content: "\f041"
+}
+
+li[data-tab=components]>a:before {
+    content: "\f096"
+}
+
+li[data-tab=showroom]>a:before {
+    content: "\f085"
+}
+
+#xform-bar button.active {
+    background-color: #78cc78;
+}
+
+.component-panel label .icon {
+	display:inline-block;
+	margin-right: 4px;
+	margin-bottom: 4px;
+	vertical-align: middle;
+}
+
+.navbar-header .logo {
+	display: inline-block;
+/* 	margin-right: 15px; */
+/* 	margin-left: 20px; */
+	width: 25px;
+	height: 25px;
+	line-height: initial;
+	vertical-align: middle;
+}
+
+/* Scroll bar styling */
+/* Let's get this party started */
+::-webkit-scrollbar {
+    //width: 8px;
+    //height: 8px;
+    //background-color: #a1a1a9;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: rgba(94, 102, 113, 0.8);
+    -webkit-box-shadow: inset 0 0 6px #7d788d;
+}
+
+::-webkit-scrollbar-thumb:window-inactive {
+    background: rgba(199, 196, 196, 0.4);
+}

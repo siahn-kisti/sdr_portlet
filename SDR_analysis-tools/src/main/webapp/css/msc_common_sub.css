@@ -1,0 +1,1125 @@
+/*소재 커뮤니티 공통*/
+/* devsky : ajax 페이지 로딩 시 나타날 영역 */
+#icon-loding {
+    position: absolute;
+    width: 256px;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0px;
+    left: 0px;
+    margin: auto;
+    z-index: 100;
+    display: none;
+}
+
+/* devsky : 임시 데이터 영역 */
+#hiddenData {display: none;}
+
+/*소재 커뮤니티 Sub LNB*/
+/*songolmea : 수정일 2017.08.30*/
+#nav-area {
+    width: 100%;
+    height: 80px;
+    background: url('../images/material_scientific_community02/bg_nav_header.jpg');
+    background-position: top;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+#nav-top {
+    width: 1280px;
+    margin: 0 auto;
+}
+#nav-top:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#msc-logo {
+    width: 160px;
+    height: 80px;
+    padding: 20px 18px;
+    display: block;
+    float: left;
+    font-size: 14px;
+    color: #fff;
+    transition: 0.5s;
+}
+#msc-logo:hover {
+    text-decoration: none;
+    color: #337ab7;
+}
+#nav-header {
+    width: 1120px;
+    float: left;
+    background-image: url('../images/material_scientific_community02/bg_msc_header.png');
+}
+#nav-btn {
+    padding: 4px 0;
+    border-bottom: 1px solid #626262;
+    font-size: 12px;
+}
+#nav-btn:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#nav-login, #nav-mypage, #nav-btn > .dropdown {
+    float: right;
+}
+#nav-login > a, #nav-mypage > a, #nav-btn > .dropdown > button {
+    display: inline-block;
+    padding: 4px 12px;
+    font-size: 12px;
+    color: #fff;
+}
+#nav-menu {
+    width: 1120px;
+    margin: 0 auto 0 auto;
+}
+#nav-menu > ul {
+    margin: 0;
+    padding: 0;
+}
+#nav-menu > ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#nav-menu > ul > li {
+    width: 14.285714286%;
+    padding: 13px 0;
+    float: left;
+    list-style: none;
+    font-size: 13px;
+    text-align: center;
+}
+#nav-menu > ul > li > a {
+    color: #fff;
+}
+
+/*소재 커뮤니티 Sub 공통*/
+/*songolmea : 수정일 2017.08.30*/
+#sub-area {
+    width: 1280px;
+    margin: 0 auto;
+}
+
+#sub-area:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#ex1Slider .slider-selection {
+    background: #BABABA;
+}
+
+#breadcrumb-nav {
+    width: 100%;
+    background-color: #fff;
+}
+
+#breadcrumb-nav .breadcrumb {
+    width: 1280px;
+    margin: 0 auto;
+    font-size: 12px;
+    text-align: right;
+    background-color: #fff;
+}
+
+#tabs-nav {
+    width: 100px;
+    margin-right: 10px;
+    float: left;
+    background-color: #191e23;
+}
+
+#tabs-nav .nav-tabs {
+    border-bottom: 0px;
+}
+
+#tabs-nav .nav-tabs li {
+    width: 100%;
+    margin-bottom: 0px;
+    border-right: 3px solid #3082c6;
+    text-align: center;
+}
+
+#tabs-nav .nav-tabs li a {
+    margin-right: 0px;
+    border: 0px;
+    border-radius: 0px;
+    font-size: 12px;
+    line-height: 1.4em;
+    color: #fff;
+}
+
+#tabs-nav > .nav-tabs > li.active > a, #tabs-nav > .nav-tabs > li.active > a:focus, #tabs-nav > .nav-tabs > li.active > a:hover {
+    color: #fff;
+    background-color: #3082c6;
+}
+
+#tabs-nav > .nav > li > a:focus, #tabs-nav > .nav > li > a:hover {
+    background-color: #5b5e60;
+}
+
+#tabs-nav .nav-tabs li a img {
+    width: 35px;
+    margin-bottom: 5px;
+}
+
+#content-area {
+    width: 1170px;
+    float: left;
+}
+
+#title-nav {
+    padding: 15px 0;
+}
+
+#title-nav h2 {
+    width: 1280px;
+    margin: 0 auto;
+    font-size: 24px;
+}
+
+/* devsky 수정/추가 : Materials Explorer Search */
+#materials-explorer-periodic-search {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 20px 20px 25px 20px;
+    background-color: #e1e5ef;
+}
+
+#materials-explorer-periodic-search select#condition {
+    width: 29%;
+    height: 33px;
+}
+
+#materials-explorer-periodic-search input#searchValue {
+    width: 71%;
+    height: 33px;
+}
+
+#materials-explorer-periodic-search input#extractFile {
+    width: 71%;
+    height: 33px;
+    display: none;
+}
+
+/* devsky 수정/추가 : Phase Diagram Search */
+#phase-diagram-periodic-search {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 20px 20px 20px 20px;
+    background-color: #e1e5ef;
+}
+
+#phase-diagram-periodic-search input#searchValue {
+    width: 100%;
+}
+
+/* devsky 수정/추가 : Battery Explorer Search */
+#battery-explorer-periodic-search {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 20px 20px 25px 20px;
+    background-color: #e1e5ef;
+}
+
+#battery-explorer-periodic-search select#condition {
+    width: 33%;
+    height: 33px;
+}
+
+#battery-explorer-periodic-search input#searchValue {
+    width: 67%;
+}
+
+#battery-explorer-periodic-search .working-ion-text {display: inline-block; width: 100px; margin-right: 10px; z-index: 100; font-size: 12px; font-weight: normal; color: #6b6b6b;}
+
+/* devsky 수정/추가 : nanoporous Explorer Search */
+#nanoporous-explorer-periodic-search {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 20px 20px 25px 20px;
+    background-color: #e1e5ef;
+}
+
+#nanoporous-explorer-periodic-search select#condition {
+    width: 29%;
+    height: 33px;
+}
+
+#nanoporous-explorer-periodic-search input#searchValue {
+    width: 71%;
+    height: 33px;
+}
+
+#nanoporous-explorer-periodic-search input#extractFile {
+    width: 71%;
+    height: 33px;
+    display: none;
+}
+
+/* devsky 수정/추가 : nanoporous Explorer Search */
+#nanoporous-analysis-periodic-search {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 20px 20px 25px 20px;
+    background-color: #e1e5ef;
+}
+
+#nanoporous-analysis-periodic-search select#condition {
+    width: 31%;
+    height: 33px;
+}
+
+#nanoporous-analysis-periodic-search input#searchValue {
+    width: 69%;
+    height: 33px;
+}
+
+#nanoporous-analysis-periodic-search input#extractFile {
+    width: 69%;
+    height: 33px;
+    display: none;
+}
+
+#label-width {
+    position: absolute;
+    width: 1130px;
+    margin: 0 auto 0 auto;
+}
+
+/*#label-width:after {*/
+/*content: ""; display: block; clear: both;*/
+/*}*/
+
+#label-width label {
+    font-size: 12px;
+    font-weight: normal;
+    color: #6b6b6b;
+}
+
+#search-width {
+    width: 100%;
+    margin: 0 auto;
+    font-size:0;
+}
+
+#search-width:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#slider-width {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#slider-width:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#slider-width .col-quarter {
+    padding: 0 15px;
+}
+
+#slider-width .col-quarter p {
+    text-align: right;
+}
+
+#slider-width .col-quarter input {
+    border: 0px;
+    color: #2ab683;
+    text-align: right;
+    background-color: transparent;
+}
+code#errorMessage {
+    display: inline-block;
+    padding: 0;
+    width: 100%;
+    margin-top: 5px;
+    font-size: 11px;
+    text-align: center;
+}
+code#errorMessage span {
+    display: inline-block;
+    padding: 2px;
+}
+
+/*소재 커뮤니티 Sub 주기율표*/
+/*songolmea : 수정일 2017.08.30*/
+#periodic-btn {
+    width: 1280px;
+    margin: 0 auto 30px auto;
+    font-size: 0px;
+}
+
+.row-line {
+
+}
+
+.row-line:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#periodic-btn button {
+    width: 64px;
+    height: 64px;
+    padding: 0px;
+    border: 0px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    float: left;
+    vertical-align: middle;
+    position: relative;
+    overflow: hidden;
+}
+
+#periodic-btn button:hover {
+    transform: scale(1.3, 1.3);
+    transition: 0.3s;
+    z-index: 999;
+}
+
+#periodic-btn button:focus {
+    outline: none;
+}
+
+#periodic-btn .blank-btn {
+    width: 64px;
+    height: 64px;
+    margin-right: 1px;
+    margin-bottom: 1px;
+    float: left;
+    background: #fff;
+}
+
+#periodic-btn button .number {
+    font-size: 10px;
+    text-align: left;
+    position: absolute;
+    top: 3px;
+    left: 5px;
+}
+
+#periodic-btn button h5 {
+    margin: 0;
+    font-size: 20px;
+}
+
+#periodic-btn button p {
+    width: 100%;
+    margin: 0;
+    font-size: 10px;
+    position: absolute;
+    bottom: -5px;
+    transition: 0.5s;
+    opacity: 0;
+}
+
+#periodic-btn button:hover px {
+    bottom: 3px;
+    opacity: 1;
+}
+
+#periodic-btn button.pt-color-01-active:hover .number, #periodic-btn button.pt-color-02-active:hover .number, #periodic-btn button.pt-color-03-active:hover .number, #periodic-btn button.pt-color-04-active:hover .number, #periodic-btn button.pt-color-05-active:hover .number, #periodic-btn button.pt-color-06-active:hover .number, #periodic-btn button.pt-color-07-active:hover .number, #periodic-btn button.pt-color-08-active:hover .number, #periodic-btn button.pt-color-09-active:hover .number, #periodic-btn button.pt-color-10-active:hover .number, #periodic-btn button.pt-color-11-active:hover .number {
+    color: #fff;
+}
+
+#periodic-btn button.pt-color-01-active p, #periodic-btn button.pt-color-02-active p, #periodic-btn button.pt-color-03-active p, #periodic-btn button.pt-color-04-active p, #periodic-btn button.pt-color-05-active p, #periodic-btn button.pt-color-06-active p, #periodic-btn button.pt-color-07-active p, #periodic-btn button.pt-color-08-active p, #periodic-btn button.pt-color-09-active p, #periodic-btn button.pt-color-10-active p, #periodic-btn button.pt-color-11-active p {
+    bottom: 3px !important;
+    opacity: 1 !important;
+}
+
+/*소재 커뮤니티 Sub 주기율표 컬러*/
+/*songolmea : 수정일 2017.08.30*/
+/*주기율표 컬러 01*/
+#periodic-btn button.pt-color-01 {
+    color: #fff;
+    background-color: #9f43ef;
+    border: 2px solid #9f43ef;
+}
+
+#periodic-btn button.pt-color-01:hover {
+    color: #fff;
+    background-color: #523870;
+    border: 2px solid #523870;
+}
+
+#periodic-btn button.pt-color-01 p {
+    color: #9f43ef;
+}
+
+#periodic-btn button.pt-color-01:hover p {
+    color: #fff;
+    bottom: 3px !important;
+    opacity: 1 !important;
+}
+
+#periodic-btn button.pt-color-01-active {
+    color: #523870;
+    background-color: #fff;
+    border: 2px solid #523870;
+}
+
+#periodic-btn button.pt-color-01-active .number {
+    color: #523870;
+}
+
+#periodic-btn button.pt-color-01-active:hover .number {
+    color: #fff;
+}
+
+#periodic-btn button.pt-color-01-active p {
+    color: #523870;
+}
+
+/*주기율표 컬러 02*/
+#periodic-btn button.pt-color-02 {
+    color: #fff;
+    background-color: #ea6c3b;
+    border: 2px solid #ea6c3b;
+}
+
+#periodic-btn button.pt-color-02:hover {
+    color: #fff;
+    background-color: #a04c2c;
+    border: 2px solid #a04c2c;
+}
+
+#periodic-btn button.pt-color-02 p {
+    color: #ea6c3b;
+}
+
+#periodic-btn button.pt-color-02:hover p {
+    color: #fff;
+    bottom: 3px !important;
+    opacity: 1 !important;
+}
+
+#periodic-btn button.pt-color-02-active {
+    color: #a04c2c;
+    background-color: #fff;
+    border: 2px solid #a04c2c;
+}
+
+#periodic-btn button.pt-color-02-active .number {
+    color: #a04c2c;
+}
+
+#periodic-btn button.pt-color-02-active:hover .number {
+    color: #fff;
+}
+
+#periodic-btn button.pt-color-02-active p {
+    color: #a04c2c;
+}
+
+/*주기율표 컬러 03*/
+#periodic-btn button.pt-color-03 {
+    color: #fff;
+    background-color: #465382;
+    border: 2px solid #465382;
+}
+
+#periodic-btn button.pt-color-03:hover {
+    color: #fff;
+    background-color: #313a5a;
+    border: 2px solid #313a5a;
+}
+
+#periodic-btn button.pt-color-03 p {
+    color: #465382;
+}
+
+#periodic-btn button.pt-color-03:hover p {
+    color: #fff;
+    bottom: 3px !important;
+    opacity: 1 !important;
+}
+
+#periodic-btn button.pt-color-03-active {
+    color: #313a5a;
+    background-color: #fff;
+    border: 2px solid #313a5a;
+}
+
+#periodic-btn button.pt-color-03-active .number {
+    color: #313a5a;
+}
+
+#periodic-btn button.pt-color-03-active:hover .number {
+    color: #fff;
+}
+
+#periodic-btn button.pt-color-03-active p {
+    color: #313a5a;
+}
+
+/*주기율표 컬러 04*/
+#periodic-btn button.pt-color-04 {
+    color: #fff;
+    background-color: #f7c046;
+    border: 2px solid #f7c046;
+}
+
+#periodic-btn button.pt-color-04:hover {
+    color: #fff;
+    background-color: #aa8533;
+    border: 2px solid #aa8533;
+}
+
+#periodic-btn button.pt-color-04 p {
+    color: #f7c046;
+}
+
+#periodic-btn button.pt-color-04:hover p {
+    color: #fff;
+    bottom: 3px !important;
+    opacity: 1 !important;
+}
+
+#periodic-btn button.pt-color-04-active {
+    color: #aa8533;
+    background-color: #fff;
+    border: 2px solid #aa8533;
+}
+
+#periodic-btn button.pt-color-04-active .number {
+    color: #aa8533;
+}
+
+#periodic-btn button.pt-color-04-active:hover .number {
+    color: #fff;
+}
+
+#periodic-btn button.pt-color-04-active p {
+    color: #aa8533;
+}
+
+/*주기율표 컬러 05*/
+#periodic-btn button.pt-color-05 {
+    color: #fff;
+    background-color: #3082c6;
+    border: 2px solid #3082c6;
+}
+
+#periodic-btn button.pt-color-05:hover {
+    color: #fff;
+    background-color: #215885;
+    border: 2px solid #215885;
+}
+
+#periodic-btn button.pt-color-05 p {
+    color: #3082c6;
+}
+
+#periodic-btn button.pt-color-05:hover p {
+    color: #fff;
+    bottom: 3px !important;
+    opacity: 1 !important;
+}
+
+#periodic-btn button.pt-color-05-active {
+    color: #215885;
+    background-color: #fff;
+    border: 2px solid #215885;
+}
+
+#periodic-btn button.pt-color-05-active .number {
+    color: #215885;
+}
+
+#periodic-btn button.pt-color-05-active:hover .number {
+    color: #fff;
+}
+
+#periodic-btn button.pt-color-05-active p {
+    color: #215885;
+}
+
+/*주기율표 컬러 06*/
+#periodic-btn button.pt-color-06 {
+    color: #fff;
+    background-color: #2ab683;
+    border: 2px solid #2ab683;
+}
+
+#periodic-btn button.pt-color-06:hover {
+    color: #fff;
+    background-color: #1a7d5b;
+    border: 2px solid #1a7d5b;
+}
+
+#periodic-btn button.pt-color-06 p {
+    color: #2ab683;
+}
+
+#periodic-btn button.pt-color-06:hover p {
+    color: #fff;
+    bottom: 3px !important;
+    opacity: 1 !important;
+}
+
+#periodic-btn button.pt-color-06-active {
+    color: #1a7d5b;
+    background-color: #fff;
+    border: 2px solid #1a7d5b;
+}
+
+#periodic-btn button.pt-color-06-active .number {
+    color: #1a7d5b;
+}
+
+#periodic-btn button.pt-color-06-active:hover .number {
+    color: #fff;
+}
+
+#periodic-btn button.pt-color-06-active p {
+    color: #1a7d5b;
+}
+
+/*주기율표 컬러 07*/
+#periodic-btn button.pt-color-07 {
+    color: #fff;
+    background-color: #cc70d6;
+    border: 2px solid #cc70d6;
+}
+
+#periodic-btn button.pt-color-07:hover {
+    color: #fff;
+    background-color: #7d527c;
+    border: 2px solid #7d527c;
+}
+
+#periodic-btn button.pt-color-07 p {
+    color: #cc70d6;
+}
+
+#periodic-btn button.pt-color-07:hover p {
+    color: #fff;
+    bottom: 3px !important;
+    opacity: 1 !important;
+}
+
+#periodic-btn button.pt-color-07-active {
+    color: #7d527c;
+    background-color: #fff;
+    border: 2px solid #7d527c;
+}
+
+#periodic-btn button.pt-color-07-active .number {
+    color: #7d527c;
+}
+
+#periodic-btn button.pt-color-07-active:hover .number {
+    color: #fff;
+}
+
+#periodic-btn button.pt-color-07-active p {
+    color: #7d527c;
+}
+
+/*주기율표 컬러 08*/
+#periodic-btn button.pt-color-08 {
+    color: #fff;
+    background-color: #e55779;
+    border: 2px solid #e55779;
+}
+
+#periodic-btn button.pt-color-08:hover {
+    color: #fff;
+    background-color: #9a3d53;
+    border: 2px solid #9a3d53;
+}
+
+#periodic-btn button.pt-color-08 p {
+    color: #e55779;
+}
+
+#periodic-btn button.pt-color-08:hover p {
+    color: #fff;
+    bottom: 3px !important;
+    opacity: 1 !important;
+}
+
+#periodic-btn button.pt-color-08-active {
+    color: #9a3d53;
+    background-color: #fff;
+    border: 2px solid #9a3d53;
+}
+
+#periodic-btn button.pt-color-08-active .number {
+    color: #9a3d53;
+}
+
+#periodic-btn button.pt-color-08-active:hover .number {
+    color: #fff;
+}
+
+#periodic-btn button.pt-color-08-active p {
+    color: #9a3d53;
+}
+
+/*주기율표 컬러 09*/
+#periodic-btn button.pt-color-09 {
+    color: #fff;
+    background-color: #ff3d33;
+    border: 2px solid #ff3d33;
+}
+
+#periodic-btn button.pt-color-09:hover {
+    color: #fff;
+    background-color: #a72e27;
+    border: 2px solid #a72e27;
+}
+
+#periodic-btn button.pt-color-09 p {
+    color: #ff3d33;
+}
+
+#periodic-btn button.pt-color-09:hover p {
+    color: #fff;
+    bottom: 3px !important;
+    opacity: 1 !important;
+}
+
+#periodic-btn button.pt-color-09-active {
+    color: #a72e27;
+    background-color: #fff;
+    border: 2px solid #a72e27;
+}
+
+#periodic-btn button.pt-color-09-active .number {
+    color: #a72e27;
+}
+
+#periodic-btn button.pt-color-09-active:hover .number {
+    color: #fff;
+}
+
+#periodic-btn button.pt-color-09-active p {
+    color: #a72e27;
+}
+
+/*주기율표 컬러 10*/
+#periodic-btn button.pt-color-10 {
+    color: #fff;
+    background-color: #aa916a;
+    border: 2px solid #aa916a;
+}
+
+#periodic-btn button.pt-color-10:hover {
+    color: #fff;
+    background-color: #78674c;
+    border: 2px solid #78674c;
+}
+
+#periodic-btn button.pt-color-10 p {
+    color: #aa916a;
+}
+
+#periodic-btn button.pt-color-10:hover p {
+    color: #fff;
+    bottom: 3px !important;
+    opacity: 1 !important;
+}
+
+#periodic-btn button.pt-color-10-active {
+    color: #78674c;
+    background-color: #fff;
+    border: 2px solid #78674c;
+}
+
+#periodic-btn button.pt-color-10-active .number {
+    color: #78674c;
+}
+
+#periodic-btn button.pt-color-10-active:hover .number {
+    color: #fff;
+}
+
+#periodic-btn button.pt-color-10-active p {
+    color: #78674c;
+}
+
+/*주기율표 컬러 11*/
+#periodic-btn button.pt-color-11 {
+    color: #fff;
+    background-color: #543f25;
+    border: 2px solid #543f25;
+}
+
+#periodic-btn button.pt-color-11:hover {
+    color: #fff;
+    background-color: #3c2d1a;
+    border: 2px solid #3c2d1a;
+}
+
+#periodic-btn button.pt-color-11 p {
+    color: #543f25;
+}
+
+#periodic-btn button.pt-color-11:hover p {
+    color: #fff;
+    bottom: 3px !important;
+    opacity: 1 !important;
+}
+
+#periodic-btn button.pt-color-11-active {
+    color: #3c2d1a;
+    background-color: #fff;
+    border: 2px solid #3c2d1a;
+}
+
+#periodic-btn button.pt-color-11-active .number {
+    color: #3c2d1a;
+}
+
+#periodic-btn button.pt-color-11-active:hover .number {
+    color: #fff;
+}
+
+#periodic-btn button.pt-color-11-active p {
+    color: #3c2d1a;
+}
+
+#periodic-btn button.disabled {
+    color: #fff;
+    background-color: #7f7f7f;
+    border: 1px solid #fff;
+    cursor: not-allowed;
+}
+#periodic-btn button.disabled:hover {
+    transform: none;
+    background-color: #7f7f7f;
+    border: 1px solid #fff;
+    cursor: not-allowed;
+}
+
+/*소재 커뮤니티 Sub 게시판*/
+/*songolmea : 수정일 2017.08.30*/
+#board-area {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#board-area table {
+    margin: 0;
+    border-bottom: 2px solid #a3ccbc;
+}
+
+#board-area th {
+    padding: 12px 8px;
+    border-bottom: 0px;
+    font-size: 12px;
+    text-align: center;
+    background: url('../images/material_scientific_community/bg_board_header.gif') no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#board-area td {
+    font-size: 12px;
+    text-align: center;
+}
+
+#pagination-nav {
+    text-align: center;
+}
+
+
+/*Phase Diagram 서브 결과*/
+/*songolmea : 수정일 2017.09.12*/
+#phase-diagram-phase-compounds {
+    width: 100%;
+    display: none;
+    margin-bottom: 10px;
+}
+.phase_container:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.phase_expresssion {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 15px 35px;
+    background-color: #e8ebef;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+    -moz-border-radius:30px;
+    -webkit-border-radius:30px;
+    border-radius:30px;
+}
+.phase_expresssion .btn_close {
+    display: none;
+    float: right;
+    width: 20px;
+    height: 20px;
+    background: url(../images/page/btn_close.png) center no-repeat;
+    cursor: pointer;
+}
+#phase-diagram-phase-compounds .phase_image {
+    width: 50%;
+    float: left;
+    padding: 20px;
+    text-align: center;
+}
+#phase-diagram-phase-compounds .phase_image .highcharts-container {
+    width: 450px;
+    margin: 0 auto;
+}
+#phase-diagram-phase-compounds .phase_image img {
+    width: 81%
+}
+#phase-diagram-phase-compounds .phase_compound {
+    padding: 0px 20px 0px 20px;
+    width: 50%;
+    float: left;
+    height: 528px;
+    overflow: hidden;
+}
+#phase-diagram-phase-compounds .phase_compound .phase_title {
+    border-style: solid;
+    border-image: linear-gradient(to right, #14a8a9, #e5dd7b);
+    border-image-slice: 1;
+    border-image-width: 0 0 2px 0;
+    border-right:0px;
+    border-top:0px;
+    border-left:0px;
+    margin-bottom:5px;
+    padding-bottom:15px;
+    background-color:#fff;
+    font-size: 20px;
+    color: #666675;
+    margin-top: 0;
+}
+#phase-diagram-phase-compounds .phase_compound .phase_stable {
+    border:0;
+    padding: 0;
+}
+#phase-diagram-phase-compounds .phase_compound .phase_stable .ui-tabs-nav {
+    border:0;
+    border-bottom: 1px solid #bec2c6;
+    padding: 0;
+    background: #fafafb;
+}
+#phase-diagram-phase-compounds .phase_compound .phase_stable .ui-tabs-nav li {
+    border: 1px solid #bec2c6;
+    padding-bottom: 1px;
+    border-radius: 0;
+    margin-right: -1px;
+    margin-bottom: -1px;
+}
+#phase-diagram-phase-compounds .phase_compound .phase_stable .ui-tabs-nav li.ui-tabs-active {
+    border-top:2px solid #327bb9;
+    border-bottom:0;
+    background: #fff;
+    color: #000;
+}
+#phase-diagram-phase-compounds .phase_compound .phase_stable .ui-tabs-nav li.ui-tabs-active a {
+    color: #000;
+}
+#phase-diagram-phase-compounds .phase_compound .stable-body {
+    padding: 10px 0;
+}
+#phase-diagram-phase-compounds .phase_compound table {
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+#phase-diagram-phase-compounds .phase_compound table thead {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #ccc;
+}
+#phase-diagram-phase-compounds .phase_compound table thead tr {
+    display: table;
+    width: 100%;
+}
+#phase-diagram-phase-compounds .phase_compound table thead th {
+    width: 30%;
+    padding: 10px;
+    border-top: 2px solid #c2c2c2;
+    border-left: 1px solid #fff;
+    background-color: #fafafc;
+    font-size: .875rem;
+    text-align: center;
+    word-break: break-all;
+}
+#phase-diagram-phase-compounds .phase_compound table thead th:first-child {
+    width: 20%;
+    border-left: none;
+}
+#phase-diagram-phase-compounds .phase_compound table thead th:last-child {
+    width: 49%;
+}
+#phase-diagram-phase-compounds .phase_compound table thead th sub {
+    display: block;
+    padding-top: 5px;
+    padding-bottom: 10px;
+    font-size: .750rem;
+}
+#phase-diagram-phase-compounds .phase_compound table tbody {
+    display: block;
+    overflow: auto;
+    width: 100%;
+    max-height: 382px;
+}
+#phase-diagram-phase-compounds .phase_compound table tbody tr {
+    display: table;
+    width: 100%;
+}
+#phase-diagram-phase-compounds .phase_compound table tbody td {
+    width: 30%;
+    padding: 8px;
+    border-bottom: 1px solid #ccc;
+    font-size: .875rem;
+    text-align: center;
+}
+#phase-diagram-phase-compounds .phase_compound table tbody td:first-child {
+    width: 20%;
+}
+#phase-diagram-phase-compounds .phase_compound table tbody td:last-child {
+    width: 49%;
+    padding-left: 10%;
+}
+.block-views {
+    display: none;
+    float: left;
+    width: 60%;
+}
+.block-views .view-phase-diagram-data-viewer .view-content {
+    height: 580px;
+    margin-bottom: 50px;
+    padding: 40px 10%;
+    border-left: 1px solid #b4b4b4;
+    border-bottom: 1px solid #b4b4b4;
+}
+
+/* highcharts-container tooltip overflow */
+svg:not(:root) {
+    overflow: hidden !important;
+}
+.highcharts-container, svg:not(:root) {
+    overflow: visible !important;
+    margin-bottom: 30px;
+}
+.highcharts-tooltip>span {
+    max-height:500px;
+    overflow-y: auto;
+    margin-bottom: 30px;
+    background: #FFF;
+}

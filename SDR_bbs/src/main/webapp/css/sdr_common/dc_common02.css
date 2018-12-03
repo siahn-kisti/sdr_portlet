@@ -1,0 +1,176 @@
+/*소재 커뮤니티 공통*/
+
+#mini-board {
+    /*width: 1220px;*/
+    margin: 0 auto 10px auto;
+}
+
+#mini-board:after {
+    content: ""; display: block; clear: both;
+}
+
+#mini-notice {
+    width: 100%;
+    margin-right: 0.4%;
+    padding: 25px 30px;
+    border: 1px solid #dbdbdb;
+    position: relative;
+    float: left;
+    background-color: #fff;
+}
+
+#mini-board .nav {
+    margin-bottom: 8px;
+}
+
+#mini-notice>.nav>li>a {
+    /*padding: 6px 12px;*/
+}
+
+#mini-notice>.nav-pills>li.active>a , #mini-notice>.nav-pills>li.active>a:focus , #mini-notice>.nav-pills>li.active>a:hover {
+    font-size: 14px;
+    background: url('../../images/bg_nav_header.jpg');
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#mini-board .board_more {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #cccccc;
+}
+
+#mini-board .board_more:hover {
+    color: #363636;
+}
+
+#mini-board table {
+    margin: 0;
+}
+
+#mini-board table tr:last-child td {
+    padding-bottom: 0px;
+}
+
+#mini-board table tr td {
+    padding: 7px 0;
+    border: 0px;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+#mini-board table tr td:last-child {
+    text-align: right;
+}
+
+#mini-board table tr td a {
+    color: #363636;
+}
+
+#main-report {
+    width: 49.6%;
+    height: 214px;
+    margin-left: 0.4%;
+    float: left;
+}
+
+#main-report ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#main-report ul:after {
+    content: ""; display: block; clear: both;
+}
+
+#main-report ul li {
+    width: 32.2%;
+    max-height: 214px;
+    padding: 46px 0;
+    margin-right: 1.7%;
+    border: 1px solid #dbdbdb;
+    float: left;
+    list-style: none;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#main-report ul li:last-child {
+    margin-right: 0px;
+}
+
+#main-report ul li img {
+    width: 60px;
+    margin-bottom: 5px;
+}
+
+#main-report ul li p {
+    margin: 0 0 5px 0;
+    font-size: 26px;
+    font-weight: 300;
+    color: #fff;
+}
+
+#main-report ul li h3 {
+    margin: 0px;
+    font-size: 12px;
+    color: #fff;
+}
+
+
+#defCommu-board {
+    float: right;
+    width: 640px;
+    height: 250px;
+    padding: 20px 0px;
+}
+
+#defCommu-board:after {
+    content: ""; display: block; clear: both;
+}
+
+#defCommu-board .nav {
+    margin-bottom: 8px;
+}
+
+#defCommu-board .board_more {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #cccccc;
+}
+
+#defCommu-board .board_more:hover {
+    color: #363636;
+}
+
+#defCommu-board table {
+    margin: 0;
+}
+
+#defCommu-board table tr:last-child td {
+    padding-bottom: 0px;
+}
+
+#defCommu-board table tr td {
+    padding: 7px 0;
+    border: 0px;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+#defCommu-board table tr td:last-child {
+    text-align: right;
+}
+
+#defCommu-board table tr td a {
+    color: #363636;
+}
+
+#defCommu-board a {
+    padding: 8px;
+}

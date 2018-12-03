@@ -1,0 +1,39 @@
+<?xml version="1.0"?>
+<!DOCTYPE display PUBLIC "-//Liferay//DTD Display 6.2.0//EN" "http://www.liferay.com/dtd/liferay-display_6_2_0.dtd">
+
+<display>
+    <category name="SDR">
+        <portlet id="sdr-common"/>
+        <portlet id="simple-submission"/>
+        <portlet id="curation-test"></portlet>
+        <portlet id="property-setting"></portlet>
+        <portlet id="pp-test"></portlet>
+        <portlet id="datasearch"></portlet>
+		<portlet id="databrowser"></portlet>
+        <portlet id="collection-list-for-main"></portlet>
+        <portlet id="collection-list-for-edison"></portlet>
+        <portlet id="dataset-list-for-main"></portlet>
+        <portlet id="advanced-search"></portlet>
+        <portlet id="tag-cloud-search"></portlet>
+        <portlet id="upload-view"></portlet>
+        <portlet id="workflow"></portlet>
+        <portlet id="datatype-management"></portlet>
+        <portlet id="controlledvocabulary-management"></portlet>
+        <portlet id="about"></portlet>
+        <portlet id="document"></portlet>
+        <portlet id="download"></portlet>
+        <portlet id="faq"></portlet>
+        <portlet id="qna"></portlet>
+        <portlet id="sdr-home"></portlet>
+        <portlet id="sdr-community"></portlet>
+        <portlet id="data-counter"></portlet>
+        <portlet id="curation-manager"></portlet>
+		<portlet id="calculation"></portlet>
+    </category>
+    <category name="Default Community">
+        <portlet id="default-community"></portlet>
+    </category>
+    <category name="category.hidden">
+        <portlet id="datatype-workflow"></portlet>
+    </category>
+</display>

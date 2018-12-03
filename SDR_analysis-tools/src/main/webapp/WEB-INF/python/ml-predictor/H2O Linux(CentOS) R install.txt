@@ -1,0 +1,36 @@
+######################
+#1. Dependencies
+For Linux (CentOS): After you install RStudio, install the R-devel package using 
+
+'yum install R-devel.x86_64'
+
+Then, install curl-config using
+
+'yum install libcurl-devel.x86_64'
+
+cf)
+http://s3.amazonaws.com/h2o-release/h2o-classic/master/1761/docs-website/Ruser/Rinstall.html
+
+#######################
+#2. Install R the latest version (3.14.0.2 - 20170830)
+# The following two commands remove any previously installed H2O packages for R.
+if ("package:h2o" %in% search()) { detach("package:h2o", unload=TRUE) }
+if ("h2o" %in% rownames(installed.packages())) { remove.packages("h2o") }
+
+# Next, we download packages that H2O depends on.
+pkgs <- c("statmod","RCurl","jsonlite")
+for (pkg in pkgs) {
+if (! (pkg %in% rownames(installed.packages()))) { install.packages(pkg) }
+}
+
+# Now we download, install and initialize the H2O package for R.
+install.packages("h2o", type="source", repos="https://h2o-release.s3.amazonaws.com/h2o/rel-weierstrass/2/R")
+
+# Finally, let's load H2O and start up an H2O cluster
+library(h2o)
+h2o.init()
+
+#######################
+#3. More update for R
+In use.package("data.table") :
+  data.table cannot be used without R package bit64 version 0.9.7 or higher.  Please upgrade to take advangage of data.table speedups.

@@ -1,0 +1,210 @@
+#main-area {
+	width: 100%;
+	height: 428px;
+	background: url('../../css/portal/bg_edison_main.jpg') no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#main-width {
+	width: 1220px;
+	margin: 0 auto;
+	padding: 10px 0;
+	box-sizing:border-box;
+}
+#main-width:after {
+	content: ""; display: block; clear: both;
+}
+#main-app-1st {
+	width: 560px;
+	height: 408px;
+	margin-right: 20px;
+	padding-top: 213px;
+	float: left;
+	box-sizing:border-box;
+	background: url('../../css/portal/bg_main_search.png') no-repeat;
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+#main-app-2nd {
+	width: 310px;
+	height: 408px;
+	margin-right: 20px;
+	float: left;
+}
+#simulation-area a {
+	width: 310px;
+	height: 258px;
+	margin-bottom: 20px;
+	padding: 20px 40px;
+	display: block;
+	background-color: #fff;
+	text-align: center;
+	box-sizing:border-box;
+}
+#simulation-area a:hover {
+	text-decoration: none;
+}
+#simulation-area a h3 {
+	margin: 0 0 27px 0;
+	font-weight: 300;
+	letter-spacing: 1.3px;
+	color: #ef8362;
+}
+#simulation-area a img {
+	width: 118px;
+	margin-bottom: 31px;
+}
+#simulation-area a p {
+	color: #b7b7b7;
+}
+#edison-download-area a {
+	width: 310px;
+	height: 130px;
+	padding: 20px 40px;
+	display: block;
+	background-color: #fff;
+	text-align: center;
+	box-sizing:border-box;
+}
+#edison-download-area a:hover {
+	text-decoration: none;
+}
+#edison-download-area a h3 {
+	margin: 0 0 15px 0;
+	font-weight: 300;
+	letter-spacing: 1.3px;
+	color: #3082c6;
+}
+#edison-download-area a p {
+	color: #b7b7b7;
+}
+#main-app-3rd {
+	/*width: 310px;*/
+	width: 600px;
+	height: 408px;
+	float: right;
+}
+#science-app-area {
+	width: 588px;
+	height: 408px;
+	padding: 10px;
+	display: block;
+	background-color: #fff;
+	text-align: center;
+	box-sizing:border-box;
+}
+#science-app-area h3 {
+	margin: 0 0 30px 0;
+	font-weight: 300;
+	letter-spacing: 1.3px;
+	color: #2ab683;
+}
+#sa-slide {
+	margin-bottom: 35px;
+}
+#sa-slide .carousel-control.right , #sa-slide .carousel-control.left {
+	background: none;
+	border:none;
+}
+#sa-slide .carousel-caption {
+	left:20%;
+	right:20%;
+	bottom:20px;
+	padding: 0px;
+	text-shadow: none;
+	background:none;
+	line-height:1.42857143;
+}
+#sa-slide .carousel-caption a {
+	font-size: 12px;
+	color: #fff;
+}
+#sa-slide .carousel-indicators {
+	top: 260px;
+	margin: 0 0 0 -7%;
+	font-size: 12px;
+	text-shadow: none;
+}
+#sa-slide .carousel-indicators li {
+	background-color: #a8a8a8;
+}
+#sa-slide .carousel-indicators .active {
+	background-color: #363636;
+}
+
+
+.main-slide-area .scsPrevArea {
+	position: absolute;
+	z-index: 8;
+	width: 10%;
+	height:100%;
+	left: 0px;
+	right: auto;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+	background-repeat: repeat-x;
+	cursor: pointer;
+}
+.main-slide-area .scsNextArea {
+	position: absolute;
+	z-index: 8;
+	width: 10%;
+	height:100%;
+	right: 0px;
+	left: auto;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+	background-repeat: repeat-x;
+	cursor: pointer;
+}
+
+.scs-directionNav div:hover {
+	outline:0;
+	color: white;
+	text-decoration: none;
+	opacity:0.9;
+	cursor: pointer;
+}
+
+.main-slide-area .scs-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background:url(arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+}
+.main-slide-area a.scs-nextNav {
+	background-position:-30px 0;
+	/*right:15px;*/
+}
+.main-slide-area a.scs-prevNav {
+	/*left:15px;*/
+}
+
+.scs-directionNav a {
+	position: absolute;
+	top: 45%;
+	z-index: 9;
+	cursor: pointer;
+}
+
+.main-slide-area .scs-controlNav {
+	position:absolute;
+	left:50%;
+	bottom:30px;
+	margin-left:-40px; /* Tweak this to center bullets */
+}
+.main-slide-area .scs-controlNav a {
+	display:block;
+	width:22px;
+	height:22px;
+	background:url(bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
+}
+.main-slide-area .scs-controlNav a.active {
+	background-position:0 -22px;
+}

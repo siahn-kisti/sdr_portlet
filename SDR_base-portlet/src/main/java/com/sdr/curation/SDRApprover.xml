@@ -1,0 +1,277 @@
+<?xml version="1.0"?>
+
+<workflow-definition
+	xmlns="urn:liferay.com:liferay-workflow_6.2.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="urn:liferay.com:liferay-workflow_6.2.0 http://www.liferay.com/dtd/liferay-workflow-definition_6_2_0.xsd"
+>
+	<name>SDR Approver</name>
+	<description>A customized dataset approver for SDR.</description>
+	<version>1</version>
+	<state>
+		<name>created</name>
+		<metadata>
+			<![CDATA[{"xy":[78,53]}]]>
+		</metadata>
+		<actions>
+			<action>
+				<name>draft</name>
+				<script>
+					<![CDATA[
+						Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("draft"), workflowContext);
+					]]>
+				</script>
+				<script-language>javascript</script-language>
+				<execution-type>onEntry</execution-type>
+			</action>
+		</actions>	
+		<initial>true</initial>
+		<transitions>
+			<transition>
+				<name>preprocess</name>
+				<target>preprocess</target>
+			</transition>
+			<!--transition>
+				<name>reject</name>
+				<target>reject</target>
+			</transition-->
+		</transitions>
+	</state>
+	<task>
+		<name>preprocess</name>
+		<metadata>
+			<![CDATA[{"xy":[125,45]}]]>
+		</metadata>
+		<actions>
+			<action>
+				<name>preprocess</name>
+				<script>
+					<![CDATA[
+						Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("scheduled"), workflowContext);
+					]]>
+				</script>
+				<script-language>javascript</script-language>
+				<execution-type>onEntry</execution-type>
+			</action>
+		</actions>
+		<assignments>
+			<roles>
+				<role>
+					<role-type>regular</role-type>
+					<name>NoOne</name>
+				</role>
+			</roles>
+		</assignments>
+		<transitions>
+			<transition>
+				<name>review</name>
+				<target>review</target>
+			</transition>
+			<transition>
+				<name>incomplete</name>
+			<target>incomplete</target>
+			</transition>
+			<transition>
+				<name>resubmit</name>
+				<target>resubmit</target>
+			</transition>
+		</transitions>
+	</task>
+	<task>
+		<name>review</name>
+		<metadata>
+			<![CDATA[{"xy":[225,45]}]]>
+		</metadata>
+		<actions>
+			<action>
+				<name>reviewpending</name>
+				<script>
+					<![CDATA[
+						Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("pending"), workflowContext);
+					]]>
+				</script>
+				<script-language>javascript</script-language>
+				<execution-type>onEntry</execution-type>
+			</action>
+			<notification>
+				<name>Review Notification</name>
+				<template>
+					<![CDATA[
+						You have a new submission waiting for your review in the workflow. 
+						[Collection] ${collectionName}, [Dataset] ${datasetName}.
+					]]>
+				</template>
+				<template-language>freemarker</template-language>
+				<notification-type>user-notification</notification-type>			
+				<execution-type>onAssignment</execution-type>
+			</notification>
+		</actions>
+		<assignments>
+			<roles>
+				<role>
+					<role-type>site</role-type>
+					<name>Site Administrator</name>
+				</role>
+				<role>
+					<role-type>site</role-type>
+					<name>Site Content Reviewer</name>
+				</role>
+				<role>
+					<role-type>regular</role-type>
+					<name>Administrator</name>
+				</role>
+				<role>
+					<role-type>regular</role-type>
+					<name>Portal Content Reviewer</name>
+				</role>
+			</roles>
+		</assignments>
+		<transitions>
+			<transition>
+				<name>approve</name>
+				<target>approved</target>
+			</transition>
+			<transition>
+				<name>reject</name>
+				<target>rejected</target> 
+			</transition>
+			<transition>
+				<name>resubmit</name>
+				<target>resubmit</target> 
+			</transition>
+		</transitions>
+	</task>
+	<state>
+		<name>approved</name>
+		<metadata>
+			<![CDATA[{"xy":[422,56]}]]>
+		</metadata>
+		<actions>
+			<action>
+				<name>approve</name>
+				<script>
+					<![CDATA[
+						Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("approved"), workflowContext);
+					]]>
+				</script>
+				<script-language>javascript</script-language>
+				<execution-type>onEntry</execution-type>
+			</action>
+			<notification>
+				<name>Publish Notification</name>
+				<template>
+					<![CDATA[
+						Your submission was approved by a reviewer. 
+						[Collection] ${collectionName}, [Dataset] ${datasetName}.
+					]]>
+				</template>
+				<template-language>freemarker</template-language>
+				<notification-type>user-notification</notification-type>			
+				<execution-type>onEntry</execution-type>
+			</notification>	
+		</actions>
+	</state>
+	<task>
+		<name>rejected</name>
+		<metadata>
+			<![CDATA[{"xy":[422,256]}]]>
+		</metadata>
+		<actions>
+			<action>
+				<name>reject</name>
+				<script>
+					<![CDATA[
+						Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("denied"), workflowContext);
+					]]>
+				</script>
+				<script-language>javascript</script-language>
+				<execution-type>onEntry</execution-type>
+			</action>
+			<notification>
+				<name>Reject Notification</name>
+				<template>
+					<![CDATA[
+						Your submission was rejected by a reviewer, please modify and resubmit.
+						[Collection] ${collectionName}, [Dataset] ${datasetName}.
+					]]>
+				</template>
+				<template-language>freemarker</template-language>
+				<notification-type>user-notification</notification-type>		
+				<execution-type>onEntry</execution-type>
+			</notification>	
+		</actions>
+		<assignments>
+			<user />
+		</assignments>
+		<transitions>
+			<transition>
+				<name>resubmit</name>
+				<target>resubmit</target>
+			</transition>
+		</transitions>
+	</task>
+	<task>
+		<name>incomplete</name>
+		<metadata>
+			<![CDATA[{"xy":[622,256]}]]>
+		</metadata>
+		<actions>
+			<action>
+				<name>incomplete</name>
+				<script>
+					<![CDATA[
+						Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("incomplete"), workflowContext);
+					]]>
+				</script>
+				<script-language>javascript</script-language>
+				<execution-type>onEntry</execution-type>
+			</action>
+		</actions>
+		<assignments>
+			<roles>
+				<role>
+					<role-type>site</role-type>
+					<name>Site Administrator</name>
+				</role>
+				<role>
+					<role-type>regular</role-type>
+					<name>Administrator</name>
+				</role>
+			</roles>
+		</assignments>
+		<transitions>
+			<transition>
+				<name>resubmit</name>
+				<target>resubmit</target>
+			</transition>
+			<transition>
+				<name>reject</name>
+				<target>rejected</target>
+			</transition>
+		</transitions>
+	</task>
+	<state>
+		<name>resubmit</name>
+		<metadata>
+			<![CDATA[{"xy":[822,256]}]]>
+		</metadata>
+		<actions>
+			<action>
+				<name>resubmit</name>
+				<script>
+					<![CDATA[
+						Packages.com.liferay.portal.kernel.workflow.WorkflowStatusManagerUtil.updateStatus(Packages.com.liferay.portal.kernel.workflow.WorkflowConstants.toStatus("expired"), workflowContext);
+					]]>
+				</script>
+				<script-language>javascript</script-language>
+				<execution-type>onEntry</execution-type>
+			</action>
+		</actions>
+		<transitions>
+			<transition>
+				<name>preprocess</name>
+				<target>preprocess</target>
+			</transition>
+		</transitions>
+	</state>
+</workflow-definition>

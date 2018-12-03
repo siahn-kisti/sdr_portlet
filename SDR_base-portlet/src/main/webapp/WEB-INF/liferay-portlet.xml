@@ -1,0 +1,267 @@
+<?xml version="1.0"?>
+<!DOCTYPE liferay-portlet-app PUBLIC "-//Liferay//DTD Portlet Application 6.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-portlet-app_6_2_0.dtd">
+
+<liferay-portlet-app>
+
+    <portlet>
+        <portlet-name>sdr-common</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+        <css-class-wrapper>sdr-common-portlet</css-class-wrapper>
+        <add-default-resource>true</add-default-resource>
+    </portlet>
+
+    <portlet>
+        <portlet-name>simple-submission</portlet-name>
+        <icon>/icon.png</icon>
+        <asset-renderer-factory>com.sdr.metadata.asset.DatasetAssetRendererFactory</asset-renderer-factory>
+        <asset-renderer-factory>com.sdr.metadata.asset.CollectionAssetRendererFactory</asset-renderer-factory>
+        <workflow-handler>com.sdr.workflow.DatasetWorkflowHandler</workflow-handler>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>curation-test</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>
+            /js/main.js
+        </footer-portlet-javascript>
+        <css-class-wrapper>curation-test-portlet</css-class-wrapper>
+    </portlet>
+
+    <portlet>
+        <portlet-name>property-setting</portlet-name>
+        <icon>/icon.png</icon>
+        <instanceable>false</instanceable>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js </footer-portlet-javascript>
+        <css-class-wrapper>property-setting-portlet</css-class-wrapper>
+    </portlet>
+
+
+    <portlet>
+        <portlet-name>pp-test</portlet-name>
+        <icon>/icon.png</icon>
+        <instanceable>false</instanceable>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js </footer-portlet-javascript>
+        <css-class-wrapper>pp-test-portlet</css-class-wrapper>
+    </portlet>
+
+
+    <portlet>
+        <portlet-name>datasearch</portlet-name>
+        <icon>/icon.png</icon>
+        <indexer-class>com.sdr.metadata.search.CollectionIndexer</indexer-class>
+        <indexer-class>com.sdr.metadata.search.DatasetIndexer</indexer-class>
+
+        <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper
+        </friendly-url-mapper-class>
+        <friendly-url-mapping>datasearch</friendly-url-mapping>
+        <friendly-url-routes>datasearch-friendly-url-routes.xml</friendly-url-routes>
+
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+        <add-default-resource>true</add-default-resource>
+    </portlet>
+
+	<portlet>
+		<portlet-name>databrowser</portlet-name>
+		<icon>/icon.png</icon>
+		<indexer-class>com.sdr.metadata.search.CollectionIndexer</indexer-class>
+		<indexer-class>com.sdr.metadata.search.DatasetIndexer</indexer-class>
+
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+		<add-default-resource>true</add-default-resource>
+	</portlet>
+
+    <portlet>
+        <portlet-name>collection-list-for-main</portlet-name>
+        <icon>/icon.png</icon>
+        <configuration-action-class>com.liferay.portal.kernel.portlet.DefaultConfigurationAction
+        </configuration-action-class>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>collection-list-for-edison</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+
+    <portlet>
+        <portlet-name>dataset-list-for-main</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>advanced-search</portlet-name>
+        <icon>/icon.png</icon>
+        <requires-namespaced-parameters>false</requires-namespaced-parameters>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>tag-cloud-search</portlet-name>
+        <icon>/icon.png</icon>
+        <requires-namespaced-parameters>false</requires-namespaced-parameters>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+        <add-default-resource>true</add-default-resource>
+    </portlet>
+
+    <portlet>
+        <portlet-name>upload-view</portlet-name>
+        <icon>/icon.png</icon>
+        <indexer-class>com.sdr.metadata.search.DataViewIndexer</indexer-class>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>workflow</portlet-name>
+        <icon>/icon.png</icon>
+        <workflow-handler>com.sdr.workflow.DatasetWorkflowHandler</workflow-handler>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>datatype-workflow</portlet-name>
+        <icon>/icon.png</icon>
+        <control-panel-entry-category>
+            site_administration.content
+        </control-panel-entry-category>
+        <workflow-handler>com.sdr.workflow.DatasetWorkflowHandler</workflow-handler>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>datatype-management</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+		<header-portlet-css>/css/tiles/tiles_common.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>controlledvocabulary-management</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+        <add-default-resource>true</add-default-resource>
+    </portlet>
+
+    <portlet>
+        <portlet-name>sdr-home</portlet-name>
+        <icon>/icon.png</icon>
+        <friendly-url-mapper-class>com.liferay.portal.kernel.portlet.DefaultFriendlyURLMapper</friendly-url-mapper-class>
+        <friendly-url-mapping>privateinfopolicy</friendly-url-mapping>
+        <friendly-url-routes>home-friendly-url-routes.xml</friendly-url-routes>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+        <add-default-resource>true</add-default-resource>
+    </portlet>
+
+    <portlet>
+        <portlet-name>about</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>document</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>download</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>faq</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>qna</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>sdr-community</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>default-community</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>data-counter</portlet-name>
+        <icon>/icon.png</icon>
+        <configuration-action-class>com.liferay.portal.kernel.portlet.DefaultConfigurationAction
+        </configuration-action-class>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+    <portlet>
+        <portlet-name>curation-manager</portlet-name>
+        <icon>/icon.png</icon>
+        <header-portlet-css>/css/main.css</header-portlet-css>
+        <footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+    </portlet>
+
+	<portlet>
+		<portlet-name>calculation</portlet-name>
+		<icon>/icon.png</icon>
+		<header-portlet-css>/css/main.css</header-portlet-css>
+		<footer-portlet-javascript>/js/main.js</footer-portlet-javascript>
+	</portlet>
+
+    <role-mapper>
+        <role-name>administrator</role-name>
+        <role-link>Administrator</role-link>
+    </role-mapper>
+    <role-mapper>
+        <role-name>guest</role-name>
+        <role-link>Guest</role-link>
+    </role-mapper>
+    <role-mapper>
+        <role-name>power-user</role-name>
+        <role-link>Power User</role-link>
+    </role-mapper>
+    <role-mapper>
+        <role-name>user</role-name>
+        <role-link>User</role-link>
+    </role-mapper>
+
+</liferay-portlet-app>

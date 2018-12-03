@@ -1,0 +1,35 @@
+/*화면 사용 사이즈 관련 클래스*/
+
+.col-half { float: left; width: 50%; }
+.col-quarter { float: left; width: 25%; }
+
+
+/*여백 관련 클래스*/
+
+.m-r-5 { margin-right: 5px; }
+.m-r-10 { margin-right: 10px; }
+.m-r-15 { margin-right: 15px; }
+.m-r-20 { margin-right: 20px; }
+
+.m-l-5 { margin-left: 5px; }
+.m-l-10 { margin-left: 10px; }
+.m-l-15 { margin-left: 15px; }
+.m-l-20 { margin-left: 20px; }
+
+.m-t-5 { margin-top: 5px; }
+.m-t-10 { margin-top: 10px; }
+.m-t-15 { margin-top: 15px; }
+.m-t-20 { margin-top: 20px; }
+
+.m-b-5 { margin-bottom: 5px; }
+.m-b-10 { margin-bottom: 10px; }
+.m-b-15 { margin-bottom: 15px; }
+.m-b-20 { margin-bottom: 20px; }
+
+
+/*텍스트 컬러 조정*/
+
+.text-blue { color: #428bca ; }
+.text-green { color: #5cb85c ; }
+.text-yellow { color: #f0ad4e ; }
+.text-red { color: #d9534f ; }

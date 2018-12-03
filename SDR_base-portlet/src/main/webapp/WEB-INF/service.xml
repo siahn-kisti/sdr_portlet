@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.sdr.metadata">
+    <author>jaesung</author>
+    <namespace>sdr</namespace>
+
+    <entity name="DataType" local-service="true" remote-service="true">
+        <column name="dataTypeId" type="long" primary="true"></column>
+        <column name="title" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="fileValidationRule" type="String"></column>
+        <column name="userId" type="long"></column>
+        <column name="allowedUserId" type="long"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="curateRequired" type="boolean"></column>
+        <column name="location" type="String"></column>
+        <column name="dockerImage" type="String"></column>
+        <column name="defaultPpLogicId" type="long"></column>
+
+		<column name="status" type="int"></column>
+
+        <column name="dataTypeSchemaId" type="Collection" entity="DataTypeSchema"
+                mapping-table="DataType_dataTypeSchema"></column>
+
+        <finder name="Title" return-type="Collection">
+            <finder-column name="title"></finder-column>
+        </finder>
+
+        <reference package-path="com.liferay.portlet.asset" entity="AssetEntry"/>
+        <reference package-path="com.liferay.portlet.asset" entity="AssetLink"/>
+    </entity>
+    
+    <entity name="DataView" local-service="true" remote-service="true">
+        <column name="dataViewId" type="long" primary="true"></column>
+        <column name="title" type="String"></column>
+        <column name="dataTypeId" type="long"></column>
+        <column name="html" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+        <column name="status" type="int"></column>
+        <column name="orderNo" type="int"></column>
+        <finder name="DataType" return-type="Collection">
+            <finder-column name="dataTypeId"></finder-column>
+        </finder>
+        <finder name="UserId" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="D_S" return-type="Collection">
+            <finder-column name="dataTypeId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+        <reference package-path="com.liferay.portlet.asset" entity="AssetEntry"/>
+        <reference package-path="com.liferay.portlet.asset" entity="AssetLink"/>
+    </entity>
+
+    <entity name="DataViewComponents" local-service="true" remote-service="true">
+        <column name="dataViewComponentsId" type="long" primary="true"></column>
+
+        <column name="compGroup" type="String"></column>
+        <column name="compName" type="String"></column>
+        <column name="image" type="String"></column>
+        <column name="html" type="String"></column>
+        <column name="script" type="String"></column>
+        <column name="properties" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="orderNo" type="int"></column>
+
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="modifiedDate" type="Date"></column>
+        <column name="status" type="int"></column>
+
+        <finder name="UserId" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+
+        <reference package-path="com.liferay.portlet.asset" entity="AssetEntry"/>
+        <reference package-path="com.liferay.portlet.asset" entity="AssetLink"/>
+    </entity>
+    
+    <entity name="DataTypeSchema" local-service="true" remote-service="true">
+        <column name="dataTypeSchemaId" type="long" primary="true"></column>
+        <column name="title" type="String"></column>
+        <column name="reference" type="String"></column>
+        <column name="variableType" type="String"></column>
+        <column name="variableUnit" type="String"></column>
+        <column name="essential" type="Boolean" convert-null="false"></column>
+        <column name="minimum" type="Double" convert-null="false"></column>
+        <column name="maximum" type="Double" convert-null="false"></column>
+        <column name="enums" type="String"></column>
+        <column name="pattern" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="userId" type="long"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+
+        <column name="createUserId" type="long"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="modifiedDate" type="Date"></column>
+        <column name="status" type="int"></column>
+
+        <column name="dataTypeId" type="Collection" entity="DataType"
+                mapping-table="DataType_dataTypeSchema"></column>
+
+        <finder name="variableType" return-type="Collection">
+            <finder-column name="variableType"></finder-column>
+        </finder>
+
+        <finder name="status" return-type="Collection">
+            <finder-column name="status"></finder-column>
+        </finder>
+
+        <reference package-path="com.liferay.portlet.asset" entity="AssetEntry"/>
+        <reference package-path="com.liferay.portlet.asset" entity="AssetLink"/>
+    </entity>
+    <entity name="Dataset" local-service="true" remote-service="true">
+        <column name="datasetId" type="long" primary="true"></column>
+        <column name="title" type="String"></column>
+        <column name="descriptiveMetadata" type="String"></column>
+        <column name="provenanceMetadata" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="location" type="String"></column>
+        <column name="metalocation" type="String"></column>
+
+        <!-- Liferay -->
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+        <column name="userName" type="String"></column>
+
+        <!-- Preservation -->
+        <column name="createDate" type="Date"></column>
+        <column name="publishDate" type="Date"></column>
+        <column name="version" type="long"></column>
+        <column name="checksum" type="String"></column>
+        <column name="doi" type="String"></column>
+
+
+        <!-- File Retrieval Field -->
+        <column name="remote" type="boolean"></column>
+        <column name="repository" type="int"></column>
+        <column name="fileFinalized" type="boolean"></column>
+        <column name="fileNum" type="int"></column>
+        <column name="hashcode" type="int"></column>
+
+        <!-- Curation Field -->
+        <column name="curateSignature" type="int"></column>
+        <column name="retrieveSignature" type="int"></column>
+        <column name="curateLogCode" type="int"></column>
+        <column name="curateLogDate" type="Date"></column>
+        <column name="curateErrorCode" type="int"></column>
+
+        <!--  Workflow field -->
+        <column name="status" type="int"/>
+        <column name="statusByUserId" type="long"/>
+        <column name="statusByUserName" type="String"/>
+        <column name="statusDate" type="Date"/>
+
+        <!--  FK field -->
+        <column name="collectionId" type="long"></column>
+        <column name="dataTypeId" type="long"></column>
+        <column name="ppLogicId" type="long"></column>
+        <column name="curateId" type="long"></column>
+        <column name="parent" type="long"></column>
+		<column name="grId" type="long"></column>
+
+
+        <order by="asc">
+            <order-column name="datasetId"></order-column>
+        </order>
+
+        <finder name="Collection" return-type="Collection">
+            <finder-column name="collectionId"></finder-column>
+        </finder>
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="DataType" return-type="Collection">
+            <finder-column name="dataTypeId"></finder-column>
+        </finder>
+        <finder name="HashCode" return-type="Collection">
+            <finder-column name="hashcode"></finder-column>
+        </finder>
+        <finder name="User" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="status" return-type="Collection">
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="version" return-type="Collection">
+            <finder-column name="version"></finder-column>
+        </finder>
+        <finder name="parent" return-type="Collection">
+            <finder-column name="parent"></finder-column>
+        </finder>
+        <finder name="G_C" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="collectionId"></finder-column>
+        </finder>
+        <finder name="U_C" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+            <finder-column name="collectionId"></finder-column>
+        </finder>
+        <finder name="C_S" return-type="Collection">
+            <finder-column name="collectionId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="D_S" return-type="Collection">
+            <finder-column name="dataTypeId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="G_S" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="G_C_S" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="collectionId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+        <finder name="U_C_S" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+            <finder-column name="collectionId"></finder-column>
+            <finder-column name="status"></finder-column>
+        </finder>
+        <reference package-path="com.liferay.portlet.asset" entity="AssetEntry"/>
+        <reference package-path="com.liferay.portlet.asset" entity="AssetLink"/>
+    </entity>
+    <entity name="Collection" local-service="true" remote-service="true">
+        <column name="collectionId" primary="true" type="long"></column>
+        <column name="title" type="String"></column>
+        <column name="userId" type="long"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="description" type="String"></column>
+        <column name="usageRight" type="String"></column>
+        <column name="doi" type="String"></column>
+        <column name="accessPolicy" type="int"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <column name="skipCurate" type="boolean"></column>
+
+        <finder name="CollectionId" return-type="com.sdr.metadata.model.Collection">
+            <finder-column name="collectionId"></finder-column>
+        </finder>
+
+        <finder name="Title" return-type="com.sdr.metadata.model.Collection">
+            <finder-column name="title"></finder-column>
+        </finder>
+
+        <finder name="GroupId" return-type="Collection">
+            <finder-column name="groupId"></finder-column>
+        </finder>
+
+        <reference package-path="com.liferay.portlet.asset" entity="AssetEntry"/>
+        <reference package-path="com.liferay.portlet.asset" entity="AssetLink"/>
+    </entity>
+    <entity name="Collection_User" local-service="true" remote-service="true">
+        <!--  FK field -->
+        <column name="collectionId" type="long" primary="true"></column>
+        <column name="userId" type="long" primary="true"></column>
+        <finder name="CollectionsPerUser" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="UsersPerCollection" return-type="Collection">
+            <finder-column name="collectionId"></finder-column>
+        </finder>
+        <finder name="U_C" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+            <finder-column name="collectionId"></finder-column>
+        </finder>
+    </entity>
+    <entity name="Collection_AllowedUser" local-service="true" remote-service="true">
+        <!--  FK field -->
+        <column name="collectionId" type="long" primary="true"></column>
+        <column name="userId" type="long" primary="true"></column>
+        <finder name="CollectionsPerAllowedUser" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="AllowedUsersPerCollection" return-type="Collection">
+            <finder-column name="collectionId"></finder-column>
+        </finder>
+    </entity>
+    <entity name="SdrUsers" local-service="true">
+        <column name="userId" primary="true" type="long"></column>
+
+        <!-- PK fields -->
+
+        <!-- Group instance -->
+
+        <!-- Audit fields -->
+        <column name="firstName" type="String"></column>
+        <column name="lastName" type="String"></column>
+        <column name="email" type="String"></column>
+        <column name="organizationId" type="long"></column>
+        <column name="createUser" type="long"></column>
+    </entity>
+
+    <entity name="SdrOrganizations" local-service="true">
+        <column name="organizationId" primary="true" type="long"></column>
+        <column name="organizationName" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="url" type="String"></column>
+        <column name="address" type="String"></column>
+        <column name="zipcode" type="String"></column>
+        <column name="city" type="String"></column>
+        <column name="country" type="String"></column>
+    </entity>
+
+    <entity name="ApiKey" local-service="true">
+        <column name="userId" type="long" primary="true"></column>
+        <column name="apiKey" type="String"></column>
+    </entity>
+
+    <entity name="Curate" local-service="true">
+        <column name="curateId" type="long" primary="true"></column>
+        <column name="title" type="String"></column>
+        <column name="createDate" type="Date"></column>
+        <column name="endDate" type="Date"></column>
+        <column name="log" type="String"></column>
+
+        <!-- FK fields -->
+        <column name="datasetId" type="long"></column>
+
+        <!-- Group instance -->
+        <column name="groupId" type="long"></column>
+
+        <!-- Audit fields -->
+        <column name="companyId" type="long"></column>
+        <column name="userId" type="long"></column>
+        <column name="userName" type="String"></column>
+
+        <finder name="Dataset" return-type="Collection">
+            <finder-column name="datasetId"></finder-column>
+        </finder>
+    </entity>
+
+    <entity name="ReqMakeSite" local-service="true">
+        <column name="requestId" type="long" primary="true"></column>
+        <column name="name" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="siteType" type="long"></column>
+        <column name="userId" type="long"></column>
+        <column name="requestDate" type="Date"></column>
+        <column name="confirmDate" type="Date"></column>
+        <column name="message" type="String"></column>
+        <column name="status" type="long"></column>
+        <column name="answer" type="String"></column>
+
+        <finder name="UserId" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+    </entity>
+    <entity name="AssetEntries_AssetTags" local-service="true" remote-service="true">
+        <!--  FK field -->
+        <column name="entryId" primary="true" type="long"></column>
+        <column name="tagId" primary="true" type="long"></column>
+    </entity>
+
+    <entity name="SimulationJob" local-service="true">
+        <column name="simulationId" type="long" primary="true"></column>
+        <column name="simulationUuid" type="String"></column>
+        <column name="jobUuid" type="String"></column>
+        <!-- PK fields -->
+
+        <!-- Group instance -->
+
+        <!-- Audit fields -->
+        <column name="inputId" type="String"></column>
+        <column name="title" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="status" type="String"></column>
+        <column name="simulationStartDt" type="Date"></column>
+        <column name="simulationEndDt" type="Date"></column>
+        <column name="userId" type="long"></column>
+        <column name="groupId" type="long"></column>
+        <column name="companyId" type="long"></column>
+        <finder name="User" return-type="Collection">
+            <finder-column name="userId"></finder-column>
+        </finder>
+        <finder name="SimUuid" return-type="Collection">
+            <finder-column name="simulationUuid"></finder-column>
+        </finder>
+        <finder name="JobUuid" return-type="Collection">
+            <finder-column name="jobUuid"></finder-column>
+        </finder>
+    </entity>
+
+
+    <entity name="CurationJob" local-service="true">
+        <column name="simulationId" type="long" primary="true"></column>
+        <column name="simulationUuid" type="String"></column>
+        <column name="jobUuid" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="status" type="String"></column>
+        <column name="simulationStartDt" type="Date"></column>
+        <column name="simulationEndDt" type="Date"></column>
+    </entity>
+
+
+    <entity name="IceBreakerVcToken" local-service="true">
+        <column name="vcToken" type="String"></column>
+        <column name="vcTokenExpired" type="Date"></column>
+        <column name="resultCode" type="int"></column>
+        <column name="tokenId" primary="true" type="long"></column>
+        <column name="activate" type="int"></column>
+        <finder name="activatedToken" return-type="com.sdr.metadata.model.IceBreakerVcToken">
+            <finder-column name="activate"></finder-column>
+        </finder>
+    </entity>
+
+    <entity name="DataType_dataTypeSchema_essential" local-service="true">
+        <column name="dataTypeId" type="long" primary="true"></column>
+        <column name="dataTypeSchemaId" type="long" primary="true"></column>
+        <column name="essential" type="boolean"></column>
+
+        <finder name="dataType_dataTypeSchema" return-type="Collection">
+            <finder-column name="dataTypeId"></finder-column>
+            <finder-column name="dataTypeSchemaId"></finder-column>
+        </finder>
+    </entity>
+
+    <entity name="MlGuiParameter" local-service="true">
+        <column name="mlGuiParameterId" primary="true" type="long"></column>
+        <column name="parentId" type="long"></column>
+        <column name="kind" type="String"></column>
+        <column name="displayName" type="String"></column>
+        <column name="valueType" type="String"></column>
+        <column name="value" type="String"></column>
+        <column name="image" type="String"></column>
+        <column name="option" type="String"></column>
+        <column name="description" type="String"></column>
+        <finder name="list" return-type="Collection">
+            <finder-column name="kind"></finder-column>
+        </finder>
+        <finder name="childList" return-type="Collection">
+            <finder-column name="parentId"></finder-column>
+            <finder-column name="kind"></finder-column>
+        </finder>
+    </entity>
+
+
+    <entity name="PpLogic" local-service="true">
+        <column name="ppId" type="long" primary="true"></column>
+        <column name="userId" type="long"></column>
+        <column name="title" type="String"></column>
+        <column name="description" type="String"></column>
+        <column name="type" type="int"></column>
+        <column name="command" type="String"></column>
+        <!-- FK fields -->
+        <column name="dataTypeId" type="long"></column>
+    </entity>
+
+
+	<entity name="GroupRule" local-service="true">
+		<column name="grId" type="long" primary="true"></column>
+		<column name="title" type="String"></column>
+		<column name="description" type="String"></column>
+		<column name="rule" type="String"></column>
+		<column name="viewAttr" type="String"></column>
+		<column name="mergeAttr" type="String"></column>
+	</entity>
+
+	<entity name="DatatypeRule" local-service="true">
+		<column name="drId" type="long" primary="true"></column>
+		<column name="grId" type="long"></column>
+		<column name="dataTypeId" type="long"></column>
+	</entity>
+
+
+
+</service-builder>

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE service-builder PUBLIC "-//Liferay//DTD Service Builder 6.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-service-builder_6_2_0.dtd">
+<service-builder package-path="com.sdr.popup">
+    <author>goopsw</author>
+    <namespace>sdr_popup</namespace>
+
+    <entity name="Popup" uuid="false" local-service="true" remote-service="false">
+        <!-- PK fields -->
+        <column name="popupId" type="long" primary="true"></column>
+
+        <column name="companyId" type="long"></column>
+        <column name="groupId" type="long"></column>
+
+        <column name="title" type="String"></column>
+        <column name="startDate" type="Date"></column>
+        <column name="finishDate" type="Date"></column>
+        <column name="width" type="int"></column>
+        <column name="height" type="int"></column>
+        <column name="enable" type="boolean"></column>
+        <column name="imgPath" type="long"></column>
+
+        <order>
+            <order-column name="startDate" order-by="desc"></order-column>
+            <order-column name="finishDate" order-by="desc"></order-column>
+            <order-column name="popupId" order-by="desc"></order-column>
+        </order>
+
+        <finder name="C_G" return-type="Collection">
+            <finder-column name="companyId"></finder-column>
+            <finder-column name="groupId"></finder-column>
+        </finder>
+        <finder name="C_G_S_F_E" return-type="Collection">
+            <finder-column name="companyId"></finder-column>
+            <finder-column name="groupId"></finder-column>
+            <finder-column name="startDate" comparator="&lt;="></finder-column>
+            <finder-column name="finishDate" comparator="&gt;="></finder-column>
+            <finder-column name="enable"></finder-column>
+        </finder>
+    </entity>
+
+</service-builder>

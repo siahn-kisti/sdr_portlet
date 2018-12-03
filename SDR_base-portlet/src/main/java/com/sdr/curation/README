@@ -1,0 +1,34 @@
+To make the curation logics work, the followings are required.
+
+(1) Install A docker client SW 
+
+(2) Set the path to the docker client at the portlet.properties file. 
+    # dockerCommand=docker
+    
+(3) Set the path to the file root at the portlet.properties file. 
+    The path needs to be under c:/Users directory in case of the Windows docker.  
+    # repositoryRoot=c:/Users/admin/root
+    
+(3) Start A docker server 
+    If you use a Windows docker, it is started automatically after the Quickstart terminal is started.
+    
+(4) Set environment Variables 
+    If you use a Windows docker, use the following command at the Quickstart terminal,
+       which prints necessary environment variables
+    $ docker-machine env --shell cmd default
+    
+    (Example)
+    SET DOCKER_TLS_VERIFY=1
+	SET DOCKER_HOST=tcp://192.168.99.100:2376
+	SET DOCKER_CERT_PATH=C:\Users\admin\.docker\machine\machines\default
+	SET DOCKER_MACHINE_NAME=default
+	SET COMPOSE_CONVERT_WINDOWS_PATHS=true
+    
+(5) Install docker images you want
+    The curation logic may call /curate/curate.sh inside a docker image to fulfill curation logics.
+    
+    $ docker load < Downloads/vasp.tar
+    $ docker images
+
+          
+          

@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.sdr.guide.model.Guide">
+		<field name="uuid" type="String" />
+		<field name="datasetId" type="long" />
+		<field name="title" type="String" />
+		<field name="dataType" type="String" />
+		<field name="contributors" type="String" />
+		<field name="collectionName" type="String" />
+		<field name="keyword" type="String" />
+		<field name="description" type="String" />
+		<field name="dataFileId" type="Long" />
+		<field name="dataFileName" type="String" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="deleteDate" type="Date" />
+	</model>
+</model-hints>

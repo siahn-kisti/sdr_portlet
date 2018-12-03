@@ -1,0 +1,346 @@
+#data-counter-type1 {
+    /*width: 100%;*/
+    padding: 5px 0;
+}
+
+#data-counter-type1 ul {
+    /*width: 1280px;*/
+    margin: 0 auto;
+    padding: 0;
+}
+
+#data-counter-type1 ul li {
+    /*width: 175px;*/
+    width: 24%;
+    margin-right: 17px;
+    padding: 25px 55px;
+    border: 1px solid #dbdbdb;
+    float: left;
+    list-style: none;
+    text-align: center;
+    color: #af71ad;
+    background-color: #fff;
+    margin-bottom: 10px;
+    box-sizing: border-box;
+}
+
+#data-counter-type1 ul li img {
+    width: 60px;
+    /*width: 33%;*/
+    float: left;
+}
+
+#data-counter-type1 ul li h5 {
+    margin: 12px 0 0 0;
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+#data-counter-type1 ul li p {
+    margin: 0;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+#data-counter-type1 ul li:last-child {
+    margin-right: 0px;
+}
+
+#data-counter-type1 ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+
+#data-counter-type2 {
+    width: 100%;
+    height: 214px;
+    margin-left: 0.4%;
+    float: left;
+}
+
+#data-counter-type2 ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#data-counter-type2 ul:after {
+    content: ""; display: block; clear: both;
+}
+
+#data-counter-type2 ul li {
+    width: 31.2%;
+    max-height: 214px;
+    padding: 46px 0;
+    margin-right: 1.7%;
+    border: 1px solid #dbdbdb;
+    float: left;
+    list-style: none;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#data-counter-type2 ul li:last-child {
+    margin-right: 0px;
+}
+
+#data-counter-type2 ul li img {
+    width: 60px;
+    margin-bottom: 5px;
+}
+
+#data-counter-type2 ul li p {
+    margin: 0 0 5px 0;
+    font-size: 26px;
+    font-weight: 300;
+    color: #fff;
+}
+
+#data-counter-type2 ul li h3 {
+    margin: 0px;
+    font-size: 12px;
+    color: #fff;
+}
+
+#data-counter-type2 {
+    width: 640px;
+    height: 250px;
+    padding: 20px 0px;
+    float: left;
+    box-sizing: border-box;
+}
+
+#data-counter-type2 ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#data-counter-type2 ul:after {
+    content: ""; display: block; clear: both;
+}
+
+#data-counter-type2 ul li {
+    width: 31.2%;
+    max-height: 214px;
+    padding: 46px 0;
+    margin-right: 1.7%;
+    border: 1px solid #dbdbdb;
+    float: left;
+    list-style: none;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#data-counter-type2 ul li:last-child {
+    margin-right: 0px;
+}
+
+#data-counter-type2 ul li img {
+    width: 60px;
+    margin-bottom: 5px;
+}
+
+#data-counter-type2 ul li p {
+    margin: 0 0 5px 0;
+    font-size: 26px;
+    font-weight: 300;
+    color: #fff;
+}
+
+#data-counter-type2 ul li h3 {
+    margin: 0px;
+    font-size: 12px;
+    color: #fff;
+}
+
+#data-counter-type4 {
+    width: 590px;
+    padding: 20px 10px;
+    float: left;
+    box-sizing: border-box;
+}
+
+#data-counter-type4 > table {
+    border-top: 2px solid #465ea5;
+    border-bottom: 1px solid #becbea;
+    margin-bottom: 0;
+}
+
+#data-counter-type4 > table > tbody > tr {
+    margin: 0px;
+    padding: 0px;
+}
+
+#data-counter-type4 > table > tbody > tr:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#data-counter-type4 > table > tbody > tr > td {
+    width: 47.2%;
+    max-height: 214px;
+    /*padding: 15px 0;*/
+    padding: 4px 0;
+    margin: 5px 4px 0.9% 0.9%;
+    border: 1px solid #dbdbdb;
+    float: left;
+    list-style: none;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    background-color: #5b8fc1;
+}
+
+#data-counter-type4 > table > tbody > tr > td:last-child {
+    margin-right: 0px;
+}
+
+#data-counter-type4 > table > tbody > tr > td > img {
+    width: 60px;
+    float: left;
+    margin: 5px 0 5px 45px;
+}
+
+#data-counter-type4 > table > tbody > tr > td > p {
+    margin: 0 0 5px 0;
+    font-size: 26px;
+    font-weight: 300;
+    color: #fff;
+}
+
+#data-counter-type4 .animatedNumberCount {
+    margin: 10px 0 5px 110px;
+    font-size: 26px;
+    font-weight: 300;
+    color: #fff;
+}
+
+#data-counter-type4 > table > tbody > tr > td h3 {
+    margin: 0px;
+    font-size: 12px;
+    color: #fff;
+}
+
+/* JAESUNG */
+#data-counter-type5 {
+    width: 295px;
+    padding: 0px 10px;
+    float: left;
+    box-sizing: border-box;
+    margin-left: 30px;
+}
+
+#data-counter-type5 > table {
+    margin-bottom: 0;
+}
+
+#data-counter-type5 > table > tbody > tr {
+    margin: 0px;
+    padding: 0px;
+}
+
+#data-counter-type5 > table > tbody > tr:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+#data-counter-type5 > table > tbody > tr > td {
+    width: 100%;
+    max-height: 214px;
+    /*padding: 15px 0;*/
+    padding: 25px 0;
+    margin: 5px 4px 0.9% 0.9%;
+    border: 1px solid #dbdbdb;
+    float: left;
+    list-style: none;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    background-color: #5b8fc1;
+}
+
+#data-counter-type5 > table > tbody > tr > td:last-child {
+    margin-right: 0px;
+}
+
+#data-counter-type5 > table > tbody > tr > td > img {
+    width: 60px;
+    float: left;
+    margin: 5px 0 5px 45px;
+}
+
+#data-counter-type5 > table > tbody > tr > td > p {
+    margin: 0 0 5px 0;
+    font-size: 26px;
+    font-weight: 300;
+    color: #fff;
+}
+
+#data-counter-type5 .animatedNumberCount {
+    margin: 10px 0 5px 110px;
+    font-size: 26px;
+    font-weight: 300;
+    color: #fff;
+}
+
+#data-counter-type5 > table > tbody > tr > td h3 {
+    margin: 0px;
+    font-size: 12px;
+    color: #fff;
+}
+/* JAESUNG */
+
+
+
+#main-count {
+    width: 590px;
+    margin: 0 auto;
+    float: left;
+    padding: 20px 0;
+}
+
+#count-board {
+    width: 100%;
+    padding: 0 10px;
+    float: left;
+    box-sizing: border-box;
+}
+
+#count-board > table {
+    border-top: 2px solid #465ea5;
+    border-bottom: 1px solid #becbea;
+    margin-bottom: 0;
+}
+
+#count-board > table > thead > tr > th {
+    font-size: 12px;
+    text-align: center;
+    border-bottom: 0;
+}
+
+#count-board > table > tbody > tr > td {
+    padding: 9px;
+    border-top: 0px;
+    font-size: 11px;
+    text-align: center;
+}
+
+#count-board > table > tbody > tr > td:first-child {
+    vertical-align: middle;
+}
+
+#count-board > table > tbody > tr > td:last-child {
+    text-align: center;
+}

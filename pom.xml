@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.sdr</groupId>
+	<artifactId>sdr-parent</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+
+	<properties>
+
+		<liferay.app.server.deploy.dir>
+			C:\Users\leegyuseong\Documents\liferay-portal-tomcat-6.2-ce-ga6-20160112152609836\liferay-portal-6.2-ce-ga6\tomcat-7.0.62\webapps
+		</liferay.app.server.deploy.dir>
+
+		<liferay.app.server.lib.global.dir>
+			C:\Users\leegyuseong\Documents\liferay-portal-tomcat-6.2-ce-ga6-20160112152609836\liferay-portal-6.2-ce-ga6\tomcat-7.0.62\lib\ext
+		</liferay.app.server.lib.global.dir>
+
+		<liferay.app.server.portal.dir>
+			C:\Users\leegyuseong\Documents\liferay-portal-tomcat-6.2-ce-ga6-20160112152609836\liferay-portal-6.2-ce-ga6\tomcat-7.0.62\webapps\root
+		</liferay.app.server.portal.dir>
+
+		<liferay.auto.deploy.dir>
+			C:\Users\leegyuseong\Documents\liferay-portal-tomcat-6.2-ce-ga6-20160112152609836\liferay-portal-6.2-ce-ga6\deploy
+		</liferay.auto.deploy.dir>
+
+		<liferay.maven.plugin.version>
+			6.2.10.16
+		</liferay.maven.plugin.version>
+
+		<liferay.version>
+			6.2.5
+		</liferay.version>
+
+		<spring.version>
+			3.2.5.RELEASE
+		</spring.version>
+
+	</properties>
+
+	<profiles>
+		<profile>
+			<id>local</id>
+			<properties>
+				<env>local</env>
+			</properties>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+		</profile>
+		<profile>
+			<id>dev</id>
+			<properties>
+				<env>dev</env>
+			</properties>
+		</profile>
+	</profiles>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.6.1</version>
+				<configuration>
+					<encoding>UTF-8</encoding>
+					<source>1.7</source>
+					<target>1.7</target>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<dependencies>
+
+	</dependencies>
+
+	<modules>
+		<!--<module>guide-portlet</module>-->
+		<module>SDR_base-service</module>
+		<module>SDR_base-portlet</module>
+		<module>SDR_rest</module>
+		<module>SDR_analysis-tools</module>
+		<module>SDR_viewDesigner</module>
+		<module>SDR_materials-theme</module>
+		<!--<module>SDR_common-hook</module>-->
+		<module>SDR_search_ext</module>
+		<!--<module>SDR_bbs</module>-->
+		<module>SDR_default-theme</module>
+		<!--<module>SDR_carousel</module>-->
+    	<!--<module>SDR_layout-template</module>-->
+		<module>SDR_mlPlatform</module>
+		<module>guide-book-portlet</module>
+	</modules>
+
+</project>

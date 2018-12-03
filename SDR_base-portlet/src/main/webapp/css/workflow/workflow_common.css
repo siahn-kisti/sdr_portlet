@@ -1,0 +1,263 @@
+/*Workflow List*/
+.aui .listBoardArea label.wf-status {
+    float: left;
+    margin: 2px 2px 0 0;
+    padding: 6px 10px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+    color: #fff;
+    cursor: auto;
+  width:100px;
+}
+
+.aui .listBoardArea label.wf-status.wf-draft {
+    /*width: 29%;*/
+    background-color: #bcbcbc;
+    /*background-image: linear-gradient(90deg, #8c8c8c 0%, #bcbcbc 100%);*/
+    /*margin-top: 10px;*/
+}
+
+.aui .listBoardArea label.wf-status.wf-scheduled {
+    /*width: 29%;*/
+    background-color: #bcbcbc;
+    /*background-image: linear-gradient(90deg, #8c8c8c 0%, #bcbcbc 100%);*/
+    /*margin-top: 10px;*/
+}
+
+.aui .listBoardArea label.wf-status.wf-pending {
+    /*width: 29%;*/
+    /*background-color: #efb74d;*/
+    background-color: #bcbcbc;
+    /*background-image: linear-gradient(90deg, #e0994b 0%, #efb74d 100%);*/
+    /*margin-top: 10px;*/
+}
+
+.aui .listBoardArea label.wf-status.wf-approved {
+    /*width: 29%;*/
+    background-color: #50a2f5;
+    /*background-color: #00a081;*/
+    /*background-image: linear-gradient(90deg, #00755f 0%, #00a081 100%);*/
+}
+
+.aui .listBoardArea label.wf-status.wf-denied {
+    /*width: 29%;*/
+    background-color: #e0994b;
+    /*background-color: #e27149;*/
+    /*background-image: linear-gradient(90deg, #cc231b 0%, #e27149 100%);*/
+}
+
+.aui .listBoardArea label.wf-status.wf-incomplete {
+    /*width: 29%;*/
+    background-color: #cc231b;
+    /*background-color: #e27149;*/
+    /*background-image: linear-gradient(90deg, #cc231b 0%, #e27149 100%);*/
+}
+
+
+.aui .listBoardArea label.wf-status-simple {
+  /*float: left;*/
+  display: inline-block;
+  margin: 0 1px;
+  padding: 0 10px 0 0;
+  border-radius: 25px;
+  font-size: 11px;
+  font-weight: bold;
+  line-height: 1;
+  text-align: left;
+  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25);
+  color: #fff;
+  cursor: auto;
+  /*width:70px;*/
+  horiz-align: center;
+}
+.aui .listBoardArea label.wf-status-simple.wf-success {
+    background-color: #6BA951;
+}
+.aui .listBoardArea label.wf-status-simple.wf-failed {
+    background-color: #F18B6F;
+}
+.aui .listBoardArea label.wf-status-simple.wf-queue {
+    background-color: #B0A2D1;
+}
+
+
+/*Workflow Detail*/
+
+.aui .wf-step {
+    margin: 0 0 50px 0;
+}
+
+.aui .wf-step:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.aui .wf-step li {
+    float: left;
+    width: 16.25%;
+    margin-right: 0.5%;
+    padding: 15px;
+    border-radius: 5px;
+    box-sizing: border-box;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+.aui .wf-step li:last-child {
+    margin-right: 0;
+}
+
+.aui .wf-step li h4 {
+    padding: 2px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #fff;
+}
+
+.aui .wf-step li.wf-Draft h4 {
+    background-color: #bcbcbc;
+    background-image: linear-gradient(90deg, #8c8c8c 0%, #bcbcbc 100%);
+}
+
+.aui .wf-step li.wf-Scheduled h4 {
+    background-color: #bcbcbc;
+    background-image: linear-gradient(90deg, #8c8c8c 0%, #bcbcbc 100%);
+}
+
+.aui .wf-step li.wf-Pending h4 {
+    background-color: #efb74d;
+    background-image: linear-gradient(90deg, #e0994b 0%, #efb74d 100%);
+}
+
+.aui .wf-step li.wf-Approved h4 {
+    background-color: #00a081;
+    background-image: linear-gradient(90deg, #00755f 0%, #00a081 100%);
+}
+
+.aui .wf-step li.wf-Denied h4 {
+    background-color: #e27149;
+    background-image: linear-gradient(90deg, #cc231b 0%, #e27149 100%);
+}
+
+.aui .wf-step li.wf-Incomplete h4 {
+    background-color: #e27149;
+    background-image: linear-gradient(90deg, #cc231b 0%, #e27149 100%);
+}
+
+.aui .wf-step li p {
+    margin: 0;
+    line-height: 1;
+    font-size: 17px;
+    color: #000;
+}
+
+.aui .wf-search {
+    margin-bottom: 0px;
+    padding: 10px 0 0 0;
+    background: #fafafb;
+}
+
+.aui .wf-search .search-inputbox {
+    position: relative;
+    width: 770px;
+    margin: 0 auto;
+    padding: 5px 20px;
+    background-color: #fff;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+}
+
+.aui .wf-search .search-inputbox .input-append {
+    margin-bottom: 0;
+}
+
+.aui .wf-search .search-inputbox .control-group {
+    margin-bottom: 0;
+    display: inline-block;
+}
+
+.aui .wf-search .search-inputbox .control-group input[type="text"] {
+    margin-bottom: 0;
+    width: 650px;
+    height: 22px;
+    border: 0;
+    box-shadow: none;
+}
+
+.aui .wf-search .search-inputbox button {
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    width: 120px;
+    border: none;
+    text-shadow: none;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.aui .wf-listBoardArea {
+    position: relative;
+}
+
+.aui .wf-listBoardArea .wf-select {
+    position: absolute;
+    top: 9px;
+    right: 20px;
+    width: 200px;
+}
+
+.aui .wf-listBoardArea .lfr-search-container {
+    margin-top: 10px;
+}
+
+.aui .wfBtns {
+    border-width: 1px;
+    width: 75px;
+    margin-bottom: 1px;
+}
+
+.aui .refreshBtn {
+    border-width: 1px;
+    width: 75px;
+    margin-bottom: 1px;
+}
+
+.aui .wf-button-holder {
+    margin: 0;
+}
+
+.wfTitleOmmit {
+    max-width: 300px;
+}
+
+.wfTitleOmmit > a {
+    max-width: 90%;
+    display: block;
+    display: -webkit-box;
+    height: 15px;
+    line-height: 15px;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cpDataset {
+    float: left;
+    padding-right: 10px;
+}
+
+.ctStaus {
+    float: left;
+    padding-right: 20px;
+}

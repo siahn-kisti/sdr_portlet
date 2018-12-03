@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE layout-templates PUBLIC "-//Liferay//DTD Layout Templates 6.2.0//EN" "http://www.liferay.com/dtd/liferay-layout-templates_6_2_0.dtd">
+
+<layout-templates>
+	<custom>
+		<layout-template id="SDR_layout-7_5" name="SDR_layout-7_5">
+			<template-path>/7n5/SDR_layout-template.tpl</template-path>
+			<wap-template-path>/7n5/SDR_layout-template.wap.tpl</wap-template-path>
+			<thumbnail-path>/7n5/SDR_layout-template.png</thumbnail-path>
+		</layout-template>
+		<layout-template id="SDR_layout-8_4" name="SDR_layout-8_4">
+			<template-path>/8n4/SDR_layout-template.tpl</template-path>
+			<wap-template-path>/8n4/SDR_layout-template.wap.tpl</wap-template-path>
+			<thumbnail-path>/8n4/SDR_layout-template.png</thumbnail-path>
+		</layout-template>
+		<layout-template id="SDR_layout-1_1_6n6" name="SDR_layout-1_1_6n6">
+			<template-path>/1_1_6n6/SDR_layout-template.tpl</template-path>
+			<wap-template-path>/1_1_6n6/SDR_layout-template.wap.tpl</wap-template-path>
+			<thumbnail-path>/1_1_6n6/SDR_layout-template.png</thumbnail-path>
+		</layout-template>
+		<layout-template id="layout-1_7n5_1" name="SDR_layout-1_7n5_1">
+			<template-path>/1_7n5_1/SDR_layout-template.tpl</template-path>
+			<wap-template-path>/1_7n5_1/SDR_layout-template.wap.tpl</wap-template-path>
+			<thumbnail-path>/1_7n5_1/SDR_layout-template.png</thumbnail-path>
+		</layout-template>
+	</custom>
+</layout-templates>

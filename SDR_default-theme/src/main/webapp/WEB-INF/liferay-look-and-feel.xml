@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.2.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd">
+
+<look-and-feel>
+	<compatibility>
+		<version>6.2.5+</version>
+	</compatibility>
+	<theme id="SDR_default" name="SDR default theme">
+		<template-extension>ftl</template-extension>
+		<!-- 테마 설정 정보 구성 -->
+		<settings>
+			<!-- 독바 NEW -->
+			<setting configurable="true" key="dockbar-vertical" type="checkbox" value="true" />
+		</settings>
+	</theme>
+</look-and-feel>

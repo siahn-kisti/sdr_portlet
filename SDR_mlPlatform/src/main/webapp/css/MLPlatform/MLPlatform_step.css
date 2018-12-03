@@ -1,0 +1,611 @@
+/*MLPlatform Step*/
+
+#MLP-step {
+    border: 1px solid #c7cdd1;
+    background: #fff;
+}
+#MLP-step ul {}
+#MLP-step ul:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+#MLP-step ul li {
+    float: left;
+    width: 20%;
+    height: 60px;
+    padding: 23px 15px;
+    text-align: center;
+    background: url("../../images/MLPlatform/bg_mlp_arrow.png") no-repeat right;
+}
+#MLP-step ul li:last-child {
+    background: none;
+}
+#MLP-step ul li a {
+    display: block;
+    font-size: 14px;
+    line-height: 14px;
+    color: #b4b9bd;
+}
+#MLP-step ul li a label {
+    width: 26px;
+    margin: -7px 5px 0 0;
+    padding: 6px;
+    border-radius: 16px;
+    font-size: 14px;
+    text-align: center;
+    line-height: 14px;
+    background: #b4b9bd;
+    color: #fff;
+    transition: 0.5s;
+}
+#MLP-step ul li.after a {
+    color: #000;
+}
+#MLP-step ul li.active a {
+    color: #4f86fc;
+}
+#MLP-step ul li.after a label {
+    background: #28b56f;
+}
+#MLP-step ul li.active a label {
+    background: #4f86fc;
+}
+#MLP-step ul li a:hover {
+    color: #000;
+}
+#MLP-step ul li a:hover label {
+    background: #000;
+}
+
+/*MLPlatform Body*/
+
+.MLP-container {
+    margin-top: -1px;
+    padding: 40px;
+    border: 1px solid #c7cdd1;
+    background: #fff;
+}
+#MLP-checkType-head {
+    margin: -40px -40px 0 0;
+    padding: 100px 40px;
+    background: url("../../images/MLPlatform/bg_mlp_step_head.png") no-repeat right;
+}
+#MLP-checkType-head h3 {
+    margin-bottom: 19px;
+    font-size: 36px;
+    color: #343a47;
+}
+#MLP-checkType-head>h3>label {
+    font-size: 36px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #28b56f;
+}
+#MLP-checkType-head p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #838a92;
+}
+#MLP-submitData-head {
+    margin: -40px -40px 0 0;
+    padding: 100px 40px;
+    background: url("../../images/MLPlatform/bg_mlp_submit_head.png") no-repeat right;
+}
+#MLP-submitData-head h3 {
+    margin-bottom: 19px;
+    font-size: 36px;
+    color: #343a47;
+}
+#MLP-submitData-head>h3>label {
+    font-size: 36px;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #28b56f;
+}
+#MLP-submitData-head p {
+    font-size: 14px;
+    line-height: 24px;
+    color: #838a92;
+}
+table.mlp_table {
+    width: 100%;
+    border-top: 2px solid #407bbb;
+    margin-bottom: 40px;
+}
+table.mlp_table thead tr th {
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    padding: 15px 0;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: bold;
+    text-align: center;
+    background: #f9f9f9;
+}
+table.mlp_table thead tr th:last-child {
+    border-right: 0;
+}
+table.mlp_table tbody tr td {
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    padding: 7px;
+    text-align: center;
+}
+table.mlp_table tbody tr th {
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    padding: 15px 0;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: bold;
+    text-align: center;
+    background: #f9f9f9;
+    height: 100px;
+}
+table.mlp_table tbody tr td:last-child {
+    border-right: 0;
+}
+table.mlp_table tbody tr td .dropdown button {
+    position: relative;
+    width: 100%;
+    padding-right: 25px;
+    text-align: left;
+}
+table.mlp_table tbody tr td .dropdown button img {
+    height: 12px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+table.mlp_table tbody tr td .dropdown button span.caret {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+table.mlp_table tbody tr td .dropdown ul.dropdown-menu {
+    width: 100%;
+}
+table.mlp_table tbody tr td .form-group {
+    margin: 0;
+}
+
+/*// MLPlatform Body*/
+
+
+/*MLPlatform Big body background*/
+
+#select_3_1 {
+    background: url("../../images/MLPlatform/bg_select_target.png") no-repeat center right;
+}
+#select_3_2 {
+    background: url("../../images/MLPlatform/bg_select_list.png") no-repeat center right #f5f6fa;
+}
+#select_3_3 {
+    background: url("../../images/MLPlatform/bg_select_ratio.png") no-repeat center right;
+}
+#select_4_1 {
+    background: url("../../images/MLPlatform/bg_algorithm_language.png") no-repeat center right;
+}
+#select_4_2 {
+    background: url("../../images/MLPlatform/bg_algorithm_task.png") no-repeat center right #f5f6fa;
+}
+#select_4_3 {
+    background: url("../../images/MLPlatform/bg_algorithm_algorithm.png") no-repeat center right;
+}
+#select_4_4 {
+    background: url("../../images/MLPlatform/bg_algorithm_visualize.png") no-repeat center right #f5f6fa;
+}
+#select_4_5 {
+    background: url("../../images/MLPlatform/bg_algorithm_analyze.png") no-repeat center right;
+}
+
+/*// MLPlatform Big body background*/
+
+
+/*MLPlatform Big body format*/
+
+.mlp_bigBody {
+    padding: 100px 40px;
+}
+.mlp_bigBody.mlp_grayBody {
+    margin: 0 -40px;
+    padding: 100px 80px;
+    background: #f5f6fa;
+}
+.mlp_bigBody>h3 {
+    margin-bottom: 45px;
+    font-size: 36px;
+    color: #343a47;
+}
+.mlp_bigBody>h3>label {
+    margin-right: 10px;
+    font-weight: bold;
+    color: #28b56f;
+}
+.mlp_bigBody>h4 {
+    margin-top: -35px;
+    margin-left: 62px;
+    margin-bottom: 45px;
+    font-size: 24px;
+    color: #838a92;
+}
+.mlp_bigBody .dropdown button {
+    position: relative;
+    width: 500px;
+    padding-right: 25px;
+    text-align: left;
+}
+.mlp_bigBody .dropdown button span.caret {
+    position: absolute;
+    right: 10px;
+}
+.mlp_bigBody .dropdown ul.dropdown-menu {
+    width: 500px;
+}
+.lists_control {}
+.lists_control:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+.lists_control .list_control_box {
+    float: left;
+    width: 225px;
+}
+.lists_control .list_control_box h4 {
+    margin-bottom: 13px;
+    font-size: 14px;
+    font-weight: bold;
+    text-align: center;
+    color: #343a47;
+}
+.lists_control .list_control_box fieldset {
+    height: 200px;
+    padding: 12px;
+    border: 1px solid #aeb5b7;
+    background: #fff;
+    overflow-x: hidden;
+}
+.lists_control .list_control_box fieldset label {
+    width: 100%;
+    margin-bottom: 3px;
+    border: 0px;
+    text-align: left;
+    font-weight: bold;
+    background: #fff;
+    color: #79808c;
+}
+.lists_control .list_control_box fieldset label:hover,
+.lists_control .list_control_box fieldset label:focus,
+.lists_control .list_control_box fieldset label:active,
+.lists_control .list_control_box fieldset label:link,
+.lists_control .list_control_box fieldset label:visited,
+input[type=checkbox] {
+    border: 0px !important;
+    box-shadow: none !important;
+    outline: none !important;
+    outline-offset: 0px !important;
+}
+.lists_control .list_control_box fieldset label.ui-state-active {
+    font-weight: bold;
+    background: #ebeef2;
+    color: #79808c;
+}
+.lists_control .list_btn {
+    float: left;
+    width: 30px;
+    margin: 50px 10px 0px 10px;
+}
+.lists_control .list_btn .btn_mlp {
+    display: block;
+    width: 30px;
+    padding: 4px 0;
+    line-height: 10px;
+    text-align: center;
+    margin-bottom: 4px;
+}
+.lists_control .list_btn .btn_mlp:last-child {
+    margin-bottom: 0px;
+}
+.lists_control .list_btn .btn_mlp img {
+    width: 12.5px;
+    height: 10px;
+    margin: 5px auto;
+}
+.mlp_slider_cont {
+    position: relative;
+    width: 500px;
+    padding-top: 100px;
+}
+.mlp_slider_cont .slider_title {
+    position: absolute;
+    top: 0px;
+}
+.mlp_slider_cont .slider_title h4 {
+    font-size: 12px;
+    font-weight: bold;
+    color: #494949;
+}
+.mlp_slider_cont .slider_title h5 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #018b7b;
+}
+.mlp_slider_cont .slider_left_title {
+    left: 0px;
+}
+.mlp_slider_cont .slider_right_title {
+    right: 0px;
+    text-align: right;
+}
+.mlp_slider_cont .slider_right_title h5 {
+    font-size: 25px;
+    font-weight: bold;
+    color: #04659a;
+}
+.mlp_slider_cont #slider {
+    margin-bottom: 35px;
+}
+.mlp_slider_cont .ui-widget.ui-widget-content {
+    border-radius: 5px;
+    border: 0px;
+    background: linear-gradient(90deg, #04659a, #018b7b);
+}
+.mlp_slider_cont .ui-widget-content .ui-state-default {
+    top: -7px;
+    width: 24px;
+    height: 24px;
+    text-align: center;
+    padding: 5px 0px;
+    border-radius: 15px;
+    font-size: 12px;
+    line-height: 12px;
+}
+.mlp_slider_cont .slider_radio fieldset label {
+    background: #fff;
+    border: 0px;
+    padding: 0px;
+    color: #878787;
+    margin-right: 25px;
+}
+.mlp_slider_cont .slider_radio fieldset label img.check {
+    display: none;
+    margin-top: -3px;
+    margin-right: 10px;
+    height: 16px;
+    vertical-align: middle;
+}
+.mlp_slider_cont .slider_radio label.ui-state-active img.check {
+    display: inline-block;
+}
+.mlp_slider_cont .slider_radio fieldset label img.icon {
+    margin-top: -3px;
+    margin-right: 5px;
+    vertical-align: middle;
+}
+.mlp_slider_cont .slider_radio .ui-state-active,
+.mlp_slider_cont .slider_radio .ui-widget-content .ui-state-active,
+.mlp_slider_cont .slider_radio .ui-widget-header .ui-state-active,
+.mlp_slider_cont .slider_radio a.ui-button:active,
+.mlp_slider_cont .slider_radio .ui-button:active,
+.mlp_slider_cont .slider_radio .ui-button.ui-state-active:hover {
+    background: #fff;
+    border: 0px;
+    box-shadow: none;
+    color: #494949;
+}
+.mlp_bigBody .mlp_algorithm_radio fieldset label {
+    width: 245px;
+    margin-right: 10px;
+    padding: 11px;
+    border: 1px solid #ebeced;
+    font-size: 18px;
+    text-align: left;
+    color: #878787;
+    background: #f7f7f7;
+}
+.mlp_bigBody .mlp_algorithm_radio fieldset label img.none_check {
+    display: inline-block;
+    margin-top: -2px;
+    margin-right: 10px;
+    height: 20px;
+    vertical-align: middle;
+}
+.mlp_bigBody .mlp_algorithm_radio fieldset label img.check {
+    display: none;
+    margin-top: -2px;
+    margin-right: 10px;
+    height: 20px;
+    vertical-align: middle;
+}
+.mlp_bigBody .mlp_algorithm_radio label.ui-state-active img.none_check {
+    display: none;
+}
+.mlp_bigBody .mlp_algorithm_radio label.ui-state-active img.check {
+    display: inline-block;
+}
+.mlp_bigBody .mlp_algorithm_radio fieldset label img.icon {
+    height: 20px;
+    margin-top: -5px;
+    margin-right: 15px;
+    vertical-align: middle;
+}
+.mlp_bigBody .mlp_algorithm_radio .ui-state-active,
+.mlp_bigBody .mlp_algorithm_radio .ui-widget-content .ui-state-active,
+.mlp_bigBody .mlp_algorithm_radio .ui-widget-header .ui-state-active,
+.mlp_bigBody .mlp_algorithm_radio a.ui-button:active,
+.mlp_bigBody .mlp_algorithm_radio .ui-button:active,
+.mlp_bigBody .mlp_algorithm_radio .ui-button.ui-state-active:hover {
+    background: #fff;
+    border: 1px solid #ebeced;
+    box-shadow: none;
+    color: #494949;
+}
+.mlp_bigBody table.mlp_bigBody_table {
+    width: 500px;
+    border-top: 2px solid #407bbb;
+    margin-top: 25px;
+    margin-bottom: 40px;
+    background: #fff;
+}
+.mlp_bigBody table.mlp_bigBody_table thead tr th {
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    padding: 15px 0;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: bold;
+    text-align: center;
+    background: #f9f9f9;
+}
+.mlp_bigBody table.mlp_bigBody_table thead tr th:last-child {
+    border-right: 0;
+}
+.mlp_bigBody table.mlp_bigBody_table tbody tr td {
+    border-right: 1px solid #d5d5d5;
+    border-bottom: 1px solid #d5d5d5;
+    padding: 7px;
+    text-align: center;
+}
+.mlp_bigBody table.mlp_bigBody_table tbody tr td:last-child {
+    border-right: 0;
+}
+.mlp_bigBody table.mlp_bigBody_table tbody tr td .dropdown button {
+    position: relative;
+    width: 100%;
+    padding-right: 25px;
+    text-align: left;
+}
+.mlp_bigBody table.mlp_bigBody_table tbody tr td .dropdown button img {
+    height: 12px;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+.mlp_bigBody table.mlp_bigBody_table tbody tr td .dropdown button span.caret {
+    position: absolute;
+    top: 5px;
+    right: 10px;
+}
+.mlp_bigBody table.mlp_bigBody_table tbody tr td .dropdown ul.dropdown-menu {
+    width: 100%;
+}
+.mlp_bigBody table.mlp_bigBody_table tbody tr td .form-group {
+    margin: 0;
+}
+.mlp_bigBody table.mlp_bigBody_table tbody tr td .mlp_bigBody_input {
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    height: 30px;
+    margin-bottom: 0px !important;
+}
+.mlp_visualize_radio {
+    
+}
+.mlp_bigBody .mlp_visualize_radio fieldset label {
+    width: 160px;
+    margin-right: 10px;
+    padding: 11px;
+    border: 1px solid #ebeced;
+    font-size: 12px;
+    text-align: center;
+    color: #878787;
+    background: #f7f7f7;
+}
+.mlp_bigBody .mlp_visualize_radio fieldset label img.none_check {
+    display: block;
+    margin: 0 auto 12px auto;
+    height: 20px;
+    vertical-align: middle;
+}
+.mlp_bigBody .mlp_visualize_radio fieldset label img.check {
+    display: none;
+    margin: 0 auto 12px auto;
+    height: 20px;
+    vertical-align: middle;
+}
+.mlp_bigBody .mlp_visualize_radio label.ui-state-active img.none_check {
+    display: none;
+}
+.mlp_bigBody .mlp_visualize_radio label.ui-state-active img.check {
+    display: block;
+}
+.mlp_bigBody .mlp_visualize_radio fieldset label img.icon {
+    display: block;
+    height: 105px;
+    margin: 0 auto 12px auto;
+    vertical-align: middle;
+}
+.mlp_bigBody .mlp_visualize_radio .ui-state-active,
+.mlp_bigBody .mlp_visualize_radio .ui-widget-content .ui-state-active,
+.mlp_bigBody .mlp_visualize_radio .ui-widget-header .ui-state-active,
+.mlp_bigBody .mlp_visualize_radio a.ui-button:active,
+.mlp_bigBody .mlp_visualize_radio .ui-button:active,
+.mlp_bigBody .mlp_visualize_radio .ui-button.ui-state-active:hover {
+    background: #fff;
+    border: 1px solid #ebeced;
+    box-shadow: none;
+    color: #494949;
+}
+
+.mlp_analyze_checkbox {
+    
+}
+.mlp_bigBody .mlp_analyze_checkbox fieldset label {
+    width: 245px;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    border: 0px;
+    font-size: 12px;
+    text-align: left;
+    color: #878787;
+    background: #fff;
+}
+.mlp_bigBody .mlp_analyze_checkbox fieldset label img.icon {
+    display: inline-block;
+    height: 14px;
+    margin: 0px 10px;
+    vertical-align: middle;
+}
+.mlp_bigBody .mlp_analyze_checkbox .ui-state-active,
+.mlp_bigBody .mlp_analyze_checkbox .ui-widget-content .ui-state-active,
+.mlp_bigBody .mlp_analyze_checkbox .ui-widget-header .ui-state-active,
+.mlp_bigBody .mlp_analyze_checkbox a.ui-button:active,
+.mlp_bigBody .mlp_analyze_checkbox .ui-button:active,
+.mlp_bigBody .mlp_analyze_checkbox .ui-button.ui-state-active:hover {
+    background: #fff;
+    border: 0px;
+    box-shadow: none;
+    color: #494949;
+}
+
+/*//MLPlatform Big body format*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,37 @@
+$FontAwesomePath: "aui/alloy-font-awesome/font" !default;
+
+@import "aui/alloy-font-awesome/scss/variables";
+@import "aui/alloy-font-awesome/scss/mixins-alloy";
+@import "aui/alloy-font-awesome/scss/path-alloy";
+
+.aui {
+	@import "aui_variables";
+
+	$iconSpritePath: '../images/aui/glyphicons-halflings.png' !default;
+	$iconWhiteSpritePath: '../images/aui/glyphicons-halflings-white.png' !default;
+
+	@import "aui/variables-alloy";
+	@import "aui/variables";
+
+	//@import "aui/bootstrap";		// Bootstrap 2.3.2 remove
+	@import "aui/bs3/bootstrap";	// Bootstrap 3.3.7
+	@import "aui/bs3/bs2_extender";	// Bootstrap 3.3.7 Extender
+	@import "aui/bs3/bs_liferay_fixes";	// Bootstrap 3.3.7 fixes for Liferay
+	
+	@import "aui_custom";
+	// @import "aui/responsive";	// Bootstrap 2.3.2 remove
+	@import "liferay_custom";
+
+	@import "aui/alloy-font-awesome/scss/core";
+	@import "aui/alloy-font-awesome/scss/bootstrap";
+	@import "aui/alloy-font-awesome/scss/extras";
+	@import "aui/alloy-font-awesome/scss/icons-alloy";
+	@import "aui/alloy-font-awesome/scss/icons-alloy-extra";
+	
+	background-color: $body-bg; 
+	color: $text-color;
+	font-family: $font-family-base;
+	font-size: $font-size-base;
+	line-height: $line-height-base;
+	margin: 0;
+}

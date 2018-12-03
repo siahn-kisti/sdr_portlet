@@ -1,0 +1,153 @@
+#battery-explorer-area {
+    width: 90%;
+    margin: 0px auto;
+}
+
+#discharge-curve {
+    width: 100%;
+}
+
+#default-properties {
+    width: 100%;
+}
+
+#battery-explorer-area table.table_02 {
+    border: 0px;
+    margin: 0px;
+}
+
+#battery-explorer-area table.table_02 tbody tr th {
+    width: 50%;
+    padding: 10px 8px 3px 8px;
+    border: 0;
+    border-right: 1px solid #bec2c6;
+    font-size: 13px;
+    font-weight: normal;
+    color: #000;
+}
+
+#battery-explorer-area table.table_02 tbody tr th.half {
+    width: 25%;
+}
+
+#battery-explorer-area table.table_02 tbody tr th:last-child {
+    border-right: 0px;
+}
+
+#battery-explorer-area table.table_02 tbody tr td {
+    padding: 0px 8px 10px 8px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 1px solid #bec2c6;
+    border-bottom: 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#battery-explorer-area table.table_02 tbody tr td:last-child {
+    border-right: 0px;
+}
+
+#battery-explorer-area table.table_03 {
+    border: 0px;
+    margin: 0px;
+}
+
+#battery-explorer-area table.table_03 tbody tr th {
+    width: 25%;
+    padding: 10px 8px 3px 8px;
+    border: 0;
+    border-right: 1px solid #bec2c6;
+    font-size: 15px;
+    font-weight: normal;
+    color: #000;
+}
+
+#battery-explorer-area table.table_03 tbody tr th:last-child {
+    border-right: 0px;
+}
+
+#battery-explorer-area table.table_03 tbody tr td {
+    padding: 8px 8px 10px 8px;
+    border-top: 0px;
+    border-left: 0px;
+    border-right: 1px solid #bec2c6;
+    border-bottom: 0px;
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#battery-explorer-area table.table_03 tbody tr td:last-child {
+    border-right: 0px;
+}
+
+#battery-explorer-area .layer-top {
+    border-top: 3px solid;
+    border-image: linear-gradient(to right, #14a8a9, #e5dd7b);
+    border-image-slice: 1;
+    border-image-width: 3px 0 0 0;
+}
+
+#battery-explorer-area .be-inner-10 {
+    border: 1px solid #bec2c6;
+    border-top: 0px;
+    padding: 10px;
+}
+
+#battery-explorer-area .be-inner-5 {
+    border: 1px solid #bec2c6;
+    border-top: 0px;
+    padding: 5px;
+}
+
+#battery-explorer-area .be-row {
+    margin-bottom: 50px;
+}
+
+#battery-explorer-area #be-middle-left {
+    float: left;
+    width: 75%;
+    margin-right: 10px;
+}
+
+#battery-explorer-area #be-middle-right {
+    float: right;
+    width: 21%;
+}
+
+#battery-explorer-area #board-area table {width: 100%;}
+
+#battery-explorer-area .voltage_pair_properties {font-weight: bold;font-size: 17px;}
+
+#battery-explorer-area #board-area table th {font-size: 16px;}
+#battery-explorer-area #board-area table td {font-size: 16px; padding: 10px 10px 5px 10px;}
+#battery-explorer-area #board-area table td i.fa-arrow-right {color: #465382; margin: 0px 10px 0px 10px;}
+#battery-explorer-area #board-area table td span.material {color: #0f6ce7; margin-right: 5px;}
+#battery-explorer-area #board-area table td:last-child {text-align:left;}
+
+#board-area {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#board-area table {
+    margin: 0;
+    border-bottom: 2px solid #a3ccbc;
+}
+
+#board-area th {
+    padding: 12px 8px;
+    border-bottom: 0px;
+    font-size: 12px;
+    text-align: center;
+    background: url('../images/bg_board_header.gif') no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+}
+
+#board-area td {
+    font-size: 12px;
+    text-align: center;
+}

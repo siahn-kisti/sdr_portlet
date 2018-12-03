@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>CFD viewer</title>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0">
+		
+		<link href="../css/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	    <link href="../css/bootstrap-slider/css/bootstrap-slider.min.css" rel="stylesheet">
+	    <link href="../css/bootstrap-touchspin/jquery.bootstrap-touchspin.min.css" rel="stylesheet">
+	    <link href="../css/bootstrap-toggle/css/bootstrap-toggle.min.css" rel="stylesheet">
+	    
+	    <link href="../css/viewer.css" rel="stylesheet">
+	    
+	    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+	  
+		<style>
+			body {
+				font-family:Malgun Gothic;
+				font-size:13px;
+				
+				margin: 0px;
+				overflow:hidden;	
+			}
+
+			#info {
+				position: absolute;
+				top: 0px; width: 100%;
+				padding: 5px;
+			}
+
+			a {
+				color: #0080ff;
+			}
+
+		</style>
+    <script>
+      var filePath = '';
+      function scriptAppend(){
+        //document.body.appendChild("<script src='../viewer.js'><\/script>");
+        var s = document.createElement("script");
+        s.type = "text/javascript";
+        s.src = "../viewer.js";
+        document.body.appendChild(s);
+      }
+    </script>
+	</head>
+	<body>
+
+	<!-- 
+   <nav class="navbar navbar-fixed-top">
+      <div class="container-fluid">
+      
+        <div id="navbar" class="" >
+           <form class="navbar-form navbar-left">
+				<button id="save-btn" type="button" class="btn btn-success btn-md " >save</button>
+				<button id="close-btn" type="button" class="btn btn-default btn-md " data-toggle="modal" data-target="#loginModal" >close</button>
+			</form>
+        </div>
+        
+        
+        <div id="xform-bar" class="">
+			<div class="navbar-form navbar-nav btn-group" style="">
+				<button id="xform-translate-btn" class="btn btn-default btn-md active">
+					<i class="fa fa-arrows"></i>
+				</button>
+				<button id="xform-rotate-btn" class="btn btn-default btn-md ">
+					<span class="glyphicon glyphicon-refresh"></span>
+				</button>
+				<button id="xform-scale-btn" class="btn btn-default btn-md ">
+					<i class="fa fa-expand"></i>
+				</button>
+			</div>
+		</div>
+      </div>
+    </nav>
+     -->
+
+    <div class="container-fluid full-height">
+      <div class="row full-height">
+			<div id="sidebar" class="nopadding" style="display:none">
+				<ul id="edit-tabs" class="nav nav-pills nav-justified">
+
+					<li role="presentation" class="active" data-tab="scene">
+						<a href="#scene" aria-controls="scene" role="tab" data-toggle="pill"></a>
+					</li>
+					
+					<li role="presentation" class="" data-tab="view">
+						<a href="#view" aria-controls="view" role="tab" data-toggle="pill"></a>
+					</li>
+
+					<li role="presentation" class="" data-tab="materials">
+						<a href="#materials" aria-controls="materials" role="tab" data-toggle="pill"></a>
+					</li>
+										
+				</ul>
+				
+				
+				<!-- Tab panes -->
+				<div id="edit-props" class="tab-content" style="">
+					<div role="tabpanel" class="tab-pane active" id="scene">
+
+						<div class="panel-group" id="accordion-scene" role="tablist" aria-multiselectable="true">
+
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab" id="heading-scene-general">
+									<h6 class="panel-title" style="font-size: 12px !important;">
+										<a data-toggle="collapse" data-target="#collapse-scene-general" aria-expanded="true" aria-controls="collapse-scene-general"> Geometry </a>
+									</h6>
+								</div>
+								<div id="collapse-scene-general" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading-scene-general">
+										
+									<div class="panel-body">
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<span>Parameters</span>
+											</div>
+											
+											
+											<ul class="list-group">
+											  <li class="list-group-item active">Dimension: X</li>
+											  <li class="list-group-item">Dimension: Y</li>
+											  <li class="list-group-item">Dimension: Z</li>
+											  <li class="list-group-item">Row</li>
+											  <li class="list-group-item">Column</li>
+											</ul>
+											
+										</div>
+
+									</div>
+								</div>
+							</div>
+							
+							
+							
+							<!-- / general -->
+
+
+
+							<!--
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab"
+									id="heading-scene-background">
+									<h6 class="panel-title" style="font-size: 12px !important;">
+										<a data-toggle="collapse"
+											data-target="#collapse-scene-background" aria-expanded="true"
+											aria-controls="collapse-scene-background"> Mesh </a> 
+											<span class="pull-right"> 
+											<input id='background-check' type="checkbox" data-toggle="toggle" data-size="mini">
+										</span>
+									</h6>
+								</div>
+					
+													
+						        <div class="panel-body" style="color:black">
+						          <div class="col-sm-12 nopadding">              
+					              
+					              	<select class='form-control mesh-select'>
+	
+										<option label='Structured'>2d grid/2d Structured.p3d</option>
+					              		<option label='Unstructured'>airfoil/naca5012xyz.dat_high.msh</option>				
+										<option label='Hybrid'>airfoil/naca0012.msh</option>
+	
+	
+					              		<option>2d grid/2d Structured naca0012.p3d</option>
+					              		<option>3d grid/3d structured_small size.p3d</option>
+					              		<option>3d grid/3d structured_big size.p3d</option>
+					              		<option>3d grid/3d structured_big size.p3d.zip</option>
+					              		
+					              		<option>2d grid/n0012_113-33.p2dfmt</option>
+					              		<option>2d grid/n0012_225-65.p2dfmt</option>
+					              		<option>3d grid/n0012_113-33.p3dfmt</option>
+					              		<option>3d grid/n0012_225-65.p3dfmt</option>
+					              		
+														              		
+										<option>msh/test_block.msh</option>
+										<option>msh/engine_block.msh</option>
+										
+										<option>msh/test_block_bin.msh</option>
+										<option>msh/engine_block_bin.msh</option>
+										<option>msh/3d structured_small size.msh</option>
+										<option>msh/indheat.msh</option>
+										<option>msh/Turbine blade STP.msh</option>
+										<option>msh/box3dhole.msh</option>
+										<option>msh/test_hybrid.msh</option>
+										<option>msh/t6.msh</option>
+										<option>msh/t13.msh</option>
+																							
+	
+					              	</select>
+					              
+					                           
+						          </div>
+						          <div>
+						          	<span id='mesh-progress'></span>
+						          </div>
+						          <div>
+						          	<span id='mesh-title'></span>
+						          </div>
+						          <div>
+						          	<span id='mesh-info'></span>
+						          </div>
+						        </div>
+						        
+							
+								
+								<div id="collapse-scene-background" role="tabpanel" aria-labelledby="heading-scene-background" class="panel-collapse collapse">
+							      <div class="panel-body">
+							        <div class="dropdown">
+							          <button type="button" data-toggle="dropdown" class="btn btn-primary dropdown-toggle form-control">Choose Background&nbsp;&nbsp;<span class="caret"></span></button>
+							
+							           <button type="button" class="btn btn-primary form-control fileUpload">
+							            <span>Upload</span>
+							            <input type="file" accept="image/x-png, image/jpeg" multiple="" class="imgUpload bg-upload upload file-input objmtl"/>
+							          </button>
+							          <ul style="width:100%" class="dropdown-menu"></ul>
+							        </div>
+							      </div>
+							    </div>
+							</div>-->
+							<!-- / fixed background -->
+
+
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab"
+									id="heading-scene-environment">
+									<h6 class="panel-title" style="font-size: 12px !important;">
+										<a data-toggle="collapse"
+											data-target="#collapse-scene-environment"
+											aria-expanded="true"
+											aria-controls="collapse-scene-environment"> Solver </a>
+										<span class="pull-right"> 
+										<input id='cubemap-check' type="checkbox" data-toggle="toggle" data-size="mini">
+										</span>
+									</h6>
+								</div>
+								<div id="collapse-scene-environment"
+									class="panel-collapse collapse" role="tabpanel"
+									aria-labelledby="heading-scene-environment">
+									<div class="panel-body">
+
+										<div id='environment-file'></div>
+
+										<div class="dropdown">
+											<button class="btn btn-primary dropdown-toggle form-control"
+												type="button" data-toggle="dropdown">
+												Choose Environment <span class="caret"></span>
+											</button>
+											<button type="button" class="btn btn-primary form-control fileUpload">
+									            <span>Upload</span>
+									            <input type="file" accept="image/x-png, image/jpeg" multiple="" class="imgUpload env-upload upload file-input objmtl"/>
+									          </button>
+											<ul class="dropdown-menu" style='width: 100%'>
+											</ul>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<!-- / environment skybox -->
+
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab"
+									id="heading-scene-postfilter">
+									<h6 class="panel-title" style="font-size: 12px !important;">
+										<a data-toggle="collapse"
+											data-target="#collapse-scene-postfilter" aria-expanded="true"
+											aria-controls="collapse-scene-background"> POST PROCESSING </a>
+									</h6>
+								</div>
+								<div id="collapse-scene-postfilter"
+									class="panel-collapse collapse" role="tabpanel"
+									aria-labelledby="heading-scene-postfilter">
+									<div class="panel-body">
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<span>Vignette</span> <label class='pull-right'> <input
+													id='vignette-slider-check' type="checkbox">
+												</label>
+											</div>
+											<div class="panel-body">
+												<input id='vignette-slider' type="text" />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- / post filter -->
+
+
+
+
+						</div>
+
+
+
+
+					</div>
+					<div role="tabpanel" class="tab-pane " id="view">
+
+
+
+						<div class="panel-group" id="accordion-view" role="tablist"
+							aria-multiselectable="true">
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab"
+									id="heading-view-lights">
+									<h6 class="panel-title" style="font-size: 12px !important;">
+										<a data-toggle="collapse"
+											data-target="#collapse-view-general"
+											href="#collapse-view-lights" aria-expanded="true"
+											aria-controls="collapse-view-lights">DISPLAY</a>
+									</h6>
+								</div>
+								<div id="collapse-view-lights"
+									class="panel-collapse collapse in" role="tabpanel"
+									aria-labelledby="heading-view-lights">
+									<div class="panel-body">
+	
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<span>VISIBILITY</span>
+											</div>
+											<div class="panel-body">
+												<div class='col-sm-12 nopadding'>
+													<input class="visibility-enable" type="checkbox" data-type="points"/> Points
+												</div>
+												
+												<div class='col-sm-12 nopadding'>
+													<input class="visibility-enable" type="checkbox" data-type="lines"/> Lines
+												</div>
+												
+												<div class='col-sm-3 nopadding'>
+													<input class="visibility-enable" type="checkbox" data-type="surfaces"/> Surfaces
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+											
+											
+											
+
+
+
+						<div class="panel-group" id="accordion-view" role="tablist"
+							aria-multiselectable="true">
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab"
+									id="heading-view-lights">
+									<h6 class="panel-title" style="font-size: 12px !important;">
+										<a data-toggle="collapse"
+											data-target="#collapse-view-general"
+											href="#collapse-view-lights" aria-expanded="true"
+											aria-controls="collapse-view-lights"> CLIP PLANES </a>
+									</h6>
+								</div>
+								<div id="collapse-view-lights"
+									class="panel-collapse collapse in" role="tabpanel"
+									aria-labelledby="heading-view-lights">
+									<div class="panel-body">
+	
+										<div class="panel panel-default">
+											<div class="panel-heading">
+												<span>ClipPlane Distance</span>
+											</div>
+											<div class="panel-body">
+												<div class='col-sm-3 nopadding'>
+													<input class="clip-enable" type="checkbox" data-axis="x"/> X
+												</div>
+												<div class='col-sm-9 nopadding'>
+													<input class='clip-slider' type="slider" data-axis='x' class='form-control slider-input'
+													data-slider-min="-1" data-slider-max="1"
+													data-slider-step="0.01" data-slider-value="0" 
+													/>
+												</div>
+												
+												<div class='col-sm-3 nopadding'>
+													<input class="clip-enable" type="checkbox" data-axis="y"/> Y
+												</div>
+												<div class='col-sm-9 nopadding'>
+													<input class='clip-slider' type="slider" data-axis='y' class='form-control slider-input'
+													data-slider-min="-1" data-slider-max="1"
+													data-slider-step="0.01" data-slider-value="0" 
+													/>
+												</div>
+												
+												<div class='col-sm-3 nopadding'>
+													<input class="clip-enable" type="checkbox" data-axis="z"/> Z
+												</div>
+												<div class='col-sm-9 nopadding'>
+													<input class='clip-slider' type="slider" data-axis='z' class='form-control slider-input'
+													data-slider-min="-1" data-slider-max="1"
+													data-slider-step="0.01" data-slider-value="0" 
+													/>
+												</div>
+											</div>
+										</div>
+											
+
+
+										<div class="panel panel-default">
+											<div class="panel-heading" role="tab"
+												id="heading-view-lights">
+												<h6 class="panel-title" style="font-size: 12px !important;">
+													PLANE PROPERTIES</h6>
+											</div>
+
+											<div class="panel-body">
+												<ul class='light-props pagination'>
+													<li class='active'><a data-toggle='pill' href='#None'>None</a></li>
+													<li><a style="width: 60px;" data-toggle='tab'
+														href='#DirectionalLight'>Global</a></li>
+													<li><a data-toggle='tab' href='#PointLight'>Local</a></li>
+												</ul>
+
+												<div class='tab-content'>
+
+													<div id='None' class='tab-pane fade in active'></div>
+
+													<div id='DirectionalLight' class='tab-pane fade'>
+
+														<div class='col-sm-12 nopadding vertical-align color-group'>
+															<div class='col-sm-3 nopadding'>
+																<input type='color'
+																	class='form-control nopadding multiply'
+																	data-path='color' />
+															</div>
+															<div class='col-sm-9 nopadding'>
+																<input type="color-slider"
+																	class='form-control slider-input' data-target="color"
+																	data-slider-min="0" data-slider-max="100"
+																	data-slider-step="1">
+															</div>
+														</div>
+
+														<div class='col-sm-12 nopadding'>
+															<span>Attached to Camera</span> 
+															<span class='pull-right'>
+																<input id="atc_dir" type='checkbox' data-path='attachedToCamera' data-toggle='toggle' data-size='mini'>
+															</span>
+														</div>
+
+														<div class='col-sm-12 nopadding vertical-align'>
+															<span>Intensity</span>
+														</div>
+														<div class='col-sm-12 nopadding vertical-align'>
+															<input type="slider" class='form-control slider-input'
+																data-path="intensity" data-slider-min="0"
+																data-slider-max="1" data-slider-step="0.01">
+														</div>
+
+
+
+														<div class='col-sm-12 nopadding'>
+															<span>Cast Shadows</span> <span class='pull-right'>
+																<input class='cast-shadow' type='checkbox'
+																data-path='castShadow' data-toggle='toggle'
+																data-size='mini'>
+															</span>
+														</div>
+
+
+														<div class='col-sm-12 nopadding vertical-align'>
+															<span>Shadow Bias</span>
+														</div>
+														<div class='col-sm-12 nopadding vertical-align'>
+															<input type="slider" class='form-control slider-input'
+																data-path="shadow.bias" data-slider-min="0"
+																data-slider-max="1" data-slider-step="0.001">
+														</div>
+
+
+													</div>
+
+													<div id='PointLight' class='tab-pane fade'>
+
+														<div
+															class='col-sm-12 nopadding vertical-align color-group'>
+															<div class='col-sm-3 nopadding'>
+																<input type='color'
+																	class='form-control nopadding multiply'
+																	data-path='color' />
+															</div>
+															<div class='col-sm-9 nopadding'>
+																<input type="color-slider"
+																	class='form-control slider-input' data-target="color"
+																	data-slider-min="0" data-slider-max="100"
+																	data-slider-step="1">
+															</div>
+														</div>
+
+														<div class='col-sm-12 nopadding vertical-align'>
+															<span>Intensity</span>
+														</div>
+														<div class='col-sm-12 nopadding vertical-align'>
+															<input type="slider" class='form-control slider-input'
+																data-path="intensity" data-slider-min="0"
+																data-slider-max="1" data-slider-step="0.01">
+														</div>
+
+														<div class='col-sm-12 nopadding vertical-align'>
+															<span>Falloff</span>
+														</div>
+														<div class='col-sm-12 nopadding vertical-align'>
+															<input type="slider" class='form-control slider-input'
+																data-path="decay" data-slider-min="0"
+																data-slider-max="100" data-slider-step="1">
+														</div>
+
+													</div>
+
+													<div id='SpotLight' class='tab-pane fade'>
+
+														<div
+															class='col-sm-12 nopadding vertical-align color-group'>
+															<div class='col-sm-3 nopadding'>
+																<input type='color'
+																	class='form-control nopadding multiply'
+																	data-path='color' />
+															</div>
+															<div class='col-sm-9 nopadding'>
+																<input type="color-slider"
+																	class='form-control slider-input' data-target="color"
+																	data-slider-min="0" data-slider-max="100"
+																	data-slider-step="1">
+															</div>
+														</div>
+
+														<div class='col-sm-12 nopadding vertical-align'>
+															<span>Intensity</span>
+														</div>
+														<div class='col-sm-12 nopadding vertical-align'>
+															<input type="slider" class='form-control slider-input'
+																data-path="intensity" data-slider-min="0"
+																data-slider-max="1" data-slider-step="0.01">
+														</div>
+
+														<div class='col-sm-12 nopadding vertical-align'>
+															<span>Falloff</span>
+														</div>
+														<div class='col-sm-12 nopadding vertical-align'>
+															<input type="slider" class='form-control slider-input'
+																data-path="distance" data-slider-min="0"
+																data-slider-max="100" data-slider-step="1">
+														</div>
+
+
+														<div class='col-sm-12 nopadding vertical-align'>
+															<span>Angle</span>
+														</div>
+														<div class='col-sm-12 nopadding vertical-align'>
+															<input type="slider" class='form-control slider-input'
+																data-path="angle" data-slider-min="0"
+																data-slider-max="90" data-slider-step="1">
+														</div>
+
+
+														<div class='col-sm-12 nopadding vertical-align'>
+															<span>Softness</span>
+														</div>
+														<div class='col-sm-12 nopadding vertical-align'>
+															<input type="slider" class='form-control slider-input'
+																data-path="decay" data-slider-min="0"
+																data-slider-max="100" data-slider-step="1">
+														</div>
+
+
+														<div class='col-sm-12 nopadding'>
+															<span>Cast Shadows</span> <span class='pull-right'>
+																<input class='cast-shadow' type='checkbox'
+																data-path='castShadow' data-toggle='toggle'
+																data-size='mini'>
+															</span>
+														</div>
+
+
+														<div class='col-sm-12 nopadding vertical-align'>
+															<span>Shadow Darkness</span>
+														</div>
+														<!--  <div class='col-sm-12 nopadding vertical-align'>
+															<input type="slider" class='form-control slider-input'
+																data-path="shadowDarkness" data-slider-min="0"
+																data-slider-max="1" data-slider-step="0.001">
+														</div>-->
+
+
+														<div class='col-sm-12 nopadding vertical-align'>
+															<span>Shadow Bias</span>
+														</div>
+														<div class='col-sm-12 nopadding vertical-align'>
+															<input type="slider" class='form-control slider-input'
+																data-path="shadowBias" data-slider-min="0"
+																data-slider-max="1" data-slider-step="0.001">
+														</div>
+
+
+													</div>
+
+													<div id='HemisphereLight' class='tab-pane fade'>
+
+														<div class='col-sm-12 nopadding vertical-align color-group'>
+															<div class='col-sm-3 nopadding'>
+																<input type='color'
+																	class='form-control nopadding multiply'
+																	data-path='color' />
+															</div>
+															<div class='col-sm-9 nopadding'>
+																<input type="color-slider"
+																	class='form-control slider-input' data-target="color"
+																	data-slider-min="0" data-slider-max="100"
+																	data-slider-step="1">
+															</div>
+														</div>
+
+														<div class='col-sm-12 nopadding vertical-align color-group'>
+															<div class='col-sm-3 nopadding'>
+																<input type='color'
+																	class='form-control nopadding multiply'
+																	data-path='groundColor' />
+															</div>
+															<div class='col-sm-9 nopadding'>
+																<input type="color-slider"
+																	class='form-control slider-input'
+																	data-target="groundColor" data-slider-min="0"
+																	data-slider-max="100" data-slider-step="1">
+															</div>
+														</div>
+														
+														<div class='col-sm-12 nopadding'>
+															<span>Attached to Camera</span> <span class='pull-right'>
+																<input id="atc_hemi" type='checkbox' data-path='attachedToCamera' data-toggle='toggle' data-size='mini'>
+															</span>
+														</div>
+														
+
+														<div class='col-sm-12 nopadding vertical-align'>
+															<span class='col-sm-3 nopadding'>Intensity</span>
+															<div class='col-sm-9 nopadding'>
+																<input type="slider" class='form-control slider-input'
+																	data-path="intensity" data-slider-min="0"
+																	data-slider-max="1" data-slider-step="0.01">
+															</div>
+														</div>
+
+													</div>
+
+												</div>
+											</div>
+										</div>
+									</div>									
+											
+								</div>
+							</div>
+							<!-- / general -->
+
+
+						</div>
+
+
+
+
+					</div>
+					<div role="tabpanel" class="tab-pane " id="materials">
+
+						<div class="panel-group" id="accordion-materials" role="tablist"
+							aria-multiselectable="true">
+							<div class="panel panel-default">
+								<div class="" role="tabpanel" aria-labelledby="">
+									<div class="panel-body">
+										<select id="model-mesh-select" class="form-control">
+
+										</select>
+									</div>
+								</div>
+							</div>
+							<!-- / meshes -->
+
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab"
+									id="heading-materials-diffuse">
+									<span class="panel-title" style="font-size: 12px !important;">
+										<span data-toggle="collapse"
+										data-target="#collapse-materials-diffuse" aria-expanded="true"
+										aria-controls="collapse-materials-diffuse"> DIFFUSE </span> 
+										<span class="pull-right"> 
+											<input id="diffuse-visible"	type="checkbox" data-path="visible" data-toggle="toggle" data-size="mini">
+										</span>
+									</span>
+								</div>
+								<div id="collapse-materials-diffuse"
+									class="panel-collapse collapse in" role="tabpanel"
+									aria-labelledby="heading-materials-diffuse">
+									<div class="panel-body vertical-align color-group">
+
+										<div class='col-sm-3 nopadding'>
+											<input type='color' class='form-control nopadding multiply'
+												data-axis='rgb' data-path='color' data-texture='map' />
+										</div>
+
+										<div class="col-sm-9 nopadding">
+											<input type="color-slider" class='form-control slider-input'
+												data-target="color" data-slider-min="0"
+												data-slider-max="100" data-slider-step="1">
+										</div>
+
+									</div>
+
+								</div>
+							</div>
+							<!-- / diffuse -->
+
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab"
+									id="heading-materials-specular">
+									<span class="panel-title" style="font-size: 12px !important;">
+										<span data-toggle="collapse"
+										data-target="#collapse-materials-specular"
+										aria-expanded="true"
+										aria-controls="collapse-materials-specular"> SPECULAR </span>
+
+									</span>
+								</div>
+								<div id="collapse-materials-specular"
+									class="panel-collapse collapse" role="tabpanel"
+									aria-labelledby="heading-materials-specular">
+									<div class="panel-body">
+
+										<div class=' vertical-align color-group'>
+											<div class='col-sm-3 nopadding'>
+												<input type='color' class='form-control nopadding multiply'
+													data-axis='rgb' data-path='specular' data-texture='specularMap' />
+											</div>
+											<div class="col-sm-9 nopadding">
+												<input type="color-slider" class='form-control slider-input'
+													data-target="specular" data-slider-min="0"
+													data-slider-max="100" data-slider-step="1">
+											</div>
+										</div>
+
+
+										<div class='col-sm-12 nopadding  vertical-align'>
+											<div class='col-sm-3'>
+												<label>Shininess</label>
+											</div>
+											<div class="col-sm-9 nopadding">
+												<input type="slider" class='form-control slider-input' data-path="shininess" data-slider-min="0" data-slider-max="100" data-slider-step="1">
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<!-- / specular -->
+
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab"
+									id="heading-materials-alphamap">
+									<span class="panel-title" style="font-size: 12px !important;">
+										<span data-toggle="collapse" data-target="#collapse-materials-alphamap" aria-expanded="true" aria-controls="collapse-materials-alphamap"> TRANSPARENCY </span> 
+										<span class="pull-right"> 
+										<input id="transp-enable" type="checkbox" data-path="transparent" data-toggle="toggle" data-size="mini">
+									</span>
+									</span>
+								</div>
+								<div id="collapse-materials-alphamap" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-materials-alphamap">
+									<div class="panel-body">
+
+										<div class='col-sm-12 nopadding'>
+
+											<select class="form-control" data-path='blending'>
+												<option>NoBlending</option>
+												<option>NormalBlending</option>
+												<option>AdditiveBlending</option>
+												<option>SubtractiveBlending</option>
+												<option>MultiplyBlending</option>
+												<option>CustomBlending</option>
+											</select>
+
+										</div>
+
+										<div class='col-sm-12 nopadding vertical-align'>
+											<div class='col-sm-3 nopadding'>
+												<input type='color' class='form-control nopadding' data-path='alphaMap' data-texture="transparent" data-type='texture' />
+											</div>
+
+											<div class="col-sm-9 nopadding">
+												<input type="slider" class='form-control slider-input'
+													data-path="opacity" data-slider-min="0" data-slider-max="1"
+													data-slider-step="0.01" data-slider-value='100'>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<!-- / alphamap -->
+
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab"
+									id="heading-materials-emissive">
+									<span class="panel-title" style="font-size: 12px !important;">
+										<span data-toggle="collapse" data-target="#collapse-materials-emissive" aria-expanded="true" aria-controls="collapse-materials-emissive"> EMISSIVE </span>
+
+										<!--  span class="pull-right">
+										 <input id="emissive-enable" type="checkbox" data-path="emissive" data-toggle="toggle" data-size="mini">
+										</span-->
+									</span>
+								</div>
+								<div id="collapse-materials-emissive"
+									class="panel-collapse collapse" role="tabpanel"
+									aria-labelledby="heading-materials-emissive">
+									<div class="panel-body vertical-align color-group">
+
+										<div class='col-sm-3 nopadding'>
+											<input type='color' class='form-control nopadding multiply'
+												data-axis='rgb' data-path='emissive'
+												data-texture='emissiveMap' />												
+										</div>
+										
+										
+
+										<div class="col-sm-9 nopadding">
+											<input type="color-slider" class='form-control slider-input'
+												data-target="emissive" data-slider-min="0"
+												data-slider-max="100" data-slider-step="1">
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<!-- / emissive -->
+
+
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab"
+									id="heading-materials-bump">
+									<span class="panel-title" style="font-size: 12px !important;">
+										<span data-toggle="collapse" data-target="#collapse-materials-bump" aria-expanded="true" aria-controls="collapse-materials-bump"> NORMAL/BUMP MAP </span>
+									</span>
+								</div>
+								<div id="collapse-materials-bump" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading-materials-bump">
+									
+										
+									<div class="panel-body">
+										<ul class='nav nav-pills nav-justified'>
+											<li class='active'><a data-toggle='pill' href='#normalMap'>Normal Map</a></li>
+											<li><a data-toggle='tab' href='#bumpMap'>Bump Map</a></li>
+										</ul>
+										<div class='tab-content'>
+											<div id='normalMap' class='tab-pane fade in active'>
+												<div class='col-sm-3 nopadding'>
+													<input type='color' class='form-control nopadding' data-path="normal" data-texture='normalMap' />
+												</div>
+
+												<div class="col-sm-9 nopadding">
+													<input type="slider" class='form-control slider-input' data-path="normalScale" data-slider-min="0" data-slider-max="100" data-slider-step="1">
+												</div>
+												<div class="col-sm-12 nopadding">
+													<input type="checkbox" id="invertY">Invert Y
+												</div>
+											</div>
+											<div id='bumpMap' class='tab-pane fade'>
+													<div class='col-sm-3 nopadding'>
+														<input type='color' class='form-control nopadding' data-axis='rgb' data-path="bump" data-texture='bumpMap' />
+												</div>
+	
+												<div class="col-sm-9 nopadding">
+													<input type="slider" class='form-control slider-input' data-path="bumpScale" data-slider-min="0.001" data-slider-max="1" data-slider-step="0.001">
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<!-- / bump -->
+
+
+
+
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab"
+									id="heading-materials-environment">
+									<span class="panel-title" style="font-size: 12px !important;">
+										<span data-toggle="collapse"
+										data-target="#collapse-materials-environment"
+										aria-expanded="true"
+										aria-controls="collapse-materials-environment">
+											ENVIRONMENT </span> <span class="pull-right"> <input
+											id="envmap-enable" type="checkbox" data-path='envMap'
+											data-toggle="toggle" data-size="mini">
+									</span>
+									</span>
+								</div>
+								<div id="collapse-materials-environment"
+									class="panel-collapse collapse" role="tabpanel"
+									aria-labelledby="heading-materials-environment">
+									<div class="panel-body">
+
+										<ul class='nav nav-pills nav-justified'>
+											<li class='active'><a data-toggle='pill'
+												href='#reflection'>Reflection</a></li>
+											<li><a data-toggle='tab' href='#refraction'>Refraction</a></li>
+										</ul>
+
+										<div class='tab-content'>
+											<div id='reflection' class='tab-pane fade in active'>
+												<div class='col-sm-12 nopadding'>
+													<input type="slider" class='form-control slider-input'
+														data-path="reflectivity" data-slider-min="0"
+														data-slider-max="1" data-slider-step="0.01">
+												</div>
+											</div>
+											<div id='refraction' class='tab-pane fade'>
+												<div class='col-sm-12 nopadding'>
+													<input type="slider" class='form-control slider-input'
+														data-path="refractionRatio" data-slider-min="0"
+														data-slider-max="1" data-slider-step="0.01">
+												</div>
+											</div>
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<!-- / environment -->
+
+
+							<div class="panel panel-default">
+								<div class="panel-heading" role="tab"
+									id="heading-materials-faces">
+									<h6 class="panel-title" style="font-size: 12px !important;">
+										<label data-toggle="collapse"
+											data-target="#collapse-materials-faces" aria-expanded="true"
+											aria-controls="collapse-materials-faces"> FACES </label>
+									</h6>
+								</div>
+								<div id="collapse-materials-faces"
+									class="panel-collapse collapse" role="tabpanel"
+									aria-labelledby="heading-materials-faces">
+									<div class="panel-body">
+
+										<div class='col-sm-12 nopadding'>
+
+											<select class="form-control" data-path='side'>
+												<option>FrontSide</option>
+												<option>BackSide</option>
+												<option>DoubleSide</option>
+											</select>
+
+										</div>
+
+									</div>
+								</div>
+							</div>
+							<!-- / faces -->
+
+
+						</div>
+
+						<form style="display: none" class="color-popover no-hide-color">
+						    <fieldset class="no-hide-color">
+						      <ul class="nav nav-pills nav-justified">
+						        <li class="active"><a data-toggle="pill" href="#color">Color</a></li>
+						        <li><a data-toggle="tab" href="#texture">Texture</a></li>
+						      </ul>
+						      <div class="tab-content">
+						        <div id="color" class="tab-pane fade in active">
+						          <input type="text" class="color-placer"/>
+						        </div>
+						        <div id="texture" class="tab-pane fade">
+						          <button type="button" data-toggle="modal" data-target="#manage-texture" class="form-control texture-manage btn btn-info">Manage Texture</button>
+						          <div class="dropdown">
+										<button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">
+											Choose Texture <span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu" style='width: 100%'>
+										</ul>
+									</div>
+						          
+						        </div>
+						      </div>
+						    </fieldset>
+						
+						  </form>
+						  
+						  <form style="display: none" class="texture-popover no-hide-texture">
+						    <fieldset class="no-hide-texture">
+						      <ul class="nav nav-pills nav-justified">
+						        <li class="active"><a data-toggle="tab" href="#texture2">Texture</a></li>
+						      </ul>
+						      <div class="tab-content">
+						        
+						        <div id="texture2" class="tab-pane fade in active">
+						          <button type="button" data-toggle="modal" data-target="#manage-texture" class="form-control texture-manage btn btn-info">Manage Texture</button>
+						          <div class="dropdown">
+										<button class="btn btn-primary dropdown-toggle form-control" type="button" data-toggle="dropdown">
+											Choose Texture <span class="caret"></span>
+										</button>
+										<ul class="dropdown-menu" style='width: 100%'>
+										</ul>
+									</div>
+						          
+						        </div>
+						      </div>
+						    </fieldset>
+						  </form>
+						<!-- Modal -->
+						
+						<div id="manage-texture" class="modal fade" role="dialog">
+							<div class="modal-dialog">
+
+								<!-- Modal content-->
+								<div class="modal-content">
+									<div class="modal-header">
+										<button type="button" class="close" data-dismiss="modal">&times;</button>
+										<h4 class="modal-title">Manage Textures</h4>
+										<button type='button' class="fileUpload btn btn-info" id='upload-texture'>
+
+											<span>Upload Textures</span> 
+											<input class="upload file-input objmtl" type="file" accept=".png;.jpg" multiple="">
+
+										</button>
+									</div>
+									<div class="modal-body">
+										<p>Some text in the modal.</p>
+										<ul class='list-group'>
+
+										</ul>
+										
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+									</div>
+								</div>
+
+							</div>
+						</div>
+
+
+					</div>
+									
+					
+				</div>
+			</div>
+			
+			
+		<div id="editarea" class="full-height" style="padding-left: 0px !important; padding-right: 0px !important; width:100%;" >
+
+
+			<div id="container" class="model-viewer viewer" style="height:100%; width: 100%;">
+				<div id="circle-bar" style="position: relative; display: none;"></div>
+				<div class="loading-container">
+			         <div class="main-progress">
+			         </div>
+			     </div>
+			     
+			     <div class="gui enabled">
+			     	<div class="hotspot-controls-responsive">
+			     		<div data-title="Previous Annotation" data-action="prev-annotation">
+			     			<div class="icon fa fa-caret-left"></div>
+			     		</div>
+			     		<div data-title="Next Annotation" data-action="next-annotation">
+			     			<div class="icon fa fa-caret-right"></div>
+			     		</div>
+			     	</div>
+			     	<div class="controls">
+						
+						<div class="spacer"></div>
+						<div class="general-controls widget">
+							<a href="#" class="control tooltip1 help" data-title="Help"> 
+								<i class="fa fa-question"></i>
+							</a> 
+							<a href="#" class="control tooltip1 settings has-menu" title="Settings" data-title="Settings"> 
+								<i class="fa fa-gear"></i>
+								<div class="control-menu settings-menu">
+									<div class="control-menu-wrapper">
+										<div class="control-menu-list">
+											<div class="setting" data-setting="shadingStyle" data-setting-group="" data-setting-type="">
+												<p class="setting-label">Rendering</p>
+												<p class="setting-value" data-value="defaultmat">Default</p>
+											</div>
+											<div class="setting" data-setting="annotationsVisible" data-setting-group="annotation" data-setting-type="" style="display: none;">
+												<p class="setting-label">Annotations</p>
+												<p class="setting-value" data-value="true">Visible</p>
+											</div>
+											<div class="setting" data-setting="viewpointsVisible" data-setting-group="viewpoint" data-setting-type="" style="display: none;">
+												<p class="setting-label">Viewpoints</p>
+												<p class="setting-value" data-value="true">Visible</p>
+											</div>
+											<div class="setting" data-setting="cycleMode" data-setting-group="animation" data-setting-type="" style="display: none;">
+												<p class="setting-label">Anim. Cycle</p>
+												<p class="setting-value" data-value="one">One</p>
+											</div>
+											<div class="setting" data-setting="speed" data-setting-group="animation" data-setting-type="" style="display: none;">
+												<p class="setting-label">Anim. Speed</p>
+												<p class="setting-value" data-value="1">x1</p>
+											</div>
+											<div class="setting" data-setting="viewerMode" data-setting-group="" data-setting-type="">
+												<p class="setting-label">Navigation</p>
+												<p class="setting-value" data-value="0">Orbit</p>
+											</div>
+
+										</div>
+										<div class="control-menu-pane"></div>
+									</div>
+								</div> 
+
+							</a> 
+							
+							<a id="fsBtn" class="control tooltip1 tooltip-right-bound fullscreen full-screen" data-title="Fullscreen"> 
+								<i class="fa fa-arrows-alt"></i>								
+							</a>
+						</div>
+					</div>
+					
+			     </div>
+							
+							
+				<div class="btn-group dropup clearfix animDiv col-xs-8" style="display:none; bottom:45px; left:30px;">			
+					<button type="button" class="btn btn-default btn-sm playAnim">
+						<span class="glyphicon glyphicon glyphicon-pause"></span>
+					</button>
+					<div class="btn btn-default btn-sm col-xs-5" id="btnSlider" style="cursor: Default; height: 30px;">
+						<div class="slider-bg" style="cursor: pointer; margin-top:5px; border-radius: 3px; height: 10px; position: relative; z-index: 2; background-color: #5A5A5A;"></div>	
+						<div class="slider-progressbar" style="cursor: pointer; border-radius: 3px; height: 10px; position: relative; z-index: 3; top: -10px; background-color: #6CC0FF;"></div>
+						
+					</div>
+					<div class="btn btn-default btn-sm" id="playtime" >00:00</div>
+					
+					<div class="btn btn-default btn-sm viewer-mode dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+						<span class="glyphicon glyphicon-th-list"></span>
+					</div>			
+					<ul class="dropdown-menu" role="menu" style="width: 200px; height: 200px; left:30%; overflow: auto;">
+						<li><a>Cycles</a></li>					
+						<li class='viewer-mode selected' data-value='cycling'><a>Cycle Once<span style="float:right;" class="glyphicon glyphicon-repeat"></span></a></li>
+						<li class="viewer-mode" data-value="cyclevalue">
+							<div class="btn-group" id="animCycle">
+							  <button type="button" class="btn btn-primary">x0.1</button>
+							  <button type="button" class="btn btn-primary">x0.5</button>
+							  <button type="button" class="btn btn-primary active">x1</button>
+							  <button type="button" class="btn btn-primary">x2</button>
+							</div>
+						</li>
+						<li class="divider"></li>
+						<li id="animList"><a>Animations</a></li>
+					</ul>
+				</div>
+				<div id="model_description" style="padding: 10px; overflow: auto; color: black; font-weight: bold; display: none; background: rgba(255,255,255,0.8); border: 1px solid; border-radius: 5px; position: absolute; left: 0; bottom: 90px; right: 0; margin: 0 auto; width: 60%; height: 50%;"></div>
+				<div style="position: absolute; bottom: 50px; width: 100%; display: none;" class="showroom-options">
+					<div style="width: 300px; margin: 0 auto;">
+					 	<div class="btn-group">
+					 		<button type="button" class="btn btn-default btn-sm showroom-product-info">
+					            <span class="glyphicon glyphicon-info-sign"></span>
+					        </button>
+					        <button id="modelTitle" type="button" style=" text-overflow:ellipsis; overflow:hidden; white-space:nowrap; color: black; width: 230px; height: 30px; background: rgba(255,255,255,0.8);" class="btn btn-default btn-sm showroom-product-play">
+					        </button>
+					        <button type="button" class="btn btn-default btn-sm showroom-product-toggle">
+					     		<span class="glyphicon glyphicon-play"></span>
+					     	</button>
+					 	</div>
+					</div>
+				</div>						
+							
+						
+				<div class="viewer-options" id="viewer-menu">
+					<div class="btn-group clearfix" id="annoMenu" style="display: none;"> 
+						<button title="Left" type="button" class="btn btn-default btn-sm viewer-mode glyphleft" aria-expanded="false">
+							<span class="glyphicon glyphicon-menu-left"></span>
+						</button>					
+						<div class="btn-group dropup clearfix">
+						  	<button title="Annotation mode" type="button" class="btn btn-default btn-sm viewer-mode dropdown-toggle glyphtag" data-toggle="dropdown" aria-expanded="false">
+								<span class="glyphicon glyphicon-tag" aria-hidden="true"></span>
+						  	</button>
+						  	<ul class="dropdown-menu" role="menu" style="left:-40px">				
+								<li id="annoTitle"><a style="background-color: transparent; color:#c8c8c8;">Annotations</a></li>
+								<li class="divider" id="annoDivide"></li>
+								<li><a style="background-color: transparent; color:#c8c8c8;">VIEWER MODE</a></li>
+								<li class='viewer-mode selected' data-value='AutoPilot'><a>AutoPilot</a></li>
+								<li class='viewer-mode' data-value='Hideanno'><a>Hide annotations</a></li>
+						  	</ul>
+						</div>
+						<button title="Right" type="button" class="btn btn-default btn-sm viewer-mode glyphright" aria-expanded="false">
+							<span class="glyphicon glyphicon-menu-right"></span>
+						</button>
+					</div>	
+				
+					<div class="btn-group clearfix" style="display:none;">
+				
+				        <div class="btn-group dropup clearfix">
+				            <button type="button" class="btn btn-default btn-sm viewer-mode dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
+				                <span class="glyphicon glyphicon-option-horizontal" aria-hidden="true"></span>
+				            </button>
+				            <ul class="dropdown-menu" role="menu" style='left:-100px'>
+				                <li><a href="#">SHADING</a></li>
+				                <li class="shading-mode selected clone" data-value="defaultmat"><a class="">Default</a></li>
+				                <li class="shading-mode clone" data-value="shadeless"><a>Shadeless</a></li>
+				                <li class="shading-mode" data-value="demo"><a>Demo mode</a></li>
+				                <li class="shading-mode" data-value="matcap"><a>Matcap</a></li>
+				                <li class="divider"></li>
+				                <li><a href="#">WIREFRAME</a></li>
+				                <li class="colors shading-mode" data-value="wireframe">
+				                    <a class="shading-mode-color" style="background:#FF507F" data-setting="wireframeColor" data-value="#FF507F"></a>
+				                    <a class="shading-mode-color" style="background:#2D9E84" data-setting="wireframeColor" data-value="#2D9E84"></a>
+				                    <a class="shading-mode-color" style="background:#4D9CFF" data-setting="wireframeColor" data-value="#4D9CFF"></a>
+				                    <a class="shading-mode-color" style="background:#EBC712" data-setting="wireframeColor" data-value="#EBC712"></a>
+				                    <a class="shading-mode-color" style="background:#FFFFFF" data-setting="wireframeColor" data-value="#FFFFFF"></a>
+				                    <a class="shading-mode-color" style="background-image:url('viewer/images/icons/trans_pattern.png'); background-size:14px 14px;" data-setting="wireframeColor" data-value="#000000"></a>
+				                  </li>
+				                  <li><a href="#">None</a></li>
+				              </ul>
+				    	</div>
+					</div>
+				</div>
+			</div>	
+
+				<!--  end of model-viewer-->
+
+			</div>
+		</div>
+
+    </div><!-- /.container -->
+    <script src="../engine.js"></script>
+	</body>
+</html>

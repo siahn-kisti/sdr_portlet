@@ -1,0 +1,23 @@
+body {word-break:break-all;}
+table { word-break: normal; }
+
+@import "sdr_outside/sdr_home.css"; /*home 공통 사용*/
+@import "sdr_outside/sdr_about.css"; /*about 공통 사용*/
+
+@import "sdr_common/sdr_content.css"; /*sdr 공통 사용*/
+/*@import "sdr_common/sdr_switcher.css"; !*sdr bootstrap 공통 사용*!*/
+@import "sdr_common/sdr_board.css"; /*sdr_board(게시판) 공통 사용*/
+@import "sdr_common/sdr_popup.css"; /*sdr_popup 공통 사용*/
+
+@import "search/search_content.css"; /*search 공통 사용*/
+@import "search/advanced_search.css"; /*advanced_search 사용*/
+
+@import "workflow/workflow_common.css"; /*workflow 사용*/
+
+/*@import "defaultCommunity/crud.css";*/ /*default community 사용*/
+/*@import "defaultCommunity/dc_common02.css";*/ /*default community 사용*/
+
+.edison-sdr-portlet{
+  width: 1220px;
+  margin: 0 auto;
+}

@@ -1,0 +1,123 @@
+.page-crystal-toolkit { padding:0 25px; }
+.page-crystal-toolkit .panel { margin-bottom:0; border:1px solid #e8ebef; border-radius:0; box-shadow:none; }
+.page-crystal-toolkit .panel .panel-heading { margin-bottom:0px; padding: 10px 12px; border-radius:0; border-left:4px solid #2ead7e; border-bottom:0px; font-size:14px; font-weight:bold; background:#fff; }
+.page-crystal-toolkit .panel .panel-body { padding: 15px; background:#eff2f4; }
+.page-crystal-toolkit .panel .panel-body:after { content:''; display:table; clear:both; }
+
+/*Crystal Toolkit*/
+.page-crystal-toolkit #crystal-toolkit-form { position:relative; max-width:inherit; margin-bottom:10px; }
+/* .page-crystal-toolkit #crystal-toolkit-form > div { max-width:980px; margin:0 auto; } */
+.page-crystal-toolkit #crystal-toolkit-form .form-item-testsearch { width:80%; margin:0 10% 10px; padding:0 5% 5px; border:none; background:none; }
+.page-crystal-toolkit #crystal-toolkit-form .form-item-testsearch .control-label { padding:0; padding-left:10px; width:100%; background:none; line-height:30px; }
+.page-crystal-toolkit #crystal-toolkit-form .form-item-testsearch .form-control { width:100%; }
+.page-crystal-toolkit #crystal-toolkit-form .form-item-files-upload-poscar { width:100%; margin-bottom:170px; padding:30px 0 25px; border:2px dotted #ccc; background-color:#f7f7f7; text-align:center; }
+.page-crystal-toolkit #crystal-toolkit-form .form-item-files-upload-poscar::after { content:"enter a space-separated list of material IDs or upload a CIF or POSCAR"; color:#999; font-size:0.875rem; }
+.page-crystal-toolkit #crystal-toolkit-form .form-item-files-upload-poscar .control-label { width:100%; padding:0 0 10px; }
+.page-crystal-toolkit #crystal-toolkit-form .form-item-files-upload-poscar #edit-upload-poscar { width:80%; height:50px; margin:0 10%; padding:13px 15px; border:none; background-color:#666; color:#fff; }
+
+/* Crystal Toolkit result */
+.page-crystal-toolkit #block-crystal-toolkit-crystal-formula { position:relative; width:100%; margin-bottom:20px; text-align:center; font-size:0px; }
+.page-crystal-toolkit #block-crystal-toolkit-crystal-formula > p { padding:20px 80px; background:#eff2f4; color:#000; font-size:1.5rem; }
+.page-crystal-toolkit #block-crystal-toolkit-crystal-formula > .contextual-links-processed { color:#4b4b4b; font-size:1.125rem; }
+
+/* Cristal Toolkit */
+#crystal-toolkit-form {width:100%;max-width:980px;margin:0 auto;margin-bottom:10px;}
+#crystal-toolkit-form:before { content:''; display:table; clear:both; }
+#crystal-toolkit-form:after { content:''; display:table; clear:both; }
+#crystal-toolkit-form .form-search-bar { width:800px; margin:0 auto 15px auto; padding:10px 0; border-bottom: 1px solid #ccc ; }
+#crystal-toolkit-form .form-search-bar:after { content:''; display:table; clear:both; }
+#crystal-toolkit-form .form-search-bar .form-submit { width:115px; }
+/* Select Operation */
+#crystal-toolkit-form .form-item-select-operation { float:left; width:170px; margin:0; margin-right:15px; }
+#crystal-toolkit-form .form-item-select-operation select { border:0; box-shadow:none; height:30px; margin:0; line-height:30px; }
+/* Search  수정 2017.09.14 songolmea */
+#crystal-toolkit-form .search-form { margin-bottom: 0px; padding:27px 0 27px 0; background: -webkit-linear-gradient(-90deg, #00b9e9, #2a6cb6); background: -o-linear-gradient(-90deg, #00b9e9, #2a6cb6); background: -moz-linear-gradient(-90deg, #00b9e9, #2a6cb6); background: linear-gradient(-90deg, #00b9e9, #2a6cb6); background: url('../images/material_sub/bg-datasearch.png') top right no-repeat, linear-gradient(-90deg, #00b9e9, #2a6cb6); }
+#crystal-toolkit-form select, #crystal-toolkit-form input[type="text"] { margin-bottom: 0px; }
+#crystal-toolkit-form .search-inputbox { position:relative; width: 770px; margin: 0 auto; padding:2px 20px; background-color:#fff; -moz-border-radius:20px; -webkit-border-radius:20px; border-radius:20px; }
+#crystal-toolkit-form .search-inputbox:after { content: ""; display: block; clear: both; }
+#crystal-toolkit-form .search-inputbox .form-group { margin-bottom: 0; display: inline-block; vertical-align:middle; }
+#crystal-toolkit-form .search-inputbox select.form-control { float: left; width: 150px; margin-right: 15px; border: none; }
+#crystal-toolkit-form .search-inputbox .aui-field-select:focus { outline: none; }
+#crystal-toolkit-form .search-inputbox .form-group input[type="text"] { display: inline-block; width: 494px; height:33px; border: 0; box-shadow: none; }
+#crystal-toolkit-form .search-inputbox button { position:absolute; top:3px; right:5px; width:120px; border:none; text-shadow:none; -moz-border-radius:20px; -webkit-border-radius:20px; border-radius:20px; }
+#crystal-toolkit-form .search-inputbox .form-group .error-msg { display: block; padding: 0px 12px; color: #c7254e; font-size: 12px; line-height: 2; }
+/* Upload file  수정 2017.08.30 songolmea */
+#crystal-toolkit-form #edit-file-container { display:none; float:left; width:494px; margin-bottom:0; }
+#crystal-toolkit-form #edit-file-container .form-item-upload-poscar { float:left; width:494px; margin-bottom:0; }
+#crystal-toolkit-form #edit-file-container .form-item-upload-poscar .control-label { display:block; clear:both; float:left; margin:0; font-size:12px; font-weight:normal; }
+#crystal-toolkit-form #edit-file-container .form-item-upload-poscar .form-managed-file { display:block; clear:both; width:100%; margin:0; }
+#crystal-toolkit-form #edit-file-container .form-item-upload-poscar .form-managed-file .form-file { float:left; width:100%; height:34px; margin:0 0 10px 0; padding:3px 10px; border:0; box-shadow:none;  }
+#crystal-toolkit-form #edit-file-container .form-item-upload-poscar .form-managed-file div.form-control { float:left; width:100%; height:30px; margin:0; padding:3px 10px; border-radius:3px 0 0 3px; border-right:none; }
+#crystal-toolkit-form #edit-file-container .form-item-upload-poscar .form-managed-file .input-group-btn { display:none; float:left; width:75px; }
+#crystal-toolkit-form #edit-file-container .form-item-upload-poscar .form-managed-file .form-submit { width:100%; height:30px; padding:0; border-radius:0 3px 3px 0; }
+
+/* middle-system */
+#middle-system { margin-bottom:15px; }
+#middle-system:after { content:''; display:table; clear:both; }
+
+/* middle-system_edit-remote */
+#edit-remote { float:left; width:230px; margin-right:25px; }
+#edit-remote #edit-supercell { margin-bottom:42px; }
+#edit-remote #edit-substitute { margin-bottom:0px; }
+
+/* edit-remote_edit-supercell */
+#edit-supercell .supercell_remote { width:230px; margin:0px; padding: 0px; }
+#edit-supercell .supercell_remote:after { content:''; display:table; clear:both; }
+#edit-supercell .supercell_remote li { float:left; width:60px; box-sizing:border-box; margin-left:25px; margin-bottom:15px; list-style:none; }
+#edit-supercell .supercell_remote li:nth-child(3n+1) { margin-left:0; }
+#edit-supercell .supercell_remote li input { width:60px; height:35px; line-height:35px; border:0; border-bottom:1px solid #ccc; border-radius:0px; text-align:center; }
+#edit-supercell button { width:230px; border-radius:0; padding:12px; }
+#edit-substitute .panel-body { padding: 30px 15px 15px 15px; }
+#edit-substitute .substitute { float:left; width:80%; margin-bottom:15px; }
+#edit-substitute .substitute .form-type-select { width:100%; margin:0; }
+#edit-substitute .substitute .form-type-select select { border-radius:0px; box-shadow:none; }
+#edit-substitute .remove { float:left; width:20%; }
+#edit-substitute .remove .form-submit { display:inline-block; float:right; height:30px; margin-bottom:15px; border:none; background:url(../images/page/btn_close.png) center no-repeat; font-size:0; }
+#edit-substitute .panel-body > .form-submit { display:none; width:200px; border-radius:0; }
+.phase-hidden { display:none; }
+.phase-hidden .block-title, .page-crystal-toolkit .phase-hidden .view-content h2, .page-crystal-toolkit .phase-hidden .view-content .submitted, .page-crystal-toolkit .phase-hidden .view-content .field-name-field-crystal-metadata{ display:none; }
+/* crystal-data */
+.crystal-data-area { float:left; width:610px; margin-right:25px; }
+.crystal-data-area .jmol-display>div { margin:0 auto; }
+.page-crystal-toolkit .block-views.phase-hidden .view-content .jmol-display { margin: 0 auto; width: 400px; text-align: center;}
+/* lattice-parameters */
+#lattice-parameters { float:left; width:230px; }
+/*#lattice-parameters .lattice_list, .page-crystal-toolkit #block-crystal-toolkit-crystal-lattice .volume { padding:20px; }*/
+.page-crystal-toolkit #block-crystal-toolkit-crystal-lattice .volume { padding:20px; }
+#lattice-parameters .lattice_list { padding:5px 20px; }
+#lattice-parameters .lattice_list { list-style:none; }
+#lattice-parameters .lattice_list li { margin-bottom:15px; vertical-align:middle; }
+#lattice-parameters .lattice_list li.lattice_c { margin-bottom:25px; }
+#lattice-parameters .lattice_content { margin-bottom:19px; }
+#lattice-parameters .lattice_content .lattice_libox  { display:inline-block; width:25px; height:25px; margin-right:15px; border:1px solid #ccc; border-radius:3px; font-size:.813rem; background:#eee; background:linear-gradient(#fff, #ddd); color:#000; font-weight:bold; text-align:center; line-height:25px; }
+/*#lattice-parameters .lattice_content .volume { padding: 0 20px 19px 20px; }*/
+#lattice-parameters .lattice_content .volume { padding: 0 20px; }
+#lattice-parameters .lattice_content .volume .lattice_libox { width:70px; }
+/* Crystal toolkit */
+.page-crystal-toolkit #edit-download-file { width:230px; padding:0; }
+.page-crystal-toolkit #edit-download-file .panel-body { padding:0; }
+.page-crystal-toolkit #edit-download-file .panel-body .control-label { margin-bottom:10px; color:#000; font-size:1.063rem; font-weight:normal; }
+.page-crystal-toolkit #edit-download-file .form-item-download-select { width:100%; margin:0; }
+.page-crystal-toolkit #edit-download-file .form-item-download-select .form-control { border:none; border-radius:0; background:#1c69d2; color:#fff; }
+.page-crystal-toolkit #edit-download-file--2 { display:none; }
+.page-crystal-toolkit .form-item-download-select .control-label{ display: none }
+/* Final Structure */
+.page-crystal-toolkit #final-structure { clear:both; margin-bottom:30px; }
+.page-crystal-toolkit #final-structure .element_wrapper { float:left; width:33.333%; margin-bottom:15px; padding: 0px 1.5%; text-align: center;}
+.page-crystal-toolkit #final-structure .element_wrapper .element_name { margin-top:0; margin-bottom:10px; padding:5px; border:1px solid #c0cbd5; background-color:#fff; color:#000; font-size:1.688rem; text-align:center; }
+.page-crystal-toolkit #final-structure .element_wrapper .coordinate { width:100%; }
+.page-crystal-toolkit #final-structure .element_wrapper .coordinate thead { display:block; width:100%; }
+.page-crystal-toolkit #final-structure .element_wrapper .coordinate thead tr { display:table; width:100%; }
+.page-crystal-toolkit #final-structure .element_wrapper .coordinate thead th { width:33%; height:30px; border-right:1px solid #fff; background-color:#8fa3b5; color:#fff; text-align:center; line-height:30px; }
+.page-crystal-toolkit #final-structure .element_wrapper .coordinate thead th:first-child { }
+.page-crystal-toolkit #final-structure .element_wrapper .coordinate thead th.table_last-child { border-right:none; }
+.page-crystal-toolkit #final-structure .element_wrapper .coordinate tbody { display:block; overflow:auto; width:100%; height: 200px; max-height:200px; }
+.page-crystal-toolkit #final-structure .element_wrapper .coordinate tbody tr { display:table; width:100%; }
+.page-crystal-toolkit #final-structure .element_wrapper .coordinate tbody td { width:33%; padding:5px; text-align:center; background:#fff; }
+/*no-data*/
+.no-data-crystal { padding: 30px 15% 0 15%; font-size: 18px; background: #eff2f4; text-align: center; color: #2f4954; }
+.no-data-crystal:after { content:''; display:table; clear:both; }
+.no-data-crystal .no-data-material, .no-data-crystal .no-data-file, .no-data-crystal .no-data-center { float: left; }
+.no-data-crystal .no-data-material { width: 47%; padding-top: 405px; padding-bottom: 127px; background: url('../images/material_sub/bg-nodata-materialid.png') center 120px no-repeat; background-size: 200px 273px; }
+.no-data-crystal .no-data-file { width: 47%; padding-top: 405px; padding-bottom: 127px; background: url('../images/material_sub/bg-nodata-file.png') center 120px no-repeat; background-size: 200px 273px; }
+.no-data-crystal .no-data-center { width: 6%; padding: 300px 0 220px 0; }

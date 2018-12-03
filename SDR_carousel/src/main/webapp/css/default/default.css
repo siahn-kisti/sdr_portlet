@@ -1,0 +1,96 @@
+.theme-default .scsSlider {
+	position:relative;
+	background:#fff url(loading.gif) no-repeat 50% 50%;
+	margin-bottom:50px;
+}
+.theme-default .scsSlider img {
+	position:absolute;
+	top:0px;
+	left:0px;
+	display:none;
+	width: 100%;
+	height: 500px;
+}
+
+.theme-default .scsSlider a {
+	border:0;
+	display:block;
+}
+
+.theme-default .scs-controlNav {
+	position:absolute;
+	left:50%;
+	bottom:30px;
+	margin-left:-40px; /* Tweak this to center bullets */
+}
+.theme-default .scs-controlNav a {
+	display:block;
+	width:22px;
+	height:22px;
+	background:url(bullets.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+	margin-right:3px;
+	float:left;
+}
+.theme-default .scs-controlNav a.active {
+	background-position:0 -22px;
+}
+
+.theme-default .scsPrevArea {
+	position: absolute;
+	z-index: 8;
+	width: 10%;
+	height: 500px;
+	left: 0px;
+	right: auto;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+	background-repeat: repeat-x;
+	cursor: pointer;
+}
+.theme-default .scsNextArea {
+	position: absolute;
+	z-index: 8;
+	width: 10%;
+	height: 500px;
+	right: 0px;
+	left: auto;
+	background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+	background-repeat: repeat-x;
+	cursor: pointer;
+}
+
+.scs-directionNav div:hover {
+	outline:0;
+	color: white;
+	text-decoration: none;
+	opacity:0.9;
+	cursor: pointer;
+}
+
+.theme-default .scs-directionNav a {
+	display:block;
+	width:30px;
+	height:30px;
+	background:url(arrows.png) no-repeat;
+	text-indent:-9999px;
+	border:0;
+}
+.theme-default a.scs-nextNav {
+	background-position:-30px 0;
+	right:15px;
+}
+.theme-default a.scs-prevNav {
+	left:15px;
+}
+
+.theme-default .scs-caption {
+	font-family: Helvetica, Arial, sans-serif;
+}
+.theme-default .scs-caption a {
+	color:#fff;
+	border-bottom:1px dotted #fff;
+}
+.theme-default .scs-caption a:hover {
+	color:#fff;
+}

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>View Designer</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="/SDR_base-portlet/designer/css/editor.css" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="/SDR_base-portlet/designer/css/material.css" rel="stylesheet">
+
+  <!-- Requied js -->
+  <script src="/SDR_base-portlet/designer/js/jquery.min.js"></script>
+</head>
+
+<body>
+<div class="row" style="">
+  <div class="col-sm-6" style="min-height:30px; border: 1px solid #dee2e6;">
+    <div class="panel panel-default" style="">
+      <div class="panel-heading">Simulation Results</div>
+      <div class="panel-body">
+        <table table-non-border="" class="table table-bordered table_02" data-row="5" data-col="1" style="">
+          <tbody>
+          <tr>
+            <th>Total Time</th>
+          </tr>
+          <tr>
+            <td><label style="">{{dm.totalTime}}</label></td>
+          </tr>
+          <tr>
+            <th>Total Iteration</th>
+          </tr>
+          <tr>
+            <td>{{dm.totalIteration}}</td>
+          </tr>
+          <tr>
+            <th>Flow Type</th>
+          </tr>
+          <tr>
+            <td>{{dm.flowType}}</td>
+          </tr>
+          <tr>
+            <th>AOA</th>
+          </tr>
+          <tr>
+            <td>{{dm.aoa}}</td>
+          </tr>
+          <tr>
+            <th>Reynolds Number</th>
+          </tr>
+          <tr>
+            <td>{{dm.reynoldsNumber}}</td>
+          </tr>
+          </tbody>
+        </table>&nbsp;
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6 border">
+
+    <div data-component-rlt2chart="" class="rlt2chart" style="width: 580px; height: 400px; background-color: rgb(238, 238, 238); min-width: 0px;"
+         data-file-type="{{finalPath}}" data-file-path="/result/cp.rlt">RLT File To 2D Chart</div>
+  </div>
+</div>
+
+<div class="row" style="">
+  <div class="col-sm-12" style="min-height:30px; border: 1px solid #dee2e6;">
+
+  </div>
+</div>
+
+<link class="rlt2chart-script" href="/SDR_base-portlet/js/font-awesome/font-awesome.min.css" rel="stylesheet">
+<script class="rlt2chart-script" src="/SDR_base-portlet/js/rlt2chart/plotly-latest.min.js" type="text/javascript"></script>
+<script class="rlt2chart-script" src="/SDR_base-portlet/js/rlt2chart/rlt2chart.js" type="text/javascript"></script>
+<script class="rlt2chart-script" type="text/javascript">
+  $(document).ready(function () {
+    $('.rlt2chart').each(function (index) {
+      var path = this.dataset.fileType + this.dataset.filePath;
+      $(this).attr('id', 'rlt2chart_' + index);
+      $(this).html('');
+      $(this).css('backgroundColor', 'white');
+      var container = document.querySelector('#rlt2chart_' + index);
+      var dataPath = new Array();
+      dataJson = {
+        'text': this.dataset.filePath,
+        'path': path
+      };
+      dataPath.push(dataJson);
+      createChart(container, dataPath);
+    });
+  });
+</script>
+<div class="gridrow row" style="">
+  <div class="gridrow-col col-12">
+    <div data-component-paraview="" class="paraview" style="width: 100%; height: 800px;" data-browser="Chrome|Opera|Firefox|Safari"
+         data-file-type="{{finalPath}}" data-file-path="/derived/result_000.vtp" data-file-list="{{fileList}}">
+      <img width="100%" height="100%" src="/SDR_base-portlet/images/designer/paraviewSample.jpg" style="pointer-events:none;">
+    </div>
+  </div>
+</div>
+<script class="paraview-script" src="/SDR_base-portlet/js/glance/glance.js?20180403" type="text/javascript"></script>
+<script class="paraview-script" src="/SDR_base-portlet/js/glance/glance-external-ITKReader.js?20180403" type="text/javascript"></script>
+<script class="paraview-script" src="/SDR_base-portlet/js/glance/glance-external-Workbox.js" type="text/javascript"></script>
+<script class="paraview-script" type="text/javascript">
+  $(document).ready(function () {
+    $('.paraview').each(function (index) {
+      var self = $(this).attr('id', 'paraview_' + index);
+      if (!validate(self)) return true;
+      var container = document.querySelector('#paraview_' + index);
+      var viewer = Glance.createViewer(container);
+      var path = this.dataset.fileType + this.dataset.filePath;
+      var fileName = this.dataset.filePath;
+      if (fileName.indexOf('*') > -1) {
+        var index = path.indexOf('SDR_baseportlet_path');
+        var oldPath = path.substring(0, index + 21);
+        var newPath = path.substring(index + 21);
+        var multiPath = $(this).attr('data-file-list');
+        var multiDatasetPath = multiPath + newPath;
+        $.ajax({
+          url: multiDatasetPath,
+          type: 'GET',
+          dataType: 'json',
+          success: function (data) {
+            for (var i in data) {
+              var fileName = data[i].fileName;
+              var filePath = oldPath + data[i].filePath;
+              console.log(fileName);
+              console.log(filePath);
+              viewer.loadURL(fileName, filePath);
+            }
+          },
+          error: function () {
+            alert('File Path Error!!!');
+          }
+        });
+      } else {
+        viewer.loadURL(this.dataset.filePath, path);
+      }
+    });
+  });
+</script>
+</body>
+
+</html>

@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<!DOCTYPE routes PUBLIC "-//Liferay//DTD Friendly URL Routes 6.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-friendly-url-routes_6_2_0.dtd">
+
+<routes>
+    <route>
+        <pattern>/collectionDetail/{collectionId}</pattern>
+        <generated-parameter name="controller">Collection</generated-parameter>
+        <generated-parameter name="action">collectionDetail</generated-parameter>
+        <generated-parameter name="collectionId">{collectionId}</generated-parameter>
+        <implicit-parameter name="p_p_state">normal</implicit-parameter>
+    </route>
+    <route>
+        <pattern>/datasetDetail/{datasetId}</pattern>
+        <generated-parameter name="controller">Dataset</generated-parameter>
+        <generated-parameter name="action">datasetDetail</generated-parameter>
+        <generated-parameter name="datasetId">{datasetId}</generated-parameter>
+        <implicit-parameter name="p_p_state">normal</implicit-parameter>
+    </route>
+</routes>

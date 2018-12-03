@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<!DOCTYPE look-and-feel PUBLIC "-//Liferay//DTD Look and Feel 6.2.0//EN" "http://www.liferay.com/dtd/liferay-look-and-feel_6_2_0.dtd">
+
+<look-and-feel>
+	<compatibility>
+		<version>6.2.5+</version>
+	</compatibility>
+	<theme id="SDR_materials" name="SDR_materials-theme">
+		<template-extension>ftl</template-extension>
+		<!-- 테마 설정 정보 구성 -->
+		<settings>
+			<setting configurable="true" key="content-title" type="text" value="Materials Science" />
+			<!-- 독바 NEW -->
+			<setting configurable="true" key="dockbar-vertical" type="checkbox" value="true" />
+		</settings>
+
+		<!-- 테마 색상 구성 -->
+		<color-scheme id="01" name="Uno">
+			<default-cs>true</default-cs>
+			<css-class>uno</css-class>
+			<color-scheme-images-path>${images-path}/color_schemes/${css-class}</color-scheme-images-path>
+		</color-scheme>
+		<color-scheme id="02" name="Due">
+			<css-class>due</css-class>
+		</color-scheme>
+		<color-scheme id="03" name="Tre">
+			<css-class>tre</css-class>
+		</color-scheme>		
+	</theme>
+</look-and-feel>

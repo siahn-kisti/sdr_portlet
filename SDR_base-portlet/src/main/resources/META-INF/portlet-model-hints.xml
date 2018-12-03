@@ -1,0 +1,337 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.sdr.metadata.model.ApiKey">
+		<field name="userId" type="long" />
+		<field name="apiKey" type="String" />
+	</model>
+	<model name="com.sdr.metadata.model.AssetEntries_AssetTags">
+		<field name="entryId" type="long" />
+		<field name="tagId" type="long" />
+	</model>
+	<model name="com.sdr.metadata.model.Collection">
+		<field name="collectionId" type="long" />
+		<field name="title" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="usageRight" type="String" />
+		<field name="doi" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="accessPolicy" type="int" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="skipCurate" type="boolean" />
+	</model>
+	<model name="com.sdr.metadata.model.Collection_AllowedUser">
+		<field name="collectionId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="com.sdr.metadata.model.Collection_User">
+		<field name="collectionId" type="long" />
+		<field name="userId" type="long" />
+	</model>
+	<model name="com.sdr.metadata.model.Curate">
+		<field name="curateId" type="long" />
+		<field name="title" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="createDate" type="Date" />
+		<field name="endDate" type="Date" />
+		<field name="log" type="String">
+			<hint name="max-length">20000</hint>
+		</field>
+		<field name="datasetId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+	</model>
+	<model name="com.sdr.metadata.model.CurationJob">
+		<field name="simulationId" type="long" />
+		<field name="simulationUuid" type="String" />
+		<field name="jobUuid" type="String" />
+		<field name="description" type="String" />
+		<field name="status" type="String" />
+		<field name="simulationStartDt" type="Date" />
+		<field name="simulationEndDt" type="Date" />
+	</model>
+	<model name="com.sdr.metadata.model.Dataset">
+		<field name="datasetId" type="long" />
+		<field name="title" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="descriptiveMetadata" type="String">
+			<hint name="max-length">20000</hint>
+		</field>
+		<field name="provenanceMetadata" type="String">
+			<hint name="max-length">20000</hint>
+		</field>
+		<field name="description" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="location" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="metalocation" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="userName" type="String" />
+		<field name="createDate" type="Date" />
+		<field name="publishDate" type="Date" />
+		<field name="version" type="long" />
+		<field name="checksum" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="doi" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="remote" type="boolean" />
+		<field name="repository" type="int" />
+		<field name="fileFinalized" type="boolean" />
+		<field name="fileNum" type="int" />
+		<field name="hashcode" type="int" />
+		<field name="curateSignature" type="int" />
+		<field name="retrieveSignature" type="int" />
+		<field name="curateLogCode" type="int" />
+		<field name="curateLogDate" type="Date" />
+		<field name="curateErrorCode" type="int" />
+		<field name="status" type="int">
+			<hint name="max-length">10</hint>
+		</field>
+		<field name="statusByUserId" type="long" />
+		<field name="statusByUserName" type="String" />
+		<field name="statusDate" type="Date" />
+		<field name="collectionId" type="long" />
+		<field name="dataTypeId" type="long" />
+		<field name="ppLogicId" type="long" />
+		<field name="curateId" type="long" />
+		<field name="parent" type="long" />
+		<field name="grId" type="long" />
+	</model>
+	<model name="com.sdr.metadata.model.DataType">
+		<field name="dataTypeId" type="long" />
+		<field name="title" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="fileValidationRule" type="String" />
+		<field name="userId" type="long" />
+		<field name="allowedUserId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="curateRequired" type="boolean" />
+		<field name="location" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="dockerImage" type="String" />
+		<field name="defaultPpLogicId" type="long" />
+		<field name="status" type="int" />
+	</model>
+	<model name="com.sdr.metadata.model.DataType_dataTypeSchema_essential">
+		<field name="dataTypeId" type="long" />
+		<field name="dataTypeSchemaId" type="long" />
+		<field name="essential" type="boolean" />
+	</model>
+	<model name="com.sdr.metadata.model.DatatypeRule">
+		<field name="drId" type="long" />
+		<field name="grId" type="long" />
+		<field name="dataTypeId" type="long" />
+	</model>
+	<model name="com.sdr.metadata.model.DataTypeSchema">
+		<field name="dataTypeSchemaId" type="long" />
+		<field name="title" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="reference" type="String" />
+		<field name="variableType" type="String" />
+		<field name="variableUnit" type="String" />
+		<field name="essential" type="Boolean" />
+		<field name="minimum" type="Double" />
+		<field name="maximum" type="Double" />
+		<field name="enums" type="String" />
+		<field name="pattern" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="userId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="createUserId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="status" type="int" />
+	</model>
+	<model name="com.sdr.metadata.model.DataView">
+		<field name="dataViewId" type="long" />
+		<field name="title" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="dataTypeId" type="long" />
+		<field name="html" type="String">
+			<hint name="max-length">20000</hint>
+		</field>
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="status" type="int">
+			<hint name="max-length">10</hint>
+		</field>
+		<field name="orderNo" type="int" />
+	</model>
+	<model name="com.sdr.metadata.model.DataViewComponents">
+		<field name="dataViewComponentsId" type="long" />
+		<field name="compGroup" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="compName" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="image" type="String">
+			<hint name="max-length">200</hint>
+		</field>
+		<field name="html" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="script" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="properties" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="description" type="String">
+			<hint name="max-length">4000</hint>
+		</field>
+		<field name="orderNo" type="int" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="status" type="int" />
+	</model>
+	<model name="com.sdr.metadata.model.GroupRule">
+		<field name="grId" type="long" />
+		<field name="title" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="rule" type="String" />
+		<field name="viewAttr" type="String" />
+		<field name="mergeAttr" type="String" />
+	</model>
+	<model name="com.sdr.metadata.model.IceBreakerVcToken">
+		<field name="vcToken" type="String">
+			<hint name="max-length">1000</hint>
+		</field>
+		<field name="vcTokenExpired" type="Date" />
+		<field name="resultCode" type="int" />
+		<field name="tokenId" type="long" />
+		<field name="activate" type="int" />
+	</model>
+	<model name="com.sdr.metadata.model.MlGuiParameter">
+		<field name="mlGuiParameterId" type="long" />
+		<field name="parentId" type="long" />
+		<field name="kind" type="String" />
+		<field name="displayName" type="String" />
+		<field name="valueType" type="String" />
+		<field name="value" type="String" />
+		<field name="image" type="String" />
+		<field name="option" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+	</model>
+	<model name="com.sdr.metadata.model.PpLogic">
+		<field name="ppId" type="long" />
+		<field name="userId" type="long" />
+		<field name="title" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="type" type="int" />
+		<field name="command" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="dataTypeId" type="long" />
+	</model>
+	<model name="com.sdr.metadata.model.ReqMakeSite">
+		<field name="requestId" type="long" />
+		<field name="name" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="siteType" type="long" />
+		<field name="userId" type="long" />
+		<field name="requestDate" type="Date" />
+		<field name="confirmDate" type="Date" />
+		<field name="message" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="status" type="long" />
+		<field name="answer" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+	</model>
+	<model name="com.sdr.metadata.model.SdrOrganizations">
+		<field name="organizationId" type="long" />
+		<field name="organizationName" type="String" />
+		<field name="description" type="String" />
+		<field name="url" type="String" />
+		<field name="address" type="String" />
+		<field name="zipcode" type="String" />
+		<field name="city" type="String" />
+		<field name="country" type="String" />
+	</model>
+	<model name="com.sdr.metadata.model.SdrUsers">
+		<field name="userId" type="long" />
+		<field name="firstName" type="String">
+			<hint name="max-length">50</hint>
+		</field>
+		<field name="lastName" type="String">
+			<hint name="max-length">50</hint>
+		</field>
+		<field name="email" type="String">
+			<hint name="max-length">100</hint>
+		</field>
+		<field name="organizationId" type="long" />
+		<field name="createUser" type="long" />
+	</model>
+	<model name="com.sdr.metadata.model.SimulationJob">
+		<field name="simulationId" type="long" />
+		<field name="simulationUuid" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="jobUuid" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="inputId" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="title" type="String" />
+		<field name="description" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="status" type="String" />
+		<field name="simulationStartDt" type="Date" />
+		<field name="simulationEndDt" type="Date" />
+		<field name="userId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="companyId" type="long" />
+	</model>
+</model-hints>

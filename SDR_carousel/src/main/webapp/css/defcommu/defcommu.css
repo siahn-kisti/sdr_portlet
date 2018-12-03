@@ -1,0 +1,99 @@
+/*소재 커뮤니티 공통*/
+
+
+#sub-area {
+    width: 100%;
+    margin: 0 auto;
+}
+
+#slider {
+    margin: 0px auto 10px auto;
+    width: 100%;
+    height: 500px;
+}
+
+
+.def-slide-area .scsPrevArea {
+    position: absolute;
+    z-index: 8;
+    width: 10%;
+    height:100%;
+    left: 0px;
+    right: auto;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0.0001) 100%);
+    background-repeat: repeat-x;
+    cursor: pointer;
+}
+.def-slide-area .scsNextArea {
+    position: absolute;
+    z-index: 8;
+    width: 10%;
+    height:100%;
+    right: 0px;
+    left: auto;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0.0001) 0%, rgba(0, 0, 0, 0.5) 100%);
+    background-repeat: repeat-x;
+    cursor: pointer;
+}
+
+.scs-directionNav div:hover {
+    outline:0;
+    color: white;
+    text-decoration: none;
+    opacity:0.9;
+    cursor: pointer;
+}
+
+.def-slide-area .scs-directionNav a {
+    display:block;
+    width:30px;
+    height:30px;
+    background:url(arrows.png) no-repeat;
+    text-indent:-9999px;
+    border:0;
+}
+.def-slide-area a.scs-nextNav {
+    background-position:-30px 0;
+    /*right:15px;*/
+}
+.def-slide-area a.scs-prevNav {
+    /*left:15px;*/
+}
+
+.scs-directionNav a {
+    position: absolute;
+    top: 45%;
+    z-index: 9;
+    cursor: pointer;
+}
+
+.def-slide-area .scs-controlNav {
+    position:absolute;
+    left:50%;
+    bottom:30px;
+    margin-left:-40px; /* Tweak this to center bullets */
+}
+.def-slide-area .scs-controlNav a {
+    display:block;
+    width:22px;
+    height:22px;
+    background:url(bullets.png) no-repeat;
+    text-indent:-9999px;
+    border:0;
+    margin-right:3px;
+    float:left;
+}
+.def-slide-area .scs-controlNav a.active {
+    background-position:0 -22px;
+}
+
+.aui .col-md-4, .aui .span4, .aui .span12 {
+    width: 100%;
+    padding : 0;
+}
+
+.aui .row, .aui .row-fluid {
+    margin : 0;
+}
+
+.portlet-column-content.empty { padding : 0 }

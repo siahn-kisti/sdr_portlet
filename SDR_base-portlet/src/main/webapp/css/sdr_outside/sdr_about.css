@@ -1,0 +1,136 @@
+.aui .breadcrumb>li+li:before { content: ""; padding: 0; }
+.about_area { text-align: center; }
+.edison .about_area > h4 { padding-top: 0; margin-bottom: 10px; font-size: 20px; font-weight: bold; color: #564e4b; }
+
+/*about 사업소개 영역*/
+.intro_blueTitle { display: inline-block; padding: 30px 60px 40px 60px; font-size: 14px; line-height: 1.7em; background-color: #f2efeb; -moz-border-radius: 80px; -webkit-border-radius: 80px; border-radius: 80px; }
+.intro_borderTitle { margin-top: -25px; display: inline-block; padding: 25px 30px; font-size: 14px; background-color: #fff; border-style: solid; border-image: linear-gradient(to right, #14a8a9, #e5dd7b); border-image-slice: 1; border-image-width: 5px; }
+.intro_boxing { width: 1220px; padding: 20px 0 0 0; margin: 0 auto 45px auto; }
+.intro_boxing:after { content: ""; display: block; clear: both; }
+.intro_boxing dl { float: left; border-top: 2px solid #2ead7e; border-bottom: 2px solid #2ead7e; width: 290px; height: 170px; margin-right: 20px; padding: 10px 30px; background-color: #ddf2e6; }
+.intro_boxing dl.boxing-blue { border-top: 2px solid #10589d; border-bottom: 2px solid #10589d; background-color: #e2e9f2; }
+.intro_boxing dl:last-child { margin-right: 0; }
+.intro_boxing dl dt { margin-bottom: 15px; font-size: 14px; color: #2ead7e; }
+.intro_boxing dl.boxing-blue dt { color: #10589d; }
+.intro_boxing dl dd { font-size: 12px; line-height: 1.6em; margin: 0 0 10px 0; }
+
+/*about 주요성과 영역*/
+.result_borderTitle { display: inline-block; margin-bottom: 25px; padding: 52px 30px; font-size: 18px; background: linear-gradient(to right, #2a6cb6, #00b9e9); color: #fff; -moz-border-radius: 80px; -webkit-border-radius: 80px; border-radius: 80px; }
+.result_boxing { width: 1220px; margin: 0 auto; }
+.result_boxing:after { content: ""; display: block; clear: both; }
+.result_boxing dl { float: left; width: 244px; padding: 0 10px; }
+.result_boxing dl dt { font-size: 16px; font-weight: normal; margin-bottom: 15px; }
+.result_boxing dl dd { margin: 0; }
+.result_boxing dl dd .result_graph { position: relative; width: 70%; height: 15px; margin-right: 30%; margin-bottom: 5px; background-color: #ededed; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
+.result_boxing dl dd .result_graph label { position: absolute; right: -45%; font-size: 11px; line-height: 15px; text-align: right; }
+.result_boxing dl dd .result_graph .result_graph-bar { height: 15px; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
+.result_boxing dl dd .result_graph .result_graph-bar.result_graph-school { background: linear-gradient(to right, #5a569a, #c3a4c8); }
+.result_boxing dl dd .result_graph .result_graph-bar.result_graph-subject { background: linear-gradient(to right, #e27149, #efb74d); }
+.result_boxing dl dd .result_graph .result_graph-bar.result_graph-univ { background: linear-gradient(to right, #0ca4a0, #8bcecc); }
+.result_boxing dl dd .bottom-title { padding-bottom: 10px; margin: 10px 5px; border-bottom: 1px solid #bec2c6; font-size: 11px; line-height: 14px; }
+.result_boxing dl dd .result_calendar { margin-bottom: 5px; padding: 10px; font-size: 12px; line-height: 16px; background-color: #ededed; -moz-border-radius: 10px; -webkit-border-radius: 10px; border-radius: 10px; }
+
+/*about > Download*/
+.download-container { width: 1220px; margin: 0 auto; }
+.download-container:after {
+    content: ""; display: block; clear: both;
+}
+.download-explain {
+    float: left;
+    width: 550px;
+    margin-right: 80px;
+}
+.download-explain p {
+    font-size: 14px;
+}
+.download-explain img {
+    width: 100%;
+}
+.download-explain label {
+    margin: 10px 0 35px 0;
+    font-size: 12px;
+    text-align: center;
+}
+.download-link {
+    float: left;
+    width: 590px;
+    padding: 30px;
+    border:1px solid #c8cbce;
+    background: #f9f9f9;
+}
+
+.aui .download-link h4 {
+    border-style: solid;
+    border-image: linear-gradient(90deg, #00a081 0%, #b9ef9e 100%);
+    border-image-slice: 1;
+    border-image-width: 0 0 2px 0;
+    border-right: 0px;
+    border-top: 0px;
+    border-left: 0px;
+    margin: 0 0 10px 0;
+    padding: 0 0 10px 0;
+    font-size: 15px;
+}
+
+.aui .download-link ul {
+    margin: 0 0 35px 0;
+}
+
+.aui .download-link ul:last-child {
+    margin: 0;
+}
+
+.aui .download-link ul li {
+    margin: 0 0 0 15px;
+    font-size: 12px;
+    line-height: 24px;
+    color: #000;
+}
+.aui .download-link ul li.li-title {
+    margin: 0;
+    font-size: 14px;
+}
+
+.aui .download-link ul li a {
+    font-weight: bold;
+    color: #00a081;
+    transition: 0.5s all;
+}
+.aui .download-link ul li a:hover {
+    color: #007760;
+    text-decoration: underline;
+}
+
+/*about > FAQ*/
+.faq-container { border-style: solid; border-image: linear-gradient(270deg, #21D4FD 0%, #B721FF 100%); border-image-slice: 1; border-image-width: 3px 0 0 0; border-right:0px; border-bottom:0px; border-left:0px; margin-bottom:0px; padding-bottom:0px; background-color:#fff; }
+.aui .faq-container .panel-group .panel { border-radius: 0; margin: 0; border:0; border-bottom: 1px solid #ddd; }
+.faq-container .panel-group .panel .panel-heading { position: relative; padding: 20px 12px 20px 72px; background: none; }
+.faq-container .panel-group .panel .panel-heading .faq-panel_headPoint { position: absolute; top:22px; left: 17px; padding: 10px 12px; font-size:20px; line-height: 1; color: #fff; background-color: #64546D; -moz-border-radius: 20px; -webkit-border-radius: 20px; border-radius: 20px; }
+.faq-container .panel-group .panel .panel-heading .panel-title { padding: 0; font-size: 14px; }
+.faq-container .panel-group .panel .panel-heading .panel-title a { display: block; margin-bottom: 5px; }
+.faq-container .panel-group .panel .panel-heading .panel-title label { display: inline; padding: .2em .6em .3em; margin-right: 3px; font-size: 11px; font-weight: normal; line-height: 1; background-color:#89828E; color: #fff; text-align: center; white-space: nowrap; vertical-align: baseline; border-radius: .25em; }
+.faq-container .panel-group .panel .panel-heading .panel-title .faq-panel_date { float: right; font-size: 12px; }
+.aui .faq-container .panel-group .panel .panel-body { position: relative; padding: 45px 15px 35px 72px; border-top: 2px solid #5587FF; }
+.aui .faq-container .panel-group .panel .panel-body:before { position: absolute; top:-2px; display: block; width: 52px; height: 17px; background: url('../../images/about/bg-faq-arrow.svg') no-repeat #fff; }
+.aui .faq-container .collapse.in { display: block; }
+@media (min-width: 980px) {
+    .aui .faq-container .collapse { display: none; }
+}
+
+/*about > QNA*/
+.qna-list-searcher { position: relative; margin-bottom: 5px; height: 30px; }
+.qna-list-searcher .input-group { position: absolute; right: 0; width:300px; }
+.qna-list-searcher .input-group input[type="text"] { vertical-align: middle; margin-bottom: 0; height: 30px; }
+.qna-list-container { border-style: solid; border-image: linear-gradient(270deg, #00B9E9 0%, #FFA45A 100%); border-image-slice: 1; border-image-width: 3px 0 0 0; border-right: 0px; border-bottom: 0px; border-left: 0px; margin-bottom: 0px; padding-bottom: 0px; background-color: #fff; }
+.qna-list-container table { width:100%; color: #000; }
+.qna-list-container table thead tr th, .qna-list-container table tbody tr td { padding: 10px 5px; text-align: center; border-bottom:1px solid #ddd; }
+.qna-list-container table thead tr th { font-weight: bold; background: #fafafb; }
+.qna-list-container table tbody tr td { transition: all 0.5s; background-color: #fff; }
+.qna-list-container table tbody tr:hover td { background-color: #fafafb; }
+.qna-list-container table tbody tr td.qna-list-left { text-align: left; }
+.qna-detail-container { border-style: solid; border-image: linear-gradient(270deg, #00B9E9 0%, #FFA45A 100%); border-image-slice: 1; border-image-width: 3px 0 0 0; border-right: 0px; border-bottom: 0px; border-left: 0px; margin-bottom: 0px; padding-bottom: 0px; background-color: #fff; }
+.qna-detail-container dl { border-bottom: 1px solid #ddd; }
+.qna-detail-container dl dt { padding: 25px; }
+.qna-detail-container dl dt h4 { margin-bottom: 15px; padding: 0; }
+.qna-detail-container dl dt span { padding: 5px 10px; margin-right: 5px; background-color: #ddd; font-weight: normal; }
+.qna-detail-container dl dd { margin: 0; padding: 25px; }

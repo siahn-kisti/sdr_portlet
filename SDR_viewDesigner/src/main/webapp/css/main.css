@@ -1,0 +1,15 @@
+body {word-break:break-all;}
+table { word-break: normal; }
+
+@import "sdr_common/sdr_content.css";
+/*@import "sdr_common/sdr_switcher.css";*/
+@import "sdr_common/sdr_board.css";
+@import "sdr_common/sdr_popup.css";
+
+@import "search/search_content.css";
+@import "search/advanced_search.css";
+
+.edison-sdr-portlet{
+  width: 1220px;
+  margin: 0 auto;
+}

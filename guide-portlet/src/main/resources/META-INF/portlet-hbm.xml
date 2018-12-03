@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping default-lazy="false" auto-import="false">
+	<import class="com.sdr.guide.model.Guide" />
+	<class name="com.sdr.guide.model.impl.GuideImpl" table="test_Guide">
+		<cache usage="read-write" />
+		<id name="datasetId" type="long">
+			<generator class="assigned" />
+		</id>
+		<property name="uuid" type="com.liferay.portal.dao.orm.hibernate.StringType" column="uuid_" />
+		<property name="title" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dataType" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="contributors" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="collectionName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="keyword" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="description" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="dataFileId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="dataFileName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="groupId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="companyId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userId" type="com.liferay.portal.dao.orm.hibernate.LongType" />
+		<property name="userName" type="com.liferay.portal.dao.orm.hibernate.StringType" />
+		<property name="createDate" type="org.hibernate.type.TimestampType" />
+		<property name="modifiedDate" type="org.hibernate.type.TimestampType" />
+		<property name="deleteDate" type="org.hibernate.type.TimestampType" />
+	</class>
+</hibernate-mapping>

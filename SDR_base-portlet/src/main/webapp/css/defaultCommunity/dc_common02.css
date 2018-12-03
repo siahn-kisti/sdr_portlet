@@ -1,0 +1,336 @@
+/*소재 커뮤니티 공통*/
+
+body {
+    
+    background-color: #e8e9ea;
+}
+
+#main-nav {
+    background-color: #fff;
+}
+
+#nav-header {
+    width: 100%;
+    height: 45px;
+    border-bottom: 1px solid #dbdbdb;
+    z-index: 100;
+    background: url('/images/defaultCommunity/bg_nav_header.jpg');
+    background-position: top;
+    background-size: 100% 3px;
+    background-repeat: no-repeat;
+}
+
+#nav-header a, #nav-header button {
+    color: #363636;
+}
+
+#nav-header a:hover , #nav-header button:hover {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+#nav-width {
+    width: 1280px;
+    height: 45px;
+    margin: 0 auto;
+    font-size: 12px;
+}
+
+#msc-logo {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 45px;
+}
+
+#msc-logo:hover {
+    color: #337ab7;
+    text-decoration: none;
+}
+
+#msc-logo span {
+    margin-left: 2px;
+    font-weight: bold;
+}
+
+#nav-dropdown {
+    float: right;
+    line-height: 45px;
+}
+
+#nav-dropdown .dropdown .btn {
+    padding: 0px 10px;
+    border: 0px;
+    font-size: 12px;
+    line-height: 45px;
+}
+
+#nav-login , #nav-lang {
+    margin: 0 15px;
+    line-height: 45px;
+    float: right;
+}
+
+#nav-menu {
+    width: 100%;
+    height: 50px;
+    border-bottom: 1px solid #dbdbdb;
+}
+
+#nav-menu-bar {
+    width: 1280px;
+    height: 50px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#nav-manu-area {
+    padding: 0px;
+    margin: 0px;
+}
+
+#nav-manu-area:after {
+    content: ""; display: block; clear: both;
+}
+
+#nav-manu-area>li {
+    margin-right: 40px;
+    float: left;
+    list-style: none;
+}
+
+#nav-manu-area>li>a {
+    padding: 0;
+    display: block;
+    font-size: 12px;
+    line-height: 50px;
+    color: #363636;
+}
+
+#nav-manu-area>li>a:hover {
+    
+}
+
+footer {
+    width: 100%;
+    padding: 20px 0;
+    background-color: #fff;
+}
+
+#footer-width {
+    width: 1280px;
+    margin: 0px auto;
+}
+
+.footer-text {
+    font-size: 12px;
+}
+
+.footer-text>a {
+    margin-left: 20px;
+    border-left: 1px solid #e8e8e8;
+    border-right: 1px solid #e8e8e8;
+}
+
+.footer-text>a, .footer-text>span {
+    padding: 0 20px;
+}
+
+
+
+/*커뮤니티 메인 공통*/
+
+#nav-bg {
+}
+
+#dc-main {
+    width: 980px;
+    padding: 10px 10px 20px 10px;
+    margin: 0 auto;
+    text-align: center;
+    color: #363636;
+}
+
+#dc-main>h2 {
+    margin: 10px 0 5px 0;
+    font-size: 16px;
+}
+
+#dc-main>p {
+    font-size: 12px;
+    color: #b2b2b2;
+}
+
+#dc-main>p>a {
+    padding: 6px 20px;
+    border-radius:18px;
+    font-size: 12px;
+}
+
+#main-slide {
+    margin: 0px auto 10px auto;
+}
+
+#main-slide>.slide>.carousel-indicators {
+    bottom: 0px;
+}
+
+#main-slide>.slide>.carousel-inner>.item>.carousel-caption {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0px 0 20px 0;
+    top: 120px;
+    text-align: left;
+}
+
+#main-slide>.slide>.carousel-inner>.item>.carousel-caption>p {
+    margin-bottom: 0px;
+    font-size: 14px;
+}
+
+#main-slide .carousel-control {
+    width: 10%;
+}
+
+#main-slide .carousel-control .glyphicon-chevron-left, .carousel-control .icon-prev {
+    margin-left: -30px;
+}
+
+#main-slide .carousel-control .glyphicon-chevron-right, .carousel-control .icon-next {
+    margin-right: -30px;
+}
+
+#main-slide .slide-img {
+    width: 100%;
+    height: 500px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (max-width: 1439px) {
+    #main-slide .slide-img {
+        height: 450px;
+    }
+}
+
+#main-board {
+    width: 1280px;
+    margin: 0 auto 10px auto;
+}
+
+#main-board:after {
+    content: ""; display: block; clear: both;
+}
+
+#main-notice {
+    width: 49.6%;
+    margin-right: 0.4%;
+    padding: 25px 30px;
+    border: 1px solid #dbdbdb;
+    position: relative;
+    float: left;
+    background-color: #fff;
+}
+
+#main-board .nav {
+    margin-bottom: 15px;
+}
+
+#main-notice>.nav>li>a {
+    padding: 6px 12px;
+}
+
+#main-notice>.nav-pills>li.active>a , #main-notice>.nav-pills>li.active>a:focus , #main-notice>.nav-pills>li.active>a:hover {
+    font-size: 14px;
+    background: url('/images/defaultCommunity/bg_nav_header.jpg');
+    background-position: top;
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+#main-board .board_more {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    color: #cccccc;
+}
+
+#main-board .board_more:hover {
+    color: #363636;
+}
+
+#main-board table {
+    margin: 0;
+}
+
+#main-board table tr:last-child td {
+    padding-bottom: 0px;
+}
+
+#main-board table tr td {
+    padding: 7px 0;
+    border: 0px;
+    font-size: 12px;
+    color: #a5a5a5;
+}
+
+#main-board table tr td:last-child {
+    text-align: right;
+}
+
+#main-board table tr td a {
+    color: #363636;
+}
+
+#main-report {
+    width: 49.6%;
+    height: 214px;
+    margin-left: 0.4%;
+    float: left;
+}
+
+#main-report ul {
+    margin: 0px;
+    padding: 0px;
+}
+
+#main-report ul:after {
+    content: ""; display: block; clear: both;
+}
+
+#main-report ul li {
+    width: 32.2%;
+    max-height: 214px;
+    padding: 46px 0;
+    margin-right: 1.7%;
+    border: 1px solid #dbdbdb;
+    float: left;
+    list-style: none;
+    text-align: center;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+#main-report ul li:last-child {
+    margin-right: 0px;
+}
+
+#main-report ul li img {
+    width: 60px;
+    margin-bottom: 5px;
+}
+
+#main-report ul li p {
+    margin: 0 0 5px 0;
+    font-size: 26px;
+    font-weight: 300;
+    color: #fff;
+}
+
+#main-report ul li h3 {
+    margin: 0px;
+    font-size: 12px;
+    color: #fff;
+}

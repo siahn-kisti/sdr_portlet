@@ -1,0 +1,619 @@
+.aui body #search_body {
+    font-family: '맑은 고딕', 'Malgun Gothic', '돋움', Dotum, Helvetica, AppleGothic, Sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background-color: #fafafb;
+}
+
+.aui body #search_body .row-fluid {
+    margin: 0;
+}
+
+/* Data Search 상단 검색바 영역 */
+#search_body .search-form {
+    margin-bottom: 0px;
+    padding: 27px 0 27px 0;
+    background: -webkit-linear-gradient(-90deg, #00b9e9, #2a6cb6);
+    background: -o-linear-gradient(-90deg, #00b9e9, #2a6cb6);
+    background: -moz-linear-gradient(-90deg, #00b9e9, #2a6cb6);
+    background: linear-gradient(-90deg, #00b9e9, #2a6cb6);
+    background: url('../../images/datasearch/bg-datasearch.png') top right no-repeat, linear-gradient(-90deg, #00b9e9, #2a6cb6);
+}
+
+.aui #search_body select, .aui #search_body textarea, .aui #search_body input[type="text"], .aui #search_body input[type="password"], .aui #search_body input[type="datetime"], .aui #search_body input[type="datetime-local"], .aui #search_body input[type="date"], .aui #search_body input[type="month"], .aui #search_body input[type="time"], .aui #search_body input[type="week"], .aui #search_body input[type="number"], .aui #search_body input[type="email"], .aui #search_body input[type="url"], .aui #search_body input[type="search"], .aui #search_body input[type="tel"], .aui #search_body input[type="color"], .aui #search_body .uneditable-input {
+    margin-bottom: 0px;
+}
+
+.aui #search_body .input-append, .aui #search_body .input-append .control-group {
+    margin-bottom: 0px;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 0;
+}
+
+.aui #search_body .search-inputbox {
+    position: relative;
+    width: 770px;
+    margin: 0 auto;
+    padding: 2px 20px;
+    background-color: #fff;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+}
+
+.aui #search_body .search-inputbox .control-group {
+    margin-bottom: 0;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.aui #search_body .search-inputbox .control-group .aui-field-select {
+    width: 112px;
+    margin-right: 15px;
+    border: none;
+}
+
+.aui #search_body .search-inputbox .control-group .aui-field-select:focus {
+    outline: none;
+}
+
+.aui #search_body .search-inputbox .input-append input[type="text"] {
+    width: 494px;
+    height: 22px;
+    border: 0;
+    box-shadow: none;
+}
+
+.aui #search_body .search-inputbox button {
+    position: absolute;
+    top: 3px;
+    right: 5px;
+    width: 120px;
+    border: none;
+    text-shadow: none;
+    -moz-border-radius: 20px;
+    -webkit-border-radius: 20px;
+    border-radius: 20px;
+}
+
+/* 좌측 탭 매뉴 */
+.aui #search_body .searchTabs {
+    float: left;
+    width: 205px;
+    padding: 14px 12px;
+}
+
+.aui #search_body .search-facet {
+    margin-bottom: 18px;
+    border-bottom: 2px solid #e8e9eb;
+}
+
+.aui #search_body .search-facet .nav .more {
+    text-align: center;
+    border: 1px solid #bec2c6;
+    background-color: #fff;
+}
+
+.aui #search_body .search-facet .nav .more > a {
+    text-align: center;
+    cursor: pointer;
+}
+
+.aui #search_body .search-facet .nav {
+    border-style: solid;
+    border-image: linear-gradient(to right, #14a8a9, #e5dd7b);
+    border-image-slice: 1;
+    border-image-width: 3px 0 0 0;
+    border-right: 0px;
+    border-bottom: 0px;
+    border-left: 0px;
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+    background-color: #fff;
+}
+
+.aui #search_body .nav-pills.nav-stacked > li {
+    float: none;
+    border: 1px solid #bec2c6;
+    border-top: 0px;
+    border-bottom: 0px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+.aui #search_body .nav-pills.nav-stacked > li:last-child {
+    border-bottom: 1px solid #bec2c6;
+}
+
+.aui #search_body .nav-pills.nav-stacked > li > a {
+    display: inline-block;
+    margin: 0;
+    padding: 5px 0px 5px 10px;
+    border-radius: 0;
+    font-size: 12px;
+    font-weight: 300;
+    color: #666;
+    cursor: pointer;
+    box-sizing: border-box;
+    max-width: calc(100% - 35px);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    vertical-align: middle;
+}
+
+.aui #search_body .nav-pills.nav-stacked > li.default > a {
+    position: relative;
+    display: block;
+    border-bottom: 1px solid #bec2c6;
+    padding: 10px;
+    background-color: #fafafb;
+    font-size: 11px;
+    font-weight: bold;
+    width: 100%;
+    max-width: 100%;
+}
+
+.aui #search_body .nav-pills.nav-stacked > li.default > a > .default-badge {
+    position: absolute;
+    right: 10px;
+    font-size: 11px;
+    font-weight: 300;
+}
+
+.aui #search_body .nav-pills.nav-stacked > li.default.active > a, .aui #search_body .nav-pills.nav-stacked > li.default > a:hover, .aui #search_body .nav-pills.nav-stacked > li.default > a:focus {
+    background: none;
+}
+
+.aui #search_body .nav-pills.nav-stacked > li:hover {
+    background-color: #eee;
+}
+
+.aui #search_body .nav-pills > .tab-move.active, .aui #search_body .nav-pills > .tab-move.active:hover, .aui #search_body .nav-pills > .tab-move.active:focus {
+    background-color: #d8eeee;
+}
+
+.aui #search_body .nav-pills > .tab-move.active > a, .aui #search_body .nav-pills > .tab-move.active > a:hover, .aui #search_body .nav-pills > .tab-move.active > a:focus {
+    background: none;
+}
+
+.aui #search_body .badge-search {
+    margin-left: 3px;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .5em;
+    background-color: #afc6c4;
+    text-shadow: none;
+}
+
+.aui #search_body .textLine {
+    padding-left: 7px;
+    margin-right: 7px;
+    border-right: 1px solid #dedfe2;
+}
+
+/* 우측 리스트 영역 */
+.aui #search_body .searchContentsList {
+    float: left;
+    position: relative;
+    width: 1015px;
+    margin: 0;
+    padding: 14px 12px 14px 0;
+}
+
+.aui #search_body .searchContentsList .nav {
+    margin: 0px;
+    border-bottom: 0px;
+}
+
+.aui #search_body .nav-tabs > li > a {
+    padding: 7px 12px;
+    -moz-border-radius: 0px;
+    -webkit-border-radius: 0px;
+    border-radius: 0px;
+}
+
+.aui #search_body .nav-tabs > .active > a, .aui #search_body .nav-tabs > .active > a:hover, .aui #search_body .nav-tabs > .active > a:focus {
+    margin: 0px;
+    border: 1px solid #bec2c6;
+    border-top: 2px solid #327bb9;
+    border-bottom-color: transparent;
+}
+
+.aui #search_body .searchContentsList .searchTabContents {
+    border: 1px solid #bec2c6;
+    background-color: #fff;
+}
+
+.aui #search_body .searchContentsList .control-group {
+    margin: 0px;
+}
+
+.aui #search_body .searchContentsList .searchAlign {
+    position: absolute;
+    top: 60px;
+    right: 24px;
+    width: 220px;
+}
+
+.aui #search_body .searchValue {
+    padding: 13px 12px 10px 12px;
+    font-size: 16px;
+    color: #666675;
+}
+
+.aui #search_body .searchList .taglib-page-iterator {
+    padding: 10px;
+}
+
+/* 검색바 키워드 영역 */
+.aui #search_body .filterArea {
+    margin-bottom: 0;
+    padding: 0 12px 12px 12px;
+    border-bottom: 1px solid #bec2c6;
+}
+
+.aui #search_body .filterArea label {
+    margin-bottom: 0;
+    font-size: 11px;
+    cursor: default;
+}
+
+.aui #search_body .filterArea div.tagsinput {
+    padding: 0;
+    border: 0;
+}
+
+.aui #search_body .filterArea div.tagsinput span.tag {
+    background-color: #9aaaad;
+    color: #fff;
+    cursor: pointer;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+    border-radius: 8px;
+    transition: 0.5s;
+}
+
+.aui #search_body .filterArea div.tagsinput span.tag:hover {
+    background-color: #606b6d;
+}
+
+.aui #search_body .filterArea div.tagsinput span.tag a {
+    color: #fff;
+}
+
+/* Data Search 검색 결과 중 Collection Tabs 영역 */
+.aui #search_body .collectionSearchList {
+    padding: 12px;
+    border-bottom: 1px solid #bec2c6;
+}
+
+.aui #search_body .collectionSearchList:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.aui #search_body .collectionSearchList .imgArea {
+    float: left;
+    width: 111px;
+    height: 108px;
+    background-repeat: no-repeat;
+    background-position: top center;
+}
+
+.aui #search_body .collectionSearchList .textArea {
+    width: calc(100% - 27%);
+    margin: 0 0 0px 15px;
+    float: left;
+}
+
+.aui #search_body .collectionSearchList .textArea a.textTitle .textTitleString {
+    float: left;
+    margin: 0 0 10px 0;
+    font-size: 14px;
+    max-width: 80%;
+    font-weight: bold;
+    color: #666675;
+    transition: 0.5s;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-height: 15px;
+    height: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.aui #search_body .collectionSearchList .textArea a.textTitle .textTitleString:hover {
+    color: #14a8a9;
+}
+
+.aui #search_body .collectionSearchList .textArea a .textTitleNumber {
+    padding-left: 5px;
+    font-size: 13px;
+    color: #acb1bc;
+}
+
+.aui #search_body .collectionSearchList .textArea .textInfo {
+    margin-bottom: 10px;
+    font-size: 12px;
+    width: 95%;
+    font-weight: 400;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-height: 12px;
+    height: 12px; /* Fallback for non-webkit */
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.aui #search_body .collectionSearchList .textArea .keywordArea {
+}
+
+.aui #search_body .collectionSearchList .textArea .keywordArea .textKeyword {
+    display: inline;
+    padding: .2em .6em .3em;
+    font-size: 75%;
+    font-weight: bold;
+    line-height: 1;
+    background-color: #93bcb7;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+}
+
+.aui #search_body .collectionSearchList .textArea .textDescription {
+    margin-bottom: 15px;
+    display: block; /* Fallback for non-webkit */
+    display: -webkit-box;
+    height: 31px; /* Fallback for non-webkit */
+    width: 95%;
+    font-size: 12px;
+    line-height: 1.4;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    color: #949494;
+}
+
+.aui #search_body .collectionSearchList .embagoLicenseArea {
+    position: relative;
+    width: 125px;
+    height: 108px;
+    float: right;
+    display: inline;
+}
+
+.aui #search_body .collectionSearchList .embagoLicenseArea .embagoArea {
+    text-align: right;
+}
+
+.aui #search_body .collectionSearchList .embagoLicenseArea .licenseArea {
+    text-align: center;
+    position: absolute;
+    width: 100%;
+    bottom: 0px;
+}
+
+.aui #search_body .collectionSearchList .embagoLicenseArea img {
+    width: 90px;
+}
+
+/* Data Search 검색 결과 중 Dataset Tabs 영역 */
+.aui #search_body .datasetSearchList {
+    padding: 12px;
+    border-bottom: 1px solid #bec2c6;
+}
+
+.aui #search_body .datasetSearchList:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.aui #search_body .datasetSearchList .imgArea {
+    float: left;
+    width: 82px;
+    height: 68px;
+    border: 1px solid #d5d5d5;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: top center;
+}
+
+.aui #search_body .datasetSearchList .textArea {
+    width: calc(100% - 94px);
+    margin: 0 0 0px 10px;
+    float: left;
+}
+
+.aui #search_body .datasetSearchList .textArea a.textTitle .textTitleString {
+    max-width: 30%;
+    float: left;
+    /*margin: 0 0 4px 0;*/
+    font-size: 15px;
+    font-weight: bold;
+    color: #666675;
+    transition: 0.5s;
+    /*display: -webkit-box;*/
+    display: inline-block;
+    /*display: inline;*/
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-height: 15px;
+    height: 15px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.aui #search_body .datasetSearchList .textArea a.textTitle .textTitleString:hover {
+    color: #14a8a9;
+}
+
+.aui #search_body .datasetSearchList .textArea a .textTitleNumber {
+    padding-left: 5px;
+    font-size: 13px;
+    color: #acb1bc;
+}
+
+.aui #search_body .datasetSearchList .textArea .textInfo {
+    max-width: 60%;
+    /*margin-bottom: 4px;*/
+    font-size: 12px;
+    color: #767676;
+    font-weight: 400;
+    display: inline-block;
+    white-space: nowrap;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    line-height: 12px;
+    height: 12px;
+}
+
+.aui #search_body .datasetSearchList .textArea .keywordArea {
+    margin-bottom: 3px;
+}
+
+.aui #search_body .datasetSearchList .textArea .keywordArea .textKeyword {
+    /*display: inline;*/
+    display: inline-block;
+    padding: .2em .6em .3em .0em;
+    font-weight: bold;
+    line-height: 1;
+    color: #c1bdbd;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: .25em;
+
+    max-width: 90%;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.aui #search_body .datasetSearchList .textArea .textDescription {
+    font-size: 12px;
+    line-height: 1.4;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 미디어쿼리 제어용 */
+
+@media (max-width: 979px) {
+    /* 하단 버튼 */
+    .aui #search_body .btn {
+        padding: 4px 12px;
+        font-size: 14px;
+    }
+
+    .aui #search_body textarea,
+    .aui #search_body input[type="text"],
+    .aui #search_body input[type="password"],
+    .aui #search_body input[type="datetime"],
+    .aui #search_body input[type="datetime-local"],
+    .aui #search_body input[type="date"],
+    .aui #search_body input[type="month"],
+    .aui #search_body input[type="time"],
+    .aui #search_body input[type="week"],
+    .aui #search_body input[type="number"],
+    .aui #search_body input[type="email"],
+    .aui #search_body input[type="url"],
+    .aui #search_body input[type="search"],
+    .aui #search_body input[type="tel"],
+    .aui #search_body input[type="color"],
+    .aui #search_body .uneditable-input {
+        height: 30px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .aui #search_body input[type="color"],
+    .aui #search_body input[type="date"],
+    .aui #search_body input[type="datetime"],
+    .aui #search_body input[type="datetime-local"],
+    .aui #search_body input[type="email"],
+    .aui #search_body input[type="month"],
+    .aui #search_body input[type="number"],
+    .aui #search_body input[type="password"],
+    .aui #search_body input[type="search"],
+    .aui #search_body input[type="tel"],
+    .aui #search_body input[type="text"],
+    .aui #search_body input[type="time"],
+    .aui #search_body input[type="url"],
+    .aui #search_body input[type="week"],
+    .aui #search_body select,
+    .aui #search_body textarea,
+    .aui #search_body .input-prepend .add-on,
+    .aui #search_body .navbar-search .search-query,
+    .aui #search_body .uneditable-input {
+        height: 30px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+}
+
+/* 미디어 쿼리 작은 사이즈 컨트롤 */
+
+@media (max-width: 767px) and (max-width: 979px) {
+    .aui #search_body .button-holder {
+        width: auto;
+    }
+
+    .aui .btn-group > .btn + .btn {
+        margin-left: -1px;
+    }
+
+    /* 하단 버튼 */
+    .aui #search_body .btn {
+        width: 130px;
+        margin-top: 0px;
+        padding: 4px 12px;
+        display: inline-block;
+        font-size: 14px;
+    }
+
+    .aui #search_body textarea,
+    .aui #search_body input[type="text"],
+    .aui #search_body input[type="password"],
+    .aui #search_body input[type="datetime"],
+    .aui #search_body input[type="datetime-local"],
+    .aui #search_body input[type="date"],
+    .aui #search_body input[type="month"],
+    .aui #search_body input[type="time"],
+    .aui #search_body input[type="week"],
+    .aui #search_body input[type="number"],
+    .aui #search_body input[type="email"],
+    .aui #search_body input[type="url"],
+    .aui #search_body input[type="search"],
+    .aui #search_body input[type="tel"],
+    .aui #search_body input[type="color"],
+    .aui #search_body .uneditable-input {
+        height: 30px;
+        font-size: 14px;
+        line-height: 20px;
+    }
+
+    .aui #search_body .row-fluid .span2 {
+        width: 14.89362%;
+        float: left;
+    }
+
+    .aui #search_body .row-fluid .span10 {
+        width: 82.97872%;
+        margin-left: 2.12766%;
+        float: left;
+    }
+}

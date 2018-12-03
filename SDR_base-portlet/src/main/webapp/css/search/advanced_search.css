@@ -1,0 +1,127 @@
+.aui body #advanced_search {
+	font-family:'맑은 고딕', 'Malgun Gothic', '돋움', Dotum, Helvetica, AppleGothic, Sans-serif;
+	-webkit-font-smoothing:antialiased;
+	margin-bottom:15px;
+}
+.edison #wrap .content-sub form:After , .aui body #advanced_search:after , #dataTypeTaggle:after, .advancedSearch-main:after {
+	content: ""; display: block; clear: both;
+}
+
+/* Advanced Search 공통 */
+#advanced_search .row-as {
+	margin-bottom:15px;
+	padding-bottom:0px;
+	border-style: solid;
+    border-image: linear-gradient(to right, #14a8a9, #e5dd7b);
+  	border-image-slice: 1;
+  	border-image-width: 3px 0 0 0;
+  	border-right:0px;
+  	border-bottom:0px;
+  	border-left:0px;
+	background-color:#fff;
+}
+#advanced_search .as-label {
+	width: 100%;
+	box-sizing: border-box;
+	margin-bottom:0;
+	padding:14px;
+	border-bottom:1px solid #bec2c6;
+	font-size:12px;
+	line-height:12px;
+	font-weight:bold;
+	vertical-align:top;
+	background-color:#fafafb;
+	color:#666;
+}
+.aui #advanced_search .control-group {
+	margin-bottom:0px;
+}
+.aui #advanced_search select {
+	position:absolute;
+	top:5px;
+	right:5px;
+	width: 220px;
+	margin:0;
+	font-size:12px;
+}
+#advanced_search .taggleUI {
+	padding:10px;
+}
+#advanced_search .taggleUI div.tagsinput input {
+	width:180px;
+}
+.aui #advanced_search .control-group.input-text-wrapper {
+	padding:10px;
+}
+.aui #advanced_search .advancedTextarea {
+	width:100%;
+	min-height:150px;
+	margin:0;
+	padding:10px;
+	border: 1px solid #ccc;
+	box-shadow:none;
+	font-size:11px;
+	line-height:16px;
+	font-family:Monaco, Menlo, Consolas, "Courier New", monospace;
+	box-sizing:border-box;
+}
+
+
+/* 왼쪽 메뉴 */
+.advancedSearch-left {
+	width:720px;
+	margin-right:25px;
+	float:left;
+}
+
+.advancedSearch-left .row-as .border-row {
+	position:relative;
+	border:1px solid #bec2c6;
+	border-top:0;
+}
+
+
+/* 오른쪽 메뉴 */
+.advancedSearch-right {
+	width:475px;
+	float:left;
+}
+#advanced_search .advancedSearch-right .as-label {
+	border-left:1px solid #bec2c6;
+	border-right:1px solid #bec2c6;
+	border-bottom:0;
+}
+.advancedSearch-right pre {
+	height:433px;
+	padding:20px;
+	overflow-x:auto;
+	font-size:11px;
+	line-height:16px;
+	border-radius: 0;
+	box-sizing: content-box;
+}
+
+
+/* 하단 리스트 */
+.advancedSearchValue h4 {
+	padding:13px 0px 10px 0px;
+	font-size:16px;
+	color:#666675;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,204 @@
+/* Space out content a bit */
+body {
+  padding: 1.5rem;
+  background-color:#fff;
+  min-height: 1000px;
+  max-width: 1220px;
+  margin: 0 auto;
+}
+
+
+.demo .lyrow .padding { padding-top:30px; }
+.demo .lyrow .padding:after {    content: ""; display: block; clear: both;}
+.edit .demo .configuration {position: absolute; top: 3px; right: 140px;white-space:nowrap; }
+
+.table th,
+.table td,
+.table thead th,
+.table thead td,
+.table tbody th,
+.table tbody td {
+  height: 30px; 
+}
+
+
+table.table_04 tbody {
+  height: 100px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.panel-heading {font-weight: bold;}
+
+table.table_04 tbody,
+table.table_04 thead { display: block; }
+
+.pull-left {float:left!important; padding-right:10px;}
+
+.panel-body {min-height: 45px;}
+
+.ui-sortable-placeholder { outline: 2px dashed #ff0000; visibility: visible!Important; border-radius: 4px;}
+
+
+
+.demo>div>.col-md-3 .panel-body {
+  height: 400px;
+  overflow: auto;
+}
+
+
+.panel {
+  border-radius: 0;
+  margin-bottom:15px;
+  padding-bottom:0px;
+  border: 0;
+  border-top:3px solid;
+  border-image: linear-gradient(to right, #14a8a9, #e5dd7b);
+  border-image-slice: 1;
+  border-image-width: 3px 0 0 0;
+  background-color:#fff;
+}
+.panel > .panel-heading {
+  padding: 15px;
+  border-radius: 0;
+  border: 1px solid #bec2c6;
+  border-top: 0;
+  font-size: 12px;
+  line-height: 12px;
+  font-weight: bold;
+  background-color: #fafafb;
+  color: #666;
+}
+.panel > .panel-body {
+  border-radius: 0;
+  border: 1px solid #bec2c6;
+  border-top: 0;
+}
+.panel > .panel-body:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+.demo .lyrow.ui-draggable:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/*table_03용*/
+table.table_03 {
+  margin-bottom: 0px;
+}
+table.table_03 tbody tr th {
+  padding: 12px 8px 0px 8px;
+  border: 0;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+}
+table.table_03 tbody tr:first-child th {
+  padding: 0px 8px 0px 8px;
+}
+table.table_03 tbody tr td {
+  padding: 0px 8px 12px 8px;
+  border-top: 0;
+  border-bottom: 1px solid #bec2c6;
+  font-size: 13px;
+  font-weight: normal;
+}
+table.table_03 tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+
+/*table_02용*/
+table.table_02 {
+  border:0;
+  margin:0;
+}
+table.table_02 tbody tr th {
+  padding: 10px 8px 3px 8px;
+  border: 0 !important;
+  border-right: 1px solid #bec2c6 !important;;
+  font-size: 13px;
+  font-weight: bold;
+  color: #000;
+}
+table.table_02 tbody tr td {
+  padding: 0px 8px 10px 8px;
+  border-top: 0 !important;;
+  border-left: 0 !important;;
+  border-right: 1px solid #bec2c6 !important;;
+  border-bottom: 1px solid #bec2c6 !important;;
+  font-size: 13px;
+  font-weight: normal;
+}
+table.table_02 tbody tr:last-child td {
+  border-bottom: 0 !important;;
+}
+table.table_02 tbody tr th:last-child {
+  border-right: 0 !important;;
+}
+table.table_02 tbody tr td:last-child {
+  border-right: 0 !important;;
+}
+table.table_02 tbody tr th .label {
+  line-height: 1.7;
+}
+
+/*Coordinate용*/
+.element_wrapper { float:left; width:33.333%; margin-bottom: 15px; padding:0px 1.5%; text-align: center; }
+.element_wrapper .element_name { border-collapse:collapse; display: inline-block; margin:0 0 10px 0;padding: 0 0 8px 0;border-bottom:1px solid #c0cbd5;font-size:18px; font-weight: bold; color: #666;}
+.element_wrapper .coordinate { width:100%; border-top: 2px solid #327bb9; }
+.element_wrapper .coordinate thead { float:left; display:block; width:347px; }
+.element_wrapper .coordinate thead tr { display:table; width:100%; }
+.element_wrapper .coordinate thead th { width: 116px;padding: 7px 5px 6px;border-right:1px solid #d5d5d5;border-bottom:1px solid #d5d5d5;background-color:#f9f9f9;color:#7f8a90;text-align:center;font-size:14px;line-height:1;}
+.element_wrapper .coordinate thead th:last-child { border-right: 0; }
+.element_wrapper .coordinate tbody { overflow-y:auto; overflow-x:hidden; float:left; width:347px; height: 200px }
+.element_wrapper .coordinate tbody tr { display:table; width:347px; }
+.element_wrapper .coordinate tbody td { width: 116px; padding: 8px 5px; text-align:center; font-size: 13px }
+
+
+.table_01 {
+  border-top:2px solid #327bb9;
+  width:100%;
+}
+.table_01 thead tr th, .table_01 tbody tr th, .table_01 tbody tr td {
+  border-right:1px solid #d5d5d5;
+  border-top:1px solid #d5d5d5;
+  padding:10px 12px;
+  vertical-align: middle;
+}
+.table_01 thead tr th, .table_01 tbody tr th {
+  background : #f9f9f9;
+  font-weight:bold;
+  text-align:center;
+}
+.table_01 thead tr th {
+  border-top:0;
+}
+.table_01 tbody tr td {
+  background-color:#fff;
+}
+/*.table_01 tbody tr:hover td {*/
+/*background-color:#f9f9f9;*/
+/*}*/
+.table_01 tr th, .table_01 tr td {
+  border-left:0;
+}
+.table_01 thead tr th:last-child, .table_01 tbody tr td:last-child {
+  border-right:0;
+}
+
+.popover-info {position:relative;}
+.popover-info .popover {display:none; top: -12.5px; left:15px; }
+.popover-info:hover .popover {display:block; opacity:1; width:400px;}
+.popover-info:hover .popover .arrow {top:23px;}
+
+.pdfComponent {display:table;}
+.xrdComponent {display:table;}
+.dosComponent {display:table;}
+.epubComponent {display:table;}
+.wikiLink {cursor: hand;}
+.notiText {display:table-cell; text-align:center; vertical-align:middle;}

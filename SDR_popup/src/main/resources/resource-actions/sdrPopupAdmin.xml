@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<!DOCTYPE resource-action-mapping PUBLIC "-//Liferay//DTD Resource Action Mapping 6.2.0//EN"
+        "http://www.liferay.com/dtd/liferay-resource-action-mapping_6_2_0.dtd">
+
+<resource-action-mapping>
+    <portlet-resource>
+        <portlet-name>sdr_popup_admin-portlet</portlet-name>
+        <permissions>
+            <supports>
+                <action-key>VIEW</action-key>
+                <action-key>EDIT</action-key>
+                <action-key>CONFIGURATION</action-key>
+            </supports>
+            <site-member-defaults></site-member-defaults>
+            <guest-defaults></guest-defaults>
+            <guest-unsupported>
+                <action-key>VIEW</action-key>
+                <action-key>EDIT</action-key>
+                <action-key>CONFIGURATION</action-key>
+            </guest-unsupported>
+        </permissions>
+    </portlet-resource>
+</resource-action-mapping>

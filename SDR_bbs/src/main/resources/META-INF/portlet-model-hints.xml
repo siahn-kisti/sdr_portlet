@@ -1,0 +1,46 @@
+<?xml version="1.0"?>
+
+<model-hints>
+	<model name="com.sdr.bbs.model.Bbs">
+		<field name="uuid" type="String" />
+		<field name="bbsId" type="long" />
+		<field name="companyId" type="long" />
+		<field name="groupId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="title" type="String" />
+		<field name="displayType" type="int" />
+	</model>
+	<model name="com.sdr.bbs.model.BbsComment">
+		<field name="uuid" type="String" />
+		<field name="commentId" type="long" />
+		<field name="postId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="writer" type="String" />
+		<field name="email" type="String" />
+		<field name="password" type="String" />
+		<field name="content" type="String" />
+		<field name="secret" type="boolean" />
+	</model>
+	<model name="com.sdr.bbs.model.BbsPost">
+		<field name="uuid" type="String" />
+		<field name="postId" type="long" />
+		<field name="bbsId" type="long" />
+		<field name="userId" type="long" />
+		<field name="createDate" type="Date" />
+		<field name="modifiedDate" type="Date" />
+		<field name="writer" type="String" />
+		<field name="email" type="String" />
+		<field name="password" type="String" />
+		<field name="title" type="String" />
+		<field name="content" type="String">
+			<hint name="max-length">2000</hint>
+		</field>
+		<field name="secret" type="boolean" />
+		<field name="commentEmailed" type="boolean" />
+		<field name="viewCount" type="int" />
+	</model>
+</model-hints>

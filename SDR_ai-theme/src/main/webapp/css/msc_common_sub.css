@@ -1,0 +1,120 @@
+/*소재 커뮤니티 공통*/
+#nav-area {
+	width: 100%; height: 80px; background: url('../images/material_scientific_community02/bg_nav_header_02.jpg'); background-position: top; background-size: cover; background-repeat: no-repeat;
+}
+
+#nav-top {
+	width: 1280px; margin: 0 auto;
+}
+
+#nav-top:after {
+	content: ""; display: block; clear: both;
+}
+
+#edison-logo {
+	width: 130px;
+	height: 80px;
+	padding: 20px 3px 20px 10px;
+	display: block;
+	float: left;
+	background-image: url("../images/material_scientific_community02/bg_msc_logo.png");
+	transition: 0.5s; }
+#edison-logo:hover > .edison-logo-img {
+	background: url("../images/material_scientific_community02/logo_edison_hover.png") no-repeat center;
+}
+.edison-logo-img {
+	width: 100%;
+	height: 100%;
+	background: url("../images/material_scientific_community02/logo_edison.png") no-repeat center;
+	transition: 0.5s;
+}
+
+#msc-logo {
+	width: 150px; height: 80px; padding: 20px 18px; display: block; float: left; font-size: 14px; color: #fff; background-image: url('../images/material_scientific_community02/bg_msc_logo.png'); transition: 0.5s; word-break: normal;
+}
+
+#msc-logo:hover {
+	text-decoration: none; color: #337ab7;
+}
+
+#nav-header {
+	width: 1000px; height: 80px; float: left; background-image: url('../images/material_scientific_community02/bg_msc_header.png');
+}
+
+#nav-btn {
+	padding: 4px 0; border-bottom: 1px solid #626262; font-size: 12px;
+}
+
+#nav-btn:after {
+	content: ""; display: block; clear: both;
+}
+
+#nav-login, #nav-mypage, #nav-btn>.dropdown {
+	float: right;
+}
+
+#nav-login>a, #nav-mypage>a, #nav-btn>.dropdown>button {
+	display: inline-block; padding: 4px 12px; font-size: 12px; color: #fff;
+}
+
+#nav-menu {
+	width: 100%; margin: 0 auto;
+}
+
+#nav-menu>ul {
+	margin: 0; padding: 0;
+}
+
+#nav-menu>ul:after {
+	content: ""; display: block; clear: both;
+}
+
+#nav-menu>ul>li {
+	width: 12.5%; padding: 13px 0; float: left; list-style: none; font-size: 13px; text-align: center;
+}
+
+#nav-menu>ul>li>a {
+	color: #fff;
+}
+
+footer {
+	width: 100%; border-top: 1px solid #e8e8e8; border-bottom: 1px solid #e8e8e8;
+}
+
+#footer-width {
+	width: 1280px; margin: 20px auto;
+}
+
+.footer-text {
+	font-size: 12px;
+}
+
+.footer-text>a.privacy {
+	margin-left: 20px; border-left: 1px solid #e8e8e8; border-right: 1px solid #e8e8e8;
+}
+
+.footer-text>a.privacy, .footer-text>span {
+	padding: 0 20px;
+}
+
+.footer-text>a.banner {
+	float: right;
+	margin-left: 30px;
+	margin-top: -10px;
+}
+
+#sub-area {
+	width: 1280px; margin: 0 auto;
+}
+
+#sub-area:after {
+	content: ""; display: block; clear: both;
+}
+
+#breadcrumb-nav {
+	width: 100%; background-color: #fff;
+}
+
+#breadcrumb-nav ul {
+	width: 1280px; margin: 0 auto; font-size: 12px; text-align: right; background-color: #fff;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>elFinder 2.1</title>
+
+		<!-- jQuery and jQuery UI (REQUIRED) -->
+		<link rel="stylesheet" type="text/css" href="js/jquery-ui/jquery-ui.min.css">
+		<script src="js/jquery/jquery-3.2.1.min.js"></script>
+		<script src="js/jquery-ui/jquery-ui.min.js"></script>
+
+		<!-- elFinder CSS (REQUIRED) -->
+		<link rel="stylesheet" type="text/css" href="js/elFinder/css/elfinder.min.css">
+		<link rel="stylesheet" type="text/css" href="js/elFinder/css/theme.css">
+
+		<!-- elFinder JS (REQUIRED) -->
+		<script src="js/elFinder/js/elfinder.min.js"></script>
+
+		<!-- elFinder translation (OPTIONAL) -->
+		<script src="js/elFinder/js/i18n/elfinder.ru.js"></script>
+
+		<!-- elFinder initialization (REQUIRED) -->
+		<script type="text/javascript" charset="utf-8">
+			// Documentation for client options:
+			// https://github.com/Studio-42/elFinder/wiki/Client-configuration-options
+			$(document).ready(function() {
+
+				var datasetParam = [{
+					datasetId: '111',
+					datasetName: 'final',
+					datasetPath: '/Users/heesangbb/Desktop/testdata/upload_test/final',
+					datasetWriterble: 'true'
+				}, {
+					datasetId: '222',
+					datasetName: 'meta',
+					datasetPath: '/Users/heesangbb/Desktop/testdata/upload_test/meta',
+					datasetWriterble: 'false'
+				}];
+
+
+				$('#elfinder').elfinder({
+					url: '/elfinder-servlet/elfinder-servlet/connector',
+					customData: {"datasetParam": JSON.stringify(datasetParam)},
+					lang: 'ko'
+				});
+
+			});
+		</script>
+	</head>
+	<body>
+
+		<!-- Element where elFinder will be created (REQUIRED) -->
+		<div id="elfinder"></div>
+
+	</body>
+</html>

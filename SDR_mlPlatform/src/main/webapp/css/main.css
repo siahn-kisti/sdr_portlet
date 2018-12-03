@@ -1,0 +1,11 @@
+body {word-break:break-all;}
+table { word-break: normal; }
+.edison-sdr-portlet{
+    width: 1220px;
+    margin: 0 auto;
+}
+
+@import "sdr_common/sdr_content.css"; /*sdr 공통 사용*/
+@import "sdr_common/sdr_switcher.css"; /*sdr bootstrap 공통 사용*/
+
+@import "search/search_content.css"; /*search 공통 사용*/

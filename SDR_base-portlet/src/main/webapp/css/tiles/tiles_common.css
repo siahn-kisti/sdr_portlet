@@ -1,0 +1,97 @@
+/* 게시판 타일형 리스트 */
+#board_body .boardTile {
+  padding:14px;
+}
+#board_body .boardTile:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#board_body .boardTile ul.boardTileList {
+  margin:0;
+  padding:0;
+}
+#board_body .boardTile ul.boardTileList:after {
+  content: "";
+  display: block;
+  clear: both;
+}
+#board_body .boardTile ul.boardTileList li {
+  float:left;
+  margin:0 11px 8px 0;
+  background-color:#e8e9eb;
+  border-radius:5px;
+  border-top:2px solid #fafafb;
+  border-bottom:2px solid #e8e9eb;
+  transition: all 0.2s;
+}
+#board_body .boardTile ul.boardTileList li:hover {
+  /*border-top:4px solid #fafafb;
+    border-bottom:0px;*/
+  margin:0px 7px 8px 4px;
+}
+#board_body .boardTile ul.boardTileList li:nth-child(5n+5) {
+  /*margin:0 0 14px 0;*/
+}
+#board_body .boardTile ul.boardTileList li a {
+  display:block;
+  width:201px;
+  height:280px;
+  padding:10px;
+  border-radius:5px;
+  border:1px solid #bec2c6;
+  background-color:#fff;
+  transition: all 0.2s;
+  text-overflow: ellipsis;
+  box-sizing: unset;
+  box-sizing: content-box;
+}
+#board_body .boardTile ul.boardTileList li a .imgArea {
+  width:201px;
+  height:153px;
+  margin-bottom:15px;
+  background-repeat:no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+#board_body .boardTile ul.boardTileList li a h4 {
+
+  padding:0;
+  font-size:14px;
+  transition: all 0.2s;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* 라인수 */
+  -webkit-box-orient: vertical;
+  word-wrap:break-word;
+  line-height: 1.2em;
+  height: 1.2em;
+  margin-bottom: 20%;
+  /* line-height 가 1.2em 이고 3라인을 자르기 때문에 height는 1.2em * 3 = 3.6em */
+}
+#board_body .boardTile ul.boardTileList li:hover a {
+  border:1px solid #327bb9;
+}
+#board_body .boardTile ul.boardTileList li:hover a h4 {
+  color: #327bb9;
+}
+#board_body .boardTile ul.boardTileList li a label {
+  font-size:12px;
+  font-weight:300;
+  color:#828282;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 3; /* 라인수 */
+  -webkit-box-orient: vertical;
+  word-wrap:break-word;
+  line-height: 1.2em;
+  height: 3.6em;
+}
+#board_body .boardTile .lfr-search-container {
+  margin:0 0 10px 0;
+  /*padding:12px;*/
+  /*background-color:#fff;*/
+  /*border:1px solid #bec2c6;*/
+}

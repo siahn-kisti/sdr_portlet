@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" default-destroy-method="destroy" default-init-method="afterPropertiesSet" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+	<bean id="com.sdr.metadata.service.ApiKeyLocalService" class="com.sdr.metadata.service.impl.ApiKeyLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.ApiKeyService" class="com.sdr.metadata.service.impl.ApiKeyServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.ApiKeyPersistence" class="com.sdr.metadata.service.persistence.ApiKeyPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.AssetEntries_AssetTagsLocalService" class="com.sdr.metadata.service.impl.AssetEntries_AssetTagsLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.AssetEntries_AssetTagsService" class="com.sdr.metadata.service.impl.AssetEntries_AssetTagsServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.AssetEntries_AssetTagsPersistence" class="com.sdr.metadata.service.persistence.AssetEntries_AssetTagsPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.CollectionLocalService" class="com.sdr.metadata.service.impl.CollectionLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.CollectionService" class="com.sdr.metadata.service.impl.CollectionServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.CollectionPersistence" class="com.sdr.metadata.service.persistence.CollectionPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.Collection_AllowedUserLocalService" class="com.sdr.metadata.service.impl.Collection_AllowedUserLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.Collection_AllowedUserService" class="com.sdr.metadata.service.impl.Collection_AllowedUserServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.Collection_AllowedUserPersistence" class="com.sdr.metadata.service.persistence.Collection_AllowedUserPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.Collection_UserLocalService" class="com.sdr.metadata.service.impl.Collection_UserLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.Collection_UserService" class="com.sdr.metadata.service.impl.Collection_UserServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.Collection_UserPersistence" class="com.sdr.metadata.service.persistence.Collection_UserPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.CurateLocalService" class="com.sdr.metadata.service.impl.CurateLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.CurateService" class="com.sdr.metadata.service.impl.CurateServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.CuratePersistence" class="com.sdr.metadata.service.persistence.CuratePersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.CurationJobLocalService" class="com.sdr.metadata.service.impl.CurationJobLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.CurationJobService" class="com.sdr.metadata.service.impl.CurationJobServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.CurationJobPersistence" class="com.sdr.metadata.service.persistence.CurationJobPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.DatasetLocalService" class="com.sdr.metadata.service.impl.DatasetLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.DatasetService" class="com.sdr.metadata.service.impl.DatasetServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.DatasetPersistence" class="com.sdr.metadata.service.persistence.DatasetPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.DataTypeLocalService" class="com.sdr.metadata.service.impl.DataTypeLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.DataTypeService" class="com.sdr.metadata.service.impl.DataTypeServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.DataTypePersistence" class="com.sdr.metadata.service.persistence.DataTypePersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.DataType_dataTypeSchema_essentialLocalService" class="com.sdr.metadata.service.impl.DataType_dataTypeSchema_essentialLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.DataType_dataTypeSchema_essentialService" class="com.sdr.metadata.service.impl.DataType_dataTypeSchema_essentialServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.DataType_dataTypeSchema_essentialPersistence" class="com.sdr.metadata.service.persistence.DataType_dataTypeSchema_essentialPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.DatatypeRuleLocalService" class="com.sdr.metadata.service.impl.DatatypeRuleLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.DatatypeRuleService" class="com.sdr.metadata.service.impl.DatatypeRuleServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.DatatypeRulePersistence" class="com.sdr.metadata.service.persistence.DatatypeRulePersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.DataTypeSchemaLocalService" class="com.sdr.metadata.service.impl.DataTypeSchemaLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.DataTypeSchemaService" class="com.sdr.metadata.service.impl.DataTypeSchemaServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.DataTypeSchemaPersistence" class="com.sdr.metadata.service.persistence.DataTypeSchemaPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.DataViewLocalService" class="com.sdr.metadata.service.impl.DataViewLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.DataViewService" class="com.sdr.metadata.service.impl.DataViewServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.DataViewPersistence" class="com.sdr.metadata.service.persistence.DataViewPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.DataViewComponentsLocalService" class="com.sdr.metadata.service.impl.DataViewComponentsLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.DataViewComponentsService" class="com.sdr.metadata.service.impl.DataViewComponentsServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.DataViewComponentsPersistence" class="com.sdr.metadata.service.persistence.DataViewComponentsPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.GroupRuleLocalService" class="com.sdr.metadata.service.impl.GroupRuleLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.GroupRuleService" class="com.sdr.metadata.service.impl.GroupRuleServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.GroupRulePersistence" class="com.sdr.metadata.service.persistence.GroupRulePersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.IceBreakerVcTokenLocalService" class="com.sdr.metadata.service.impl.IceBreakerVcTokenLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.IceBreakerVcTokenService" class="com.sdr.metadata.service.impl.IceBreakerVcTokenServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.IceBreakerVcTokenPersistence" class="com.sdr.metadata.service.persistence.IceBreakerVcTokenPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.MlGuiParameterLocalService" class="com.sdr.metadata.service.impl.MlGuiParameterLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.MlGuiParameterService" class="com.sdr.metadata.service.impl.MlGuiParameterServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.MlGuiParameterPersistence" class="com.sdr.metadata.service.persistence.MlGuiParameterPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.PpLogicLocalService" class="com.sdr.metadata.service.impl.PpLogicLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.PpLogicService" class="com.sdr.metadata.service.impl.PpLogicServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.PpLogicPersistence" class="com.sdr.metadata.service.persistence.PpLogicPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.ReqMakeSiteLocalService" class="com.sdr.metadata.service.impl.ReqMakeSiteLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.ReqMakeSiteService" class="com.sdr.metadata.service.impl.ReqMakeSiteServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.ReqMakeSitePersistence" class="com.sdr.metadata.service.persistence.ReqMakeSitePersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.SdrOrganizationsLocalService" class="com.sdr.metadata.service.impl.SdrOrganizationsLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.SdrOrganizationsService" class="com.sdr.metadata.service.impl.SdrOrganizationsServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.SdrOrganizationsPersistence" class="com.sdr.metadata.service.persistence.SdrOrganizationsPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.SdrUsersLocalService" class="com.sdr.metadata.service.impl.SdrUsersLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.SdrUsersService" class="com.sdr.metadata.service.impl.SdrUsersServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.SdrUsersPersistence" class="com.sdr.metadata.service.persistence.SdrUsersPersistenceImpl" parent="basePersistence" />
+	<bean id="com.sdr.metadata.service.SimulationJobLocalService" class="com.sdr.metadata.service.impl.SimulationJobLocalServiceImpl" />
+	<bean id="com.sdr.metadata.service.SimulationJobService" class="com.sdr.metadata.service.impl.SimulationJobServiceImpl" />
+	<bean id="com.sdr.metadata.service.persistence.SimulationJobPersistence" class="com.sdr.metadata.service.persistence.SimulationJobPersistenceImpl" parent="basePersistence" />
+</beans>

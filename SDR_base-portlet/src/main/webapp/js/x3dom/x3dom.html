@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en" style='width:100%; height:100%; border:0; margin:0; padding:0;'>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="index" content="follow">
+    <meta name="revisit-after" content="2 days">
+    
+    <title>Model: Tractor </title>
+    
+    <link rel='stylesheet' href='static/x3dom.css' type='text/css' charset="utf-8"></link>
+    <link rel="stylesheet" type="text/css" href="static/css/jquery-ui-1.9.2.custom.css" />
+    <link rel="stylesheet" type="text/css" href="static/css/ui.css"/>
+    <style>
+        .x3dom-logContainer { bottom: 0px; position: absolute; }
+        body { width:100%; height:100%; border:0; margin:0; padding:0; }		
+    </style>
+
+    <script src='x3dom.js' type='text/javascript'></script>
+    
+    <script type="text/javascript" src="static/js/jquery-1.9.0.min.js"></script>
+    <script type="text/javascript" src="static/js/jquery-ui-1.9.2.custom.min.js"></script>
+    <script type="text/javascript" src="static/js/settings.js"></script>
+    <script type="text/javascript" src="static/js/ui.js"></script>
+  <script>
+    var filePath = '';
+    function scriptAppend(path, container){
+      var h = $( container ).height();
+      var w = $( container ).width();
+      var namespace="";
+
+      var inputHTML =
+          '<x3d id="x3dElement" swfpath="static/x3dom.swf" showStat="false" showLog="false" width="'+w+'" height="'+h+'" style="width:100%; height:100%; border:0; margin:0; padding:0;">'+
+          '<scene>\n' +
+          '<Viewpoint id="cam" position="-2.43383 1.07351 -1.28700" orientation="-0.00318 -0.99950 -0.03159 2.06609" description="camera"></Viewpoint>'+
+          /*'<Viewpoint id="left" position="2.70190 1.05153 -0.57128" orientation="-0.08205 0.99612 -0.03175 1.73722" description="camera"></Viewpoint>\n'+
+          '<Viewpoint id="front" position="-0.07427 0.95329 -2.79608" orientation="-0.01451 0.99989 0.00319 3.15833" description="camera"></Viewpoint>\n'+
+          '<Viewpoint id="top" position="0.05087 3.78235 -1.75890" orientation="-0.00307 0.87466 0.48473 3.12040" description="camera"></Viewpoint>'+*/
+          '<Transform><Inline nameSpaceName="'+namespace+'" mapDEFToID="true" url="'+path+'" /></Transform>\n' +
+          '</scene></x3d>';
+      $('#x3dElementDiv').append(inputHTML);
+      x3dom.reload();
+      initPosition();
+    }
+    function initPosition (delta) {
+      var camera = document.getElementById('cam');
+      camera.setAttribute('orientation', '-0.34290 0.93937 0.00027 0.77083');
+      camera.setAttribute('position', '17.36046 8.30151 20.40879');
+      camera.setAttribute('zNear', '10.57533');
+      camera.setAttribute('zFar', '47.83172');
+    }
+  </script>
+     
+</head>
+<body>
+<div class="container" style='width:100%; height:100%; border:0; margin:0; padding:0;'>
+
+
+
+    <div class="uiTransparent" id="statsWidget" style="right:4px; top:4px;">
+        <form class="uiHalfTransparent section" >
+
+            <!-- Statistics-->
+            <div class="uiTransparent" title="Statistics">Statistics</div>
+            <div id="statistics" class="uiTransparent" style="display:none;">
+
+                <!-- FPS -->
+                <div class="setting" id="fpsSetting" title="Frames per Second">
+                    <div id="FPS" style="font-size: 1.5em; ">
+                    </div>
+                </div>
+
+                <!-- rendered triangles -->
+                <!--<div class="setting" id="renderedTriangles" title="Amount of triangles currently rendered and total">
+                    <div class="settingName">Rendered Triangles</div>
+                    <div class="settingControlFullSize">
+                        <div id="renderedTrianglesPB" class="progress triangles" ><span></span></div>
+                    </div>
+                </div>-->
+                
+            </div>
+        </form>
+
+        <form class="uiHalfTransparent section">
+            <!-- interaction -->
+            <div class="uiTransparent" title="Interaction">Interaction</div>
+            <div id="interaction" class="uiTransparent" >
+               
+               <!-- Error Bound-->                
+                <div class="setting" id="errorBoundSetting" >
+                    <div class="settingName" id="ebTitle">Error Bound (Pixels): 1</div>
+                    <div class="settingControlFullSize">
+                        <div id="errorBoundSlider"></div>
+                    </div>
+                </div>
+                
+                <!-- Interaction Factor-->
+                <div class="setting" id="interactionFactorSetting" >
+                    <div class="settingName" id="ifTitle">Interaction Factor: 1</div>
+                    <div class="settingControlFullSize">
+                        <div id="interactionFactorSlider"></div>
+                    </div>
+                </div>
+                
+                <!-- Render Mode-->
+                <div class="setting" id="renderMode" title="Render mode settings">
+                    <div class="settingName" id="renderModeRadio">Render Mode</div>
+                    <div class="settingControlFullSize">
+                        <input type="radio" name="rendermode" id="renderPointsButton"><label for="renderPointsButton" class="roundBorders">Points</label></input>
+                        <input type="radio" name="rendermode" id="renderTrianglesButton" checked><label for="renderTrianglesButton" class="roundBorders">Faces</label></input>                        
+                    </div>
+                </div>
+             
+                <div class="setting">
+                    <!-- reset View -->
+                    <button id="rvButton" title="reset camera to initial position">Reset View</button>
+                </div>
+            </div>
+        </form>
+    </div>
+  <div id="x3dElementDiv"></div>
+
+</div>
+</body>
+</html>

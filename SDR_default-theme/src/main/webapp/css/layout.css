@@ -1,0 +1,19 @@
+@import "mixins";
+
+/* ---------- Column widths ---------- */
+
+.portlet-column-content.empty {
+	padding: 50px;
+}
+
+/* ---------- sub-area ---------- */
+
+#sub-area {
+    width: 1280px;
+    margin: 0 auto;
+    padding: 20px 0;
+}
+
+#sub-area:after {
+    content: ""; display: block; clear: both;
+}

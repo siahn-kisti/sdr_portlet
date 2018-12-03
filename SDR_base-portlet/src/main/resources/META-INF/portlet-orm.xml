@@ -1,0 +1,512 @@
+<?xml version="1.0"?>
+
+<entity-mappings xmlns="http://java.sun.com/xml/ns/persistence/orm" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="1.0" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm http://java.sun.com/xml/ns/persistence/orm_1_0.xsd">
+	<persistence-unit-metadata>
+		<xml-mapping-metadata-complete/>
+		<persistence-unit-defaults>
+			<access>PROPERTY</access>
+		</persistence-unit-defaults>
+	</persistence-unit-metadata>
+	<mapped-superclass class="com.sdr.metadata.model.impl.ApiKeyModelImpl">
+		<attributes>
+			<id name="userId" />
+			<basic name="apiKey" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.AssetEntries_AssetTagsModelImpl">
+		<id-class class="com.sdr.metadata.service.persistence.AssetEntries_AssetTagsPK" />
+		<attributes>
+			<id name="entryId" />
+			<id name="tagId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.CollectionModelImpl">
+		<attributes>
+			<id name="collectionId" />
+			<basic name="title" />
+			<basic name="userId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="description" />
+			<basic name="usageRight" />
+			<basic name="doi" />
+			<basic name="accessPolicy" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="skipCurate" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.Collection_AllowedUserModelImpl">
+		<id-class class="com.sdr.metadata.service.persistence.Collection_AllowedUserPK" />
+		<attributes>
+			<id name="collectionId" />
+			<id name="userId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.Collection_UserModelImpl">
+		<id-class class="com.sdr.metadata.service.persistence.Collection_UserPK" />
+		<attributes>
+			<id name="collectionId" />
+			<id name="userId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.CurateModelImpl">
+		<attributes>
+			<id name="curateId" />
+			<basic name="title" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="endDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="log">
+				<column name="LOG_" />
+			</basic>
+			<basic name="datasetId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.CurationJobModelImpl">
+		<attributes>
+			<id name="simulationId" />
+			<basic name="simulationUuid" />
+			<basic name="jobUuid" />
+			<basic name="description" />
+			<basic name="status" />
+			<basic name="simulationStartDt">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="simulationEndDt">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.DatasetModelImpl">
+		<attributes>
+			<id name="datasetId" />
+			<basic name="title" />
+			<basic name="descriptiveMetadata" />
+			<basic name="provenanceMetadata" />
+			<basic name="description" />
+			<basic name="location" />
+			<basic name="metalocation" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="userName" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="publishDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="version" />
+			<basic name="checksum" />
+			<basic name="doi" />
+			<basic name="remote" />
+			<basic name="repository" />
+			<basic name="fileFinalized" />
+			<basic name="fileNum" />
+			<basic name="hashcode" />
+			<basic name="curateSignature" />
+			<basic name="retrieveSignature" />
+			<basic name="curateLogCode" />
+			<basic name="curateLogDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="curateErrorCode" />
+			<basic name="status" />
+			<basic name="statusByUserId" />
+			<basic name="statusByUserName" />
+			<basic name="statusDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="collectionId" />
+			<basic name="dataTypeId" />
+			<basic name="ppLogicId" />
+			<basic name="curateId" />
+			<basic name="parent" />
+			<basic name="grId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="statusByUserUuid" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.DataTypeModelImpl">
+		<attributes>
+			<id name="dataTypeId" />
+			<basic name="title" />
+			<basic name="description" />
+			<basic name="fileValidationRule" />
+			<basic name="userId" />
+			<basic name="allowedUserId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="curateRequired" />
+			<basic name="location" />
+			<basic name="dockerImage" />
+			<basic name="defaultPpLogicId" />
+			<basic name="status" />
+			<transient name="allowedUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.DataType_dataTypeSchema_essentialModelImpl">
+		<id-class class="com.sdr.metadata.service.persistence.DataType_dataTypeSchema_essentialPK" />
+		<attributes>
+			<id name="dataTypeId" />
+			<id name="dataTypeSchemaId" />
+			<basic name="essential" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.DatatypeRuleModelImpl">
+		<attributes>
+			<id name="drId" />
+			<basic name="grId" />
+			<basic name="dataTypeId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.DataTypeSchemaModelImpl">
+		<attributes>
+			<id name="dataTypeSchemaId" />
+			<basic name="title" />
+			<basic name="reference" />
+			<basic name="variableType" />
+			<basic name="variableUnit" />
+			<basic name="essential" />
+			<basic name="minimum" />
+			<basic name="maximum" />
+			<basic name="enums" />
+			<basic name="pattern" />
+			<basic name="description" />
+			<basic name="userId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="createUserId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="status" />
+			<transient name="createUserUuid" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.DataViewModelImpl">
+		<attributes>
+			<id name="dataViewId" />
+			<basic name="title" />
+			<basic name="dataTypeId" />
+			<basic name="html" />
+			<basic name="description" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="status" />
+			<basic name="orderNo" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.DataViewComponentsModelImpl">
+		<attributes>
+			<id name="dataViewComponentsId" />
+			<basic name="compGroup" />
+			<basic name="compName" />
+			<basic name="image" />
+			<basic name="html" />
+			<basic name="script" />
+			<basic name="properties" />
+			<basic name="description" />
+			<basic name="orderNo" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<basic name="userId" />
+			<basic name="createDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="modifiedDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="status" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.GroupRuleModelImpl">
+		<attributes>
+			<id name="grId" />
+			<basic name="title" />
+			<basic name="description" />
+			<basic name="rule" />
+			<basic name="viewAttr" />
+			<basic name="mergeAttr" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.IceBreakerVcTokenModelImpl">
+		<attributes>
+			<id name="tokenId" />
+			<basic name="vcToken" />
+			<basic name="vcTokenExpired">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="resultCode" />
+			<basic name="activate" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.MlGuiParameterModelImpl">
+		<attributes>
+			<id name="mlGuiParameterId" />
+			<basic name="parentId" />
+			<basic name="kind" />
+			<basic name="displayName" />
+			<basic name="valueType" />
+			<basic name="value" />
+			<basic name="image" />
+			<basic name="option">
+				<column name="OPTION_" />
+			</basic>
+			<basic name="description" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.PpLogicModelImpl">
+		<attributes>
+			<id name="ppId" />
+			<basic name="userId" />
+			<basic name="title" />
+			<basic name="description" />
+			<basic name="type">
+				<column name="TYPE_" />
+			</basic>
+			<basic name="command" />
+			<basic name="dataTypeId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.ReqMakeSiteModelImpl">
+		<attributes>
+			<id name="requestId" />
+			<basic name="name" />
+			<basic name="description" />
+			<basic name="siteType" />
+			<basic name="userId" />
+			<basic name="requestDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="confirmDate">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="message" />
+			<basic name="status" />
+			<basic name="answer" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.SdrOrganizationsModelImpl">
+		<attributes>
+			<id name="organizationId" />
+			<basic name="organizationName" />
+			<basic name="description" />
+			<basic name="url" />
+			<basic name="address" />
+			<basic name="zipcode" />
+			<basic name="city" />
+			<basic name="country" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.SdrUsersModelImpl">
+		<attributes>
+			<id name="userId" />
+			<basic name="firstName" />
+			<basic name="lastName" />
+			<basic name="email" />
+			<basic name="organizationId" />
+			<basic name="createUser" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<mapped-superclass class="com.sdr.metadata.model.impl.SimulationJobModelImpl">
+		<attributes>
+			<id name="simulationId" />
+			<basic name="simulationUuid" />
+			<basic name="jobUuid" />
+			<basic name="inputId" />
+			<basic name="title" />
+			<basic name="description" />
+			<basic name="status" />
+			<basic name="simulationStartDt">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="simulationEndDt">
+				<temporal>TIMESTAMP</temporal>
+			</basic>
+			<basic name="userId" />
+			<basic name="groupId" />
+			<basic name="companyId" />
+			<transient name="modelAttributes" />
+			<transient name="primaryKey" />
+			<transient name="primaryKeyObj" />
+			<transient name="userUuid" />
+		</attributes>
+	</mapped-superclass>
+	<entity class="com.sdr.metadata.model.impl.ApiKeyImpl" name="ApiKey">
+		<table name="sdr_ApiKey" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.AssetEntries_AssetTagsImpl" name="AssetEntries_AssetTags">
+		<table name="sdr_AssetEntries_AssetTags" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.CollectionImpl" name="Collection">
+		<table name="sdr_Collection" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.Collection_AllowedUserImpl" name="Collection_AllowedUser">
+		<table name="sdr_Collection_AllowedUser" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.Collection_UserImpl" name="Collection_User">
+		<table name="sdr_Collection_User" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.CurateImpl" name="Curate">
+		<table name="sdr_Curate" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.CurationJobImpl" name="CurationJob">
+		<table name="sdr_CurationJob" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.DatasetImpl" name="Dataset">
+		<table name="sdr_Dataset" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.DataTypeImpl" name="DataType">
+		<table name="sdr_DataType" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.DataType_dataTypeSchema_essentialImpl" name="DataType_dataTypeSchema_essential">
+		<table name="sdr_DataType_dataTypeSchema_essential" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.DatatypeRuleImpl" name="DatatypeRule">
+		<table name="sdr_DatatypeRule" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.DataTypeSchemaImpl" name="DataTypeSchema">
+		<table name="sdr_DataTypeSchema" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.DataViewImpl" name="DataView">
+		<table name="sdr_DataView" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.DataViewComponentsImpl" name="DataViewComponents">
+		<table name="sdr_DataViewComponents" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.GroupRuleImpl" name="GroupRule">
+		<table name="sdr_GroupRule" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.IceBreakerVcTokenImpl" name="IceBreakerVcToken">
+		<table name="sdr_IceBreakerVcToken" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.MlGuiParameterImpl" name="MlGuiParameter">
+		<table name="sdr_MlGuiParameter" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.PpLogicImpl" name="PpLogic">
+		<table name="sdr_PpLogic" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.ReqMakeSiteImpl" name="ReqMakeSite">
+		<table name="sdr_ReqMakeSite" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.SdrOrganizationsImpl" name="SdrOrganizations">
+		<table name="sdr_SdrOrganizations" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.SdrUsersImpl" name="SdrUsers">
+		<table name="sdr_SdrUsers" />
+		<attributes />
+	</entity>
+	<entity class="com.sdr.metadata.model.impl.SimulationJobImpl" name="SimulationJob">
+		<table name="sdr_SimulationJob" />
+		<attributes />
+	</entity>
+</entity-mappings>
